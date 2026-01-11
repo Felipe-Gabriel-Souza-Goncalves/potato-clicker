@@ -74,5 +74,4 @@ function alterarTextosPrecos(preco, taxaPreco, i) {
 
     document.getElementById("precoUp"+i).innerText = sumPrecos + " cookies"
     decoracao({preco: sumPrecos}, "precoUp"+i)
-  // });
 }

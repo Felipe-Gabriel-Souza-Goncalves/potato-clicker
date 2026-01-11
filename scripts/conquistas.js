@@ -89,7 +89,6 @@ function carregarConquistas(){
             <img style="width: 60px" src="imagens/trofeu ${conq.categoria}.png">
             <div>
                 <h5>${conq.nome}</h5>
-                <!-- <span>${conq.descricao}</span> !>
             </div>
         `
 

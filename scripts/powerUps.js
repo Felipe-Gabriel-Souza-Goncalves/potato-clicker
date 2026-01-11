@@ -1,5 +1,4 @@
 // EM PROGRESSO
-
 class Powerup {
   static ordemPowerups = []
   static powerupsComprados = []
@@ -18,17 +17,24 @@ class Powerup {
     
   }
 
-  comprarPowerup(){
+  comprarPowerup(index){
     if(cookies > this.preco){
-      this.comprado(this.index)
+      cookies -= this.preco
+      Powerup.comprado(index)
+      eval(this.efeito)
     }
   }
 
   static comprado(index){
-    if(!index) return
-    if(index > this.ordemPowerups.length) return
+    if(index == null || index == undefined) return
+    if(index >= Powerup.ordemPowerups.length) return
 
     this.numComprados++
+    const powerup = Powerup.ordemPowerups[index]
+    powerup.comprado = true
+
+    Powerup.powerupsComprados.push(powerup)
+    Powerup.ordemPowerups.splice(index, 1)
     this.atualizarFront()
 
 
@@ -36,21 +42,21 @@ class Powerup {
 
   static atualizarFront(){
     const filaPowerups = document.getElementById("divPowerups")
+    filaPowerups.innerHTML = ""
 
     for(let i = 0; i < 3; i++){
-      const indexPowerup = i+Powerup.numComprados
-      const powerup = Powerup.ordemPowerups[indexPowerup]
-
-      if(indexPowerup >= Powerup.ordemPowerups.length){
+      if(Powerup.ordemPowerups.length <= i){
         filaPowerups.innerHTML += `<div class="itemPowerup"></div>`
         continue
       }
 
+      const powerup = Powerup.ordemPowerups[i]
+
       filaPowerups.innerHTML += `
-        <div class= "itemPowerup" 
-          onclick="${powerup.comprarPowerup()}"
-          onmouseenter="${console.log("teste - entrou powerup")}"  
-          onmouseleave="${console.log("teste - saiu powerup")}"  
+        <div class= "itemPowerup" title="${powerup.descricao}"
+          onclick="Powerup.ordemPowerups[${i}].comprarPowerup(${i})"
+          onmouseenter="console.log('teste - entrou powerup')"  
+          onmouseleave="console.log('teste - saiu powerup')"  
         >
           ${powerup.nome}
         </div>
@@ -60,5 +66,9 @@ class Powerup {
 }
 
 const infoPowerups = {
-  pw1: new Powerup("Cliques também", `+1 cpc para cada ${upgrade1.nome}`, 500, `upgrade1.cpc += 1`)
+  pw1: new Powerup("Cliques também", `+1 cpc para cada 10 ${upgrade1.nome}`, 500, `upgrade1.cpc += 0.1; poderClique += upgrade1.quantidade*upgrade1.cpc`),
+  pw2: new Powerup("Melhores preços", `taxa de aumento 5% menor para ${upgrade3.nome}`, 625, `upgrade3.taxaPreco *= 0.95;`),
+  pw3: new Powerup("Que belo negócio!", `+5 ${upgrade4.nome}`, 800, `upgrade4.quantidade +=5;`)
 }
+
+Powerup.atualizarFront()

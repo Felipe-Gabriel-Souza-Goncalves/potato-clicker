@@ -1,20 +1,15 @@
-.estatisticasRun,
-.opcoesConfiguracao{
-    margin-top: 20%;
-    display: block;
-    padding: 30px;
-    box-sizing: border-box;
+
+
+.botaoFecharDiv {
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  right: 0;
 }
 
-#botaoReiniciarProgresso{
-    background-color: red;
-    color: aliceblue;
-    padding: 5px;
-    border: 2px solid darkred ;
-    border-radius: 5px;
-    font-size: 1.4em;
-}
-
-.botaoFecharDiv{
-    cursor: pointer;
+body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown) {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
 }

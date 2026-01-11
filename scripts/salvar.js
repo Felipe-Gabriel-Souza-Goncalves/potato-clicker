@@ -23,8 +23,6 @@ function salvarTemporario() {
 }
 
 
-
-
 function carregarSave(){
   if(localStorage.getItem("CCconfig") != null){
     const save = JSON.parse(localStorage.getItem("CCconfig"))

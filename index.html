@@ -12,7 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet" />
 
+    <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/configuracoes.css" />
+    <link rel="stylesheet" href="css/upgrades.css" />
     <link rel="stylesheet" href="css/powerUps.css" />
     <link rel="stylesheet" href="css/animacoes.css" />
     <link rel="stylesheet" href="css/extras.css" />
@@ -23,7 +26,7 @@
   <body>
     <div id="tudoPraEsquerda">
       <div class="divCookieGrande">
-        <img id="imagemCookie" onclick="clicarNoCookie()" src="imagens/teste-cookie.png" width="150" alt="Cookie" />
+        <img id="imagemCookie" onclick="clicarNoCookie()" draggable="false" src="imagens/teste-cookie.png" width="150" alt="Cookie" />
         <br /><br />
         <div>
           <h1 id="contador">0 Cookies</h1>
@@ -41,7 +44,6 @@
         <img onclick="abrirSecao('divConfiguracoes', '', configAberta)" src="imagens/configuracoes.png" alt="configuracoes">
         <img onclick="abrirSecao('divEstatisticas', '', estatisticaAberta)" src="imagens/estatisticas.png" alt="estatisticas">
         <img onclick="abrirSecao('divConquistas', '', abriuConquista)" src="imagens/conquistas.png" alt="conquistas">
-        <!-- <img onclick="abrirSecao('')" src="imagens/upgrades.png" alt="upgrades"> -->
       </div>
       <table id="tabelaDeComprasProdutos">
         <thead>

@@ -1,22 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "M PLUS Rounded 1c", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
-body {
-  display: flex;
-  overflow-x: hidden;
-}
-button {
-  cursor: pointer;
-}
-
 #tudoPraEsquerda {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: antiquewhite;
+  background-color: rgb(215, 215, 215);
   min-width: 50vw;
   height: 100vh;
   padding-bottom: 36px;
@@ -41,117 +27,15 @@ button {
 #imagemCookie:active {
   animation: clickCookie 0.15s ease-in-out;
 }
-li {
-  position: relative;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgb(114, 58, 11);
-}
-li::marker {
-  color: transparent;
-}
-li:nth-child(1) {
-  left: 20px;
-  top: 14px;
-}
-li:nth-child(2) {
-  left: 68px;
-  top: 42px;
-}
-li:nth-child(3) {
-  left: 12px;
-  top: 23px;
-}
-li:nth-child(4) {
-  left: 40px;
-  top: 45px;
-}
-li:nth-child(5) {
-  left: 55px;
-  top: -10px;
-}
 
-.upgradeBloqueado {
-  background-color: gray;
-  color: black;
-  cursor: pointer;
-}
-
-table {
-  font-size: 12px;
-  border: 2px solid black;
-  border-collapse: collapse;
-}
-.nomeUpgrade {
-  width: 200px;
-}
-.qntUp {
-  width: 60px;
-}
-.precoCompra {
-  width: 200px;
-}
-
-/* teste */
-
-th,
-tr,
-td {
-  height: 50px;
-  border: 1px solid black;
-  text-align: center;
-}
-th {
-  width: 33%;
-  background-color: rgb(68, 42, 8);
-  color: aliceblue;
-}
-thead tr:last-of-type {
-  background-color: rgb(68, 68, 68);
-}
-
-.botaoMudarNumUpgrade {
-  height: 100%;
-  width: 100%;
-  border-radius: 0px;
-  border: 0;
-  font-size: 1.5rem;
-  background-color: rgb(226, 226, 226);
-}
-.botaoMudarNumUpgrade:hover {
-  filter: brightness(0.8);
-}
-.botaoMudarNumUpgrade:active {
-  animation: clickCompraUpgrade 200ms ease-in-out;
-}
-.botaoMudarNumUpgrade {
-  filter: brightness(0.7);
-}
 .botaoAtivo {
   filter: brightness(1.1);
-  background-color: darkgrey;
+  background-color: darkgrey !important;
   color: aliceblue;
 }
-
 
 .navSecoes img{
   cursor: pointer;
-}
-#precoUp1,
-#precoUp2,
-#precoUp3 {
-  /* background-color: rgba(70, 62, 59, 0.61); */
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-select {
-  border: 6px ridge #180f03;
-  color: white;
-  background-color: #47320f;
 }
 
 #tudoPraDireita {
@@ -161,17 +45,14 @@ select {
   min-width: 50vw;
   overflow: hidden;
 }
-.botaoInformacao {
-  font-size: 2rem;
-  padding: 5px;
-  min-width: 300px;
-}
 
 #divConfiguracoes,
 #divEstatisticas,
 #divConquistas {
   display: none;
   backdrop-filter: blur(5px) brightness(0.7);
+  background-color: rgba(52, 36, 5, 0.568);
+  color: white;
   position: fixed;
   top: 0;
   right: 0;
@@ -188,13 +69,6 @@ select {
 #divEstatisticas::-webkit-scrollbar,
 #divConquistas::-webkit-scrollbar {
   display: none;
-}
-.botaoFecharDiv {
-  font-size: 2rem;
-  position: absolute;
-  z-index: 9;
-  top: 0;
-  right: 0;
 }
 
 #popupSalvar {

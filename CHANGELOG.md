@@ -1,5 +1,10 @@
 # Atualizações - Versão atual - [1.9.2]
 
+## Versão 1.10-beta 10/01/2026
+- Primeira implementação dos powerups
+- Otimizações e organização de código
+- Melhorias e alterações de design
+
 ## Versão 1.9.2 - 26/12/2025
 - Alteração de visual das seções de navegação
 - Correções de conquistas não desbloqueadas

@@ -1,0 +1,48 @@
+h2[id^="precoUp"]{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upgradeBloqueado {
+  background-color: gray;
+  color: black;
+  cursor: pointer;
+}
+
+table {
+  font-size: 12px;
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+.nomeUpgrade {width: 200px;}
+.qntUp {width: 60px;}
+.precoCompra {width: 200px;}
+
+.botaoMudarNumUpgrade {
+  height: 100%;
+  width: 100%;
+  border-radius: 0px;
+  border: 0;
+  font-size: 1.5rem;
+  background-color: rgb(226, 226, 226);
+}
+.botaoMudarNumUpgrade:hover {filter: brightness(0.8);}
+.botaoMudarNumUpgrade:active {animation: clickCompraUpgrade 200ms ease-in-out;}
+
+th,
+tr,
+td {
+  height: 50px;
+  border: 1px solid black;
+  text-align: center;
+}
+th {
+  width: 33%;
+  background-color: rgb(68, 42, 8);
+  color: aliceblue;
+}
+thead tr:last-of-type {
+  background-color: rgb(68, 68, 68);
+}

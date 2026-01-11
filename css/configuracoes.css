@@ -1,0 +1,21 @@
+.estatisticasRun,
+.opcoesConfiguracao {
+  display: block;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+#botaoReiniciarProgresso {
+  background-color: red;
+  color: aliceblue;
+  padding: 5px;
+  border: 2px solid darkred;
+  border-radius: 5px;
+  font-size: 1.4em;
+}
+
+#textoSalvarManualmente {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

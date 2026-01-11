@@ -5,10 +5,7 @@
 }
 
 @keyframes clickCompraUpgrade{
-    0%{
-        background-color: rgb(151, 151, 151);
-        transform: translateY(-2px);
-    }
+    0%{background-color: rgb(151, 151, 151);transform: translateY(-2px);}
 
 }
 

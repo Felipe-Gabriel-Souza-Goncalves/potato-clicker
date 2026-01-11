@@ -58,8 +58,8 @@ class Upgrades {
 // nome, preco, taxa (>1), cps (cookie por segundo), cpc (cookie por clique)
 const upgrade1 = new Upgrades("+1 Cookie/seg", 5, 1.2, 1, 0);
 const upgrade2 = new Upgrades("+5 Cookie/seg", 25, 1.42, 5, 0);
-const upgrade3 = new Upgrades("+10 Cookie/seg", 200, 1.7, 10, 0);
-const upgrade4 = new Upgrades("+1 Cookie/click", 1200, 1.06, 0, 1);
+const upgrade3 = new Upgrades("+10 Cookie/seg", 200, 1.5, 10, 0);
+const upgrade4 = new Upgrades("+1 Cookie/click", 1200, 1.3, 0, 1);
 
 function audioCookie() {
   if (SFXligado == true) {
@@ -91,8 +91,8 @@ function textoAudio(){
 
 function clicarNoCookie() {
   audioCookie();
-  cookies += poderClique;
-  cookieTotal += poderClique;
+  cookies += Math.floor(poderClique);
+  cookieTotal += Math.floor(poderClique);
   cliques += 1;
   document.getElementById("contador").innerHTML = cookies + " Cookies";
 }

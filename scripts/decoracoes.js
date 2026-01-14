@@ -1,9 +1,9 @@
 function decoracao(obj, idPreco) {
   
   const elementPreco = document.getElementById(idPreco)
-  elementPreco.title = obj.preco + ` cookies necessários para comprar`;
+  elementPreco.title = obj.preco + ` batatas necessários para comprar`;
   
-  if (obj.preco > cookies) {
+  if (obj.preco > batatas) {
     elementPreco.parentElement.classList.add("upgradeBloqueado")
   } else if(elementPreco.parentElement.classList.contains("upgradeBloqueado")) {
     elementPreco.parentElement.classList.remove("upgradeBloqueado")
@@ -11,16 +11,16 @@ function decoracao(obj, idPreco) {
 }
 
 function estatisticas() {
-  document.getElementById("estatCookies").innerHTML = cookies;
-  document.getElementById("estatCookiesTotal").innerHTML = cookieTotal;
-  document.getElementById("estatCookiesPorClique").innerHTML = poderClique;
-  document.getElementById("estatCookiesPorSegundo").innerHTML = valorSelectCPS();
+  document.getElementById("estatBatatas").innerHTML = batatas;
+  document.getElementById("estatBatatasTotal").innerHTML = BatataTotal;
+  document.getElementById("estatBatatasPorClique").innerHTML = poderClique;
+  document.getElementById("estatBatatasPorSegundo").innerHTML = valorSelectCPS();
   document.getElementById("estatCliquesTotais").innerHTML = cliques;
   document.getElementById("estatUpgradesComprados").innerHTML = Upgrades.numeroDeUpgrades;
 }
 
 function valorSelectCPS() {
-  const index = document.getElementById("selectCookiesPorSegundo").value;
+  const index = document.getElementById("selectBatatasPorSegundo").value;
   let total = 0;
 
   if (index == "total") {
@@ -72,6 +72,6 @@ function alterarTextosPrecos(preco, taxaPreco, i) {
         sumPrecos+= preco
     }
 
-    document.getElementById("precoUp"+i).innerText = sumPrecos + " cookies"
+    document.getElementById("precoUp"+i).innerText = sumPrecos + " batatas"
     decoracao({preco: sumPrecos}, "precoUp"+i)
 }

@@ -10,10 +10,10 @@ function salvarTemporario() {
       SFXligado: SFXligado,
       volume: document.getElementById("volumeSFX").value,
     },
-    cookies: {
-      bancoCookie: cookies,
-      cookieTotal: cookieTotal,
-      cookiePS: cookiesPS,
+    batatas: {
+      bancoBatata: batatas,
+      BatataTotal: BatataTotal,
+      BatataPS: batatasPS,
     },
     conquistas: Conquistas.conquistasLiberadas,
     upgrades: Upgrades.upgradesExistentes
@@ -33,10 +33,10 @@ function carregarSave(){
     SFXligado = save.geral.SFXligado
     document.getElementById("volumeSFX").value = save.geral.volume
 
-    // Configurações sobre cookies
-    cookies = save.cookies.bancoCookie
-    cookieTotal = save.cookies.cookieTotal
-    cookiesPS = save.cookies.cookiePS
+    // Configurações sobre batatas
+    batatas = save.batatas.bancoBatata
+    BatataTotal = save.batatas.BatataTotal
+    batatasPS = save.batatas.BatataPS
 
     // Configurações das conquistas
     Conquistas.numeroConquistasLiberadas = save.conquistas.length
@@ -60,6 +60,6 @@ carregarSave()
 function carregarTextosPrecos(){
   Upgrades.upgradesExistentes.forEach((upgd, i) =>{
     document.getElementById(`qntUp`+ (i+1)).innerText = upgd.quantidade 
-    document.getElementById(`precoUp`+ (i+1)).innerText = upgd.preco + " cookies"
+    document.getElementById(`precoUp`+ (i+1)).innerText = upgd.preco + " batatas"
   })
 }

@@ -18,8 +18,8 @@ class Powerup {
   }
 
   comprarPowerup(index){
-    if(cookies > this.preco){
-      cookies -= this.preco
+    if(batatas > this.preco){
+      batatas -= this.preco
       Powerup.comprado(index)
       eval(this.efeito)
     }

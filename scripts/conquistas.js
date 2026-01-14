@@ -31,11 +31,11 @@ const randomStats = { // Estatísticas inúteis para fazer conquistas
 
 
 const infoConquistas = {
-    c1: new Conquistas("Começando!", "Fez ao menos 100 cookies no total", cookies, "cookieTotal >= 100", "bronze"),
-    c2: new Conquistas("Um pouco mais", "Fez ao menos 1.000 cookies no total", cookies, "cookieTotal >= 1000", "bronze"),
-    c3: new Conquistas("Aberto para todos!", "Fez ao menos 10.000 cookies no total!", cookies, "cookieTotal >= 10000", "prata"),
-    c4: new Conquistas("Melhor do mundo!", "Fez ao menos 100.000 cookies no total!!!", cookies, "cookieTotal >= 100000", "ouro"),
-    c29: new Conquistas("Monopólio", "Fez ao menos 1.000.000 cookies no total!!!", cookies, "cookieTotal >= 1000000", "ouro"),
+    c1: new Conquistas("Começando!", "Fez ao menos 100 batatas no total", batatas, "BatataTotal >= 100", "bronze"),
+    c2: new Conquistas("Um pouco mais", "Fez ao menos 1.000 batatas no total", batatas, "BatataTotal >= 1000", "bronze"),
+    c3: new Conquistas("Aberto para todos!", "Fez ao menos 10.000 batatas no total!", batatas, "BatataTotal >= 10000", "prata"),
+    c4: new Conquistas("Melhor do mundo!", "Fez ao menos 100.000 batatas no total!!!", batatas, "BatataTotal >= 100000", "ouro"),
+    c29: new Conquistas("Monopólio", "Fez ao menos 1.000.000 batatas no total!!!", batatas, "BatataTotal >= 1000000", "ouro"),
 
     c5: new Conquistas("Olha! faz sozinho!", `Comprou 1 ${upgrade1.nome}`, upgrade1.quantidade, "upgrade1.quantidade >= 1", "bronze"),
     c6: new Conquistas("Automático", `Comprou 10 ${upgrade1.nome}`, upgrade1.quantidade, "upgrade1.quantidade >= 10", "bronze"),
@@ -44,13 +44,13 @@ const infoConquistas = {
 
     c9: new Conquistas("5x melhor!", `Comprou 1 ${upgrade2.nome}`, upgrade2.quantidade, "upgrade2.quantidade >= 1", "bronze"),
     c10: new Conquistas("Ótimo custo benefício", `Comprou 10 ${upgrade2.nome}`, upgrade2.quantidade, "upgrade2.quantidade >= 10", "bronze"),
-    c11: new Conquistas("Uma fábrica de cookies", `Comprou 25 ${upgrade2.nome}`, upgrade2.quantidade, "upgrade2.quantidade >= 25", "prata"),
-    c12: new Conquistas("Wow. cookies.", `Comprou 50 ${upgrade2.nome}`, upgrade2.quantidade, "upgrade2.quantidade >= 50", "ouro"),
+    c11: new Conquistas("Uma fábrica de batatas", `Comprou 25 ${upgrade2.nome}`, upgrade2.quantidade, "upgrade2.quantidade >= 25", "prata"),
+    c12: new Conquistas("Wow. batatas.", `Comprou 50 ${upgrade2.nome}`, upgrade2.quantidade, "upgrade2.quantidade >= 50", "ouro"),
 
     c13: new Conquistas("Que forno grande", `Comprou 1 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 1", "bronze"),
-    c14: new Conquistas("100 cookies/seg só aqui!", `Comprou 10 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 10", "bronze"),
+    c14: new Conquistas("100 batatas/seg só aqui!", `Comprou 10 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 10", "bronze"),
     c15: new Conquistas("Para que tanto?", `Comprou 25 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 25", "prata"),
-    c16: new Conquistas("Milênio de cookies!", `Comprou 50 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 50", "ouro"),
+    c16: new Conquistas("Milênio de batatas!", `Comprou 50 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 50", "ouro"),
 
     c17: new Conquistas("O início!", `Clicou 1 vez`, cliques, "cliques >= 1", "bronze"),
     c18: new Conquistas("Pegando o ritmo", `Clicou 500 vezes`, cliques, "cliques >= 500", "bronze"),
@@ -71,7 +71,7 @@ const infoConquistas = {
     c31: new Conquistas("Analista de dados", `Ficou 5min seguidos vendo as estatísticas`, randomStats.timeStatistic, "randomStats.timeStatistic >= 300", "bronze"),
     c32: new Conquistas("VOU LIBERAR TODOS!", `Abriu a conquistas mais de 25 vezes`, randomStats.conquistasAbertas, "randomStats.conquistasAbertas >= 25", "bronze"),
     c33: new Conquistas("Não confio na automação", `Salvou manualmente 10 vezes`, randomStats.saveManual, "randomStats.saveManual >= 10", "bronze"),
-    c34: new Conquistas("Me deixe comprar!!!", `Tentou comprar algo sem cookies suficientes 100 vezes`, randomStats.tentativasComprar, "randomStats.tentativasComprar >= 100", "prata"),
+    c34: new Conquistas("Me deixe comprar!!!", `Tentou comprar algo sem batatas suficientes 100 vezes`, randomStats.tentativasComprar, "randomStats.tentativasComprar >= 100", "prata"),
 
 }
 

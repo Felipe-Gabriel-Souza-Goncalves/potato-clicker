@@ -2,7 +2,7 @@ carregarTabela();
 
 // Salvar
 // pegarLocalStorage();
-carregarSelectCookies()
+carregarSelectBatatas()
 
 
 // Decorações
@@ -19,14 +19,14 @@ setInterval(() =>{
 }, 5000)
 
 // Script
-cookiesPorSeg()
+batatasPorSeg()
 carregarTextosPrecos()
 textoAudio()
 
 setInterval(salvarTemporario, 30000);
-setInterval(cookiesPorSeg, 1000);
+setInterval(batatasPorSeg, 1000);
 
 
-document.getElementById("selectCookiesPorSegundo").addEventListener("change", () =>{
-  document.getElementById("estatCookiesPorSegundo").innerHTML = valorSelectCPS()
+document.getElementById("selectBatatasPorSegundo").addEventListener("change", () =>{
+  document.getElementById("estatBatatasPorSegundo").innerHTML = valorSelectCPS()
 });

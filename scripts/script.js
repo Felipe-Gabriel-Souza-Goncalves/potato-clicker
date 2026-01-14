@@ -1,6 +1,6 @@
-var cookies = 0;
-var cookiesPS = 0;
-var cookieTotal = 0;
+var batatas = 0;
+var batatasPS = 0;
+var BatataTotal = 0;
 let cliques = 0;
 let poderClique = 1;
 let SFXligado = true;
@@ -32,13 +32,13 @@ class Upgrades {
 
   comprarUpgrade(idQntd, idPreco, index) {
     for (let i = 0; i < qntdUpgradeComprar; i++) {
-      if (cookies >= this.preco) {
-        cookies -= this.preco;
+      if (batatas >= this.preco) {
+        batatas -= this.preco;
         this.preco = Math.floor(this.preco * this.taxaPreco);
         this.quantidade++;
 
         poderClique += this.cpc
-        cookiesPS += this.cps
+        batatasPS += this.cps
 
         Upgrades.contarUpgrades();
         alterarTextosPrecos(this.preco, this.taxaPreco, index)
@@ -47,7 +47,7 @@ class Upgrades {
         break;
       }
 
-      document.getElementById("contador").innerHTML = cookies + " Cookies";
+      document.getElementById("contador").innerHTML = batatas + " Batatas";
 
       // mudar o html dos elementos passados no parametro
       document.getElementById(idQntd).innerHTML = this.quantidade;
@@ -55,18 +55,18 @@ class Upgrades {
   }
 }
 
-// nome, preco, taxa (>1), cps (cookie por segundo), cpc (cookie por clique)
-const upgrade1 = new Upgrades("+1 Cookie/seg", 5, 1.2, 1, 0);
-const upgrade2 = new Upgrades("+5 Cookie/seg", 25, 1.42, 5, 0);
-const upgrade3 = new Upgrades("+10 Cookie/seg", 200, 1.5, 10, 0);
-const upgrade4 = new Upgrades("+1 Cookie/click", 1200, 1.3, 0, 1);
+// nome, preco, taxa (>1), cps (Batata por segundo), cpc (Batata por clique)
+const upgrade1 = new Upgrades("+1 Batata/seg", 5, 1.2, 1, 0);
+const upgrade2 = new Upgrades("+5 Batata/seg", 25, 1.42, 5, 0);
+const upgrade3 = new Upgrades("+10 Batata/seg", 200, 1.5, 10, 0);
+const upgrade4 = new Upgrades("+1 Batata/click", 1200, 1.3, 0, 1);
 
-function audioCookie() {
+function audioBatata() {
   if (SFXligado == true) {
 
-    let sonsCookie = ["sfx/pop-1.mp3", "sfx/pop-2.mp3", "sfx/pop-3.mp3"];
+    let sonsBatata = ["sfx/pop-1.mp3", "sfx/pop-2.mp3", "sfx/pop-3.mp3"];
     let index = Math.floor(Math.random() * 3);
-    var audio = new Audio(sonsCookie[index]);
+    var audio = new Audio(sonsBatata[index]);
 
     audio.volume = document.getElementById("volumeSFX").value;
     audio.play();
@@ -89,21 +89,21 @@ function textoAudio(){
     textoVolume.innerText = (volumeSFX*100).toFixed(0) + "% (mutado)" 
 }
 
-function clicarNoCookie() {
-  audioCookie();
-  cookies += Math.floor(poderClique);
-  cookieTotal += Math.floor(poderClique);
+function clicarNoBatata() {
+  audioBatata();
+  batatas += Math.floor(poderClique);
+  BatataTotal += Math.floor(poderClique);
   cliques += 1;
-  document.getElementById("contador").innerHTML = cookies + " Cookies";
+  document.getElementById("contador").innerHTML = batatas + " Batatas";
 }
 
-// Função de adicionar cookies por segundo ao banco de cookies
-function cookiesPorSeg() {
-  cookies += cookiesPS;
-  cookieTotal += cookiesPS;
+// Função de adicionar batatas por segundo ao banco de batatas
+function batatasPorSeg() {
+  batatas += batatasPS;
+  BatataTotal += batatasPS;
 
-  document.getElementById("contador").innerHTML = cookies + " Cookies";
-  document.getElementById("cookies/s").innerHTML = cookiesPS + " Cookies por segundo";
+  document.getElementById("contador").innerHTML = batatas + " Batatas";
+  document.getElementById("batatas/s").innerHTML = batatasPS + " Batatas por segundo";
 
   if(randomStats.elementOpened == "config"){randomStats.timeConfig++; randomStats.timeStatistic = 0}
   if(randomStats.elementOpened == "estatistica"){randomStats.timeStatistic++; randomStats.timeConfig = 0}
@@ -147,15 +147,15 @@ function carregarTabela() {
                 </button>
             </td>
             <td class="qntUp" id="qntUp${index}">${upgrade.quantidade}</td>
-            <td class="precoCompra" class="upgradeBloqueado"><h2 id="precoUp${index}">${upgrade.preco} cookies</h2></td>
+            <td class="precoCompra" class="upgradeBloqueado"><h2 id="precoUp${index}">${upgrade.preco} batatas</h2></td>
         `;
 
     tabelaProdutos.appendChild(tr);
   });
 }
 
-function carregarSelectCookies() {
-  const select = document.getElementById("selectCookiesPorSegundo");
+function carregarSelectBatatas() {
+  const select = document.getElementById("selectBatatasPorSegundo");
   select.innerHTML = "";
 
   Upgrades.upgradesExistentes

@@ -3,29 +3,33 @@
   flex-direction: column;
   align-items: center;
   background-color: rgb(215, 215, 215);
+  background: url(../imagens/bg-manha2.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-width: 50vw;
   height: 100vh;
   padding-bottom: 36px;
 }
-.divCookieGrande {
+.divBatataGrande {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
   align-items: center;
   text-align: center;
 }
-#imagemCookie {
+#imagemBatata {
   clip-path: circle();
   transition: 0.4s;
   cursor: pointer;
 }
-#imagemCookie:hover {
+#imagemBatata:hover {
   scale: 1.1;
 }
 
-#imagemCookie:focus,
-#imagemCookie:active {
-  animation: clickCookie 0.15s ease-in-out;
+#imagemBatata:focus,
+#imagemBatata:active {
+  animation: clickBatata 0.15s ease-in-out;
 }
 
 .botaoAtivo {

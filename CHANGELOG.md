@@ -1,4 +1,10 @@
-# Atualizações - Versão atual - [1.9.2]
+# Atualizações - Versão atual - [2.0-beta]
+
+## Versão 2.0-beta 13/01/2026
+### Batata clicker!
+- Imagens e nomes alterados
+- Fundo apropriado para a região de clicar
+- Fundo muda com horário do dispositivo
 
 ## Versão 1.10-beta 10/01/2026
 - Primeira implementação dos powerups

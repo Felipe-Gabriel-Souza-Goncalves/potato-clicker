@@ -1,4 +1,4 @@
-@keyframes clickCookie{
+@keyframes clickBatata{
     0%{scale: 1;}
     50%{scale: 1.2;}
     100%{scale: 1;}
@@ -9,7 +9,7 @@
 
 }
 
-@keyframes fundoCookie{
+@keyframes fundoBatata{
     0%{rotate: 0deg;}
     50%{rotate: 360deg;}
     99%{rotate: 0deg;}

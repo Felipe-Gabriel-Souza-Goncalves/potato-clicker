@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cookie clicker</title>
+    <title>Batata clicker</title>
 
-    <link rel="shortcut icon" href="imagens/teste-cookie.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="imagens/batata.png" type="image/x-icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,12 +25,12 @@
   </head>
   <body>
     <div id="tudoPraEsquerda">
-      <div class="divCookieGrande">
-        <img id="imagemCookie" onclick="clicarNoCookie()" draggable="false" src="imagens/teste-cookie.png" width="150" alt="Cookie" />
+      <div class="divBatataGrande">
+        <img id="imagemBatata" onclick="clicarNoBatata()" draggable="false" src="imagens/batata.png" width="150" alt="Batata" />
         <br /><br />
         <div>
-          <h1 id="contador">0 Cookies</h1>
-          <h2 id="cookies/s">0 Cookies por segundo</h2>
+          <h1 id="contador">0 Batatas</h1>
+          <h2 id="batatas/s">0 Batatas por segundo</h2>
         </div>
         <br />
       </div>
@@ -70,11 +70,11 @@
           <br /><br />
 
           <label for="volumeSFX">Volume SFX</label>
-          <input type="range" oninput="audioCookie()" id="volumeSFX" value="0.5" min="0" max="1" step="0.01" />
+          <input type="range" oninput="audioBatata()" id="volumeSFX" value="0.5" min="0" max="1" step="0.01" />
           <span id="configVolume">50%</span>
           <br />
 
-          <button id="toggleSFX" onclick="SFXligado = !SFXligado; audioCookie()">Desligar efeitos sonoros</button>
+          <button id="toggleSFX" onclick="SFXligado = !SFXligado; audioBatata()">Desligar efeitos sonoros</button>
 
           <h2 id="textoSalvarManualmente">
             Salvar manualmente:
@@ -93,16 +93,16 @@
         <img src="imagens/fechar.png" class="botaoFecharDiv" width="64" alt="X" onclick="abrirSecao()"></button>
 
         <div class="estatRun">
-          <h2>Cookies atuais: <span id="estatCookies">0</span></h2>
-          <h2>Cookies total: <span id="estatCookiesTotal">0</span></h2>
-          <h2>Cookies por clique: <span id="estatCookiesPorClique">1</span></h2>
+          <h2>Batatas atuais: <span id="estatBatatas">0</span></h2>
+          <h2>Batatas totais: <span id="estatBatatasTotal">0</span></h2>
+          <h2>Batatas por clique: <span id="estatBatatasPorClique">1</span></h2>
 
           <h2>
-            Cookies por segundo:
-            <select name="selectCookiesPorSegundo" id="selectCookiesPorSegundo">
+            Batatas por segundo:
+            <select name="selectBatatasPorSegundo" id="selectBatatasPorSegundo">
               <option value="total">Total</option>
             </select>
-            <span id="estatCookiesPorSegundo">0</span>
+            <span id="estatBatatasPorSegundo">0</span>
           </h2>
 
           <h2>Cliques: <span id="estatCliquesTotais">0</span></h2>

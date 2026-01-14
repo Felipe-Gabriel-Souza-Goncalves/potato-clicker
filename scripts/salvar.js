@@ -14,6 +14,7 @@ function salvarTemporario() {
       bancoBatata: batatas,
       BatataTotal: BatataTotal,
       BatataPS: batatasPS,
+      poderClique: poderClique,
     },
     conquistas: Conquistas.conquistasLiberadas,
     upgrades: Upgrades.upgradesExistentes
@@ -37,6 +38,7 @@ function carregarSave(){
     batatas = save.batatas.bancoBatata
     BatataTotal = save.batatas.BatataTotal
     batatasPS = save.batatas.BatataPS
+    poderClique = save.batatas.poderClique
 
     // Configurações das conquistas
     Conquistas.numeroConquistasLiberadas = save.conquistas.length

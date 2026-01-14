@@ -13,7 +13,7 @@ function decoracao(obj, idPreco) {
 function estatisticas() {
   document.getElementById("estatBatatas").innerHTML = batatas;
   document.getElementById("estatBatatasTotal").innerHTML = BatataTotal;
-  document.getElementById("estatBatatasPorClique").innerHTML = poderClique;
+  document.getElementById("estatBatatasPorClique").innerHTML = Math.floor(poderClique).toFixed(0);
   document.getElementById("estatBatatasPorSegundo").innerHTML = valorSelectCPS();
   document.getElementById("estatCliquesTotais").innerHTML = cliques;
   document.getElementById("estatUpgradesComprados").innerHTML = Upgrades.numeroDeUpgrades;

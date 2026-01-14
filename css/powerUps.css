@@ -1,15 +1,29 @@
-.itemPowerup{
-    align-content: center;
-    text-align: center;
-    border: 1px solid gray;
-    background-color: rgba(128, 128, 128, 0.39);
-    width: 80px;
-    height: 80px;
+.itemPowerup {
+  align-content: center;
+  text-align: center;
+  border: 1px solid gray;
+  background-color: rgba(128, 128, 128, 0.39);
+  width: 80px;
+  height: 80px;
 }
-.displayPowerUpsEscondido{
-    display: none;
+.displayPowerUpsEscondido {
+  display: none;
 }
 
-#divPowerups{
-    display: flex;
+#divPowerups {
+  display: flex;
 }
+
+#infoPowerups {
+  padding: 8px 16px;
+  margin: 12px;
+  border: 4px double rgb(71, 50, 15);
+  border: 8px double #180f03;
+  background-color: #47320f;
+  color: white;
+  display: none;
+  width: 50%;
+  word-wrap: break-word;
+}
+
+#nomePowerups{display: inline;margin: 0px 4px;}

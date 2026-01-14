@@ -46,3 +46,6 @@ th {
 thead tr:last-of-type {
   background-color: rgb(68, 68, 68);
 }
+
+#infoUpgrade{display: none;}
+#nomeUpgrade{display: inline;}

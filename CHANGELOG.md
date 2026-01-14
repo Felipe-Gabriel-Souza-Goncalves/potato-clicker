@@ -1,4 +1,9 @@
-# Atualizações - Versão atual - [2.0-beta]
+# Atualizações - Versão atual - [2.0.1]
+
+## Versão 2.0.1 14/01/26
+- Correção do poder do clique não ser salvo em localStorage
+- Informações dos powerups
+- Correção de debug mal formado para trocar fundo
 
 ## Versão 2.0-beta 13/01/2026
 ### Batata clicker!

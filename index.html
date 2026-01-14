@@ -36,6 +36,12 @@
       </div>
 
       <div id="divPowerups"></div>
+      <div id="infoPowerups">
+        <p id="nomePowerup"></p>
+        <span id="precoPowerup"></span>
+        <p id="descricaoPowerup"></p>
+      </div>
+
 
     </div>
     <div id="tudoPraDireita">
@@ -56,6 +62,13 @@
             <td><button class="botaoMudarNumUpgrade botaoAtivo" onclick="mudarNumUpgrades(0)">x1</button></td>
             <td><button class="botaoMudarNumUpgrade" onclick="mudarNumUpgrades(1)">x10</button></td>
             <td><button class="botaoMudarNumUpgrade" onclick="mudarNumUpgrades(2)">100x</button></td>
+          </tr>
+          <tr id="infoUpgrade">
+            <td colspan="3" rowspan="3">
+              <div>
+                <p id="nomeUpgrade">placeholder</p> &nbsp; | &nbsp; <span id="precoUpgrade">0</span> &nbsp; batatas
+              </div>
+            </td>
           </tr>
         </thead>
         <tbody id="listaProdutos"></tbody>

@@ -140,9 +140,11 @@ function carregarTabela() {
     tr.innerHTML = `
             <td class="nomeUpgrade">
                 <button 
-                    class="botaoMudarNumUpgrade" 
-                    onclick="upgrade${index}.comprarUpgrade('qntUp${index}', 'precoUp${index}', ${index})">
-                    
+                  class="botaoMudarNumUpgrade" 
+                  onclick="upgrade${index}.comprarUpgrade('qntUp${index}', 'precoUp${index}', ${index})"
+                  onmouseenter=""
+                  onmouseleave=""
+                >
                     ${upgrade.nome}
                 </button>
             </td>

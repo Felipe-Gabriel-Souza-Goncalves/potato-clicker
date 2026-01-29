@@ -1,4 +1,8 @@
-# Atualizações - Versão atual - [2.0.2]
+# Atualizações - Versão atual - [2.0.3]
+
+## Versão 2.0.3 29/01/26
+- Correções de imagens não sendo carregadas
+- README atualizado ao projeto
 
 ## Versão 2.0.2 29/01/26
 - Lançamento do potato clicker

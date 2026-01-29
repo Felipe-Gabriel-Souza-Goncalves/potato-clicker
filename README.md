@@ -1,17 +1,17 @@
 # 🥔 Potato Clicker
 
 ## 🌐 Link do site:
-https://felipe-gabriel-souza-goncalves.github.io/fake-cookie-clicker/ <br>
+https://felipe-gabriel-souza-goncalves.github.io/potato-clicker/ <br>
 
 ## ✏️ Descrição:
-Jogo web clicker inspirado em [cookie clicker](https://orteil.dashnet.org/cookieclicker/)!
+Jogo web clicker inspirado em jogos idle como [cookie clicker](https://orteil.dashnet.org/cookieclicker/)!
 Feito para estudo das linguagens:
 - HTML
 - CSS
 - JavaScript
 
 Um jogo simples sem fim com o simples intuito de ver seu progresso ganhando a moeda do jogo, batatas!
-Todas as artes pixelizadas foram feitas utilizando a plataforma [Pixilart](https://www.pixilart.com/)
+Todas as artes pixelizadas foram feitas utilizando a plataforma [Pixilart](https://www.pixilart.com/)<br>
 _Eventualmente, haverá os arquivos para edição dos sprites utilizados_
 
 ## ⚙️ Funcionalidades:

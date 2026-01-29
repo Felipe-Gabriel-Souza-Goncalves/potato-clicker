@@ -28,10 +28,10 @@ function alterarFoto(){
   const tudoEsquerda = document.getElementById("tudoPraEsquerda")
   const agora = new Date()
   if(agora.getHours() > 5 && agora.getHours() < 18){
-    tudoEsquerda.style.backgroundImage = "url(../imagens/bg-manha2.png)"
+    tudoEsquerda.style.backgroundImage = "url(imagens/bg-manha2.png)"
     tudoEsquerda.style.color= "black"
   } else{
-    tudoEsquerda.style.backgroundImage = "url(../imagens/bg-noite1.png)"
+    tudoEsquerda.style.backgroundImage = "url(imagens/bg-noite1.png)"
     tudoEsquerda.style.color= "white"
   }
 }

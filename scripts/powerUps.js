@@ -1,4 +1,5 @@
-// EM PROGRESSO
+const filaPowerups = document.getElementById("divPowerups");
+
 class Powerup {
   static ordemPowerups = [];
   static powerupsComprados = [];
@@ -39,7 +40,6 @@ class Powerup {
   }
 
   static atualizarFront() {
-    const filaPowerups = document.getElementById("divPowerups");
     filaPowerups.innerHTML = "";
 
     for (let i = 0; i < 3; i++) {
@@ -51,7 +51,9 @@ class Powerup {
       const powerup = Powerup.ordemPowerups[i];
 
       filaPowerups.innerHTML += `
-        <div class= "itemPowerup" title="${powerup.descricao}"
+        <div 
+          class="itemPowerup"
+          title="${powerup.descricao}"
           onclick="Powerup.ordemPowerups[${i}].comprarPowerup(${i})"
           onmouseenter="mostrarPowerupDetalhado(${i})"  
           onmouseleave="esconderPowerupDetalhado()"  

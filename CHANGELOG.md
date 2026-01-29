@@ -1,4 +1,10 @@
-# Atualizações - Versão atual - [2.0.1]
+# Atualizações - Versão atual - [2.0.2]
+
+## Versão 2.0.2 29/01/26
+- Lançamento do potato clicker
+- Otimizações de código
+- Alteração nos ícones de salvar
+- Alteração na documentação do projeto 
 
 ## Versão 2.0.1 14/01/26
 - Correção do poder do clique não ser salvo em localStorage
@@ -10,6 +16,8 @@
 - Imagens e nomes alterados
 - Fundo apropriado para a região de clicar
 - Fundo muda com horário do dispositivo
+
+## **Antes do Potato Clicker**
 
 ## Versão 1.10-beta 10/01/2026
 - Primeira implementação dos powerups

@@ -19,13 +19,13 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: left;
-  gap: 10px;
   border: 8px ridge rgb(70, 39, 13);
   background-color: #363643;
-  width: 30%;
+  width: 32%;
 }
-
-.containerConquistas h3 {
+.containerConquistas h5 {
+  height: 100%;
+  padding: 0px 6px;
   text-wrap: wrap;
 }
 
@@ -34,7 +34,7 @@
   background-color: #202021;
 }
 
-#descricaoConquista {
+#infoConquista {
   display: none;
   position: fixed;
   width: 50vw;
@@ -47,7 +47,7 @@
   gap: 12px;
   box-sizing: border-box;
 }
-#trofeuConquistaInfo{height:70px}
+#trofeuConquista{height:70px}
 
 #campoPopupsConquistas{
   position: fixed;

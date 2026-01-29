@@ -21,7 +21,7 @@ function estatisticaAberta(){randomStats.elementOpened = "estatistica"}
 function abriuConquista(){randomStats.conquistasAbertas++}
 
 window.addEventListener("DOMContentLoaded", ()=>{
-  setTimeout(alterarFoto, 5000)
+  alterarFoto()
 })
 
 function alterarFoto(){

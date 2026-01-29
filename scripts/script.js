@@ -1,3 +1,6 @@
+const displayBatatas = document.getElementById("batatas")
+const displayBatatasPS = document.getElementById("batatasPS")
+
 var batatas = 0;
 var batatasPS = 0;
 var BatataTotal = 0;
@@ -47,7 +50,7 @@ class Upgrades {
         break;
       }
 
-      document.getElementById("contador").innerHTML = batatas + " Batatas";
+      displayBatatas.innerHTML = batatas + " Batatas";
 
       // mudar o html dos elementos passados no parametro
       document.getElementById(idQntd).innerHTML = this.quantidade;
@@ -94,7 +97,7 @@ function clicarNoBatata() {
   batatas += Math.floor(poderClique);
   BatataTotal += Math.floor(poderClique);
   cliques += 1;
-  document.getElementById("contador").innerHTML = batatas + " Batatas";
+  displayBatatas.innerHTML = batatas + " Batatas";
 }
 
 // Função de adicionar batatas por segundo ao banco de batatas
@@ -102,8 +105,8 @@ function batatasPorSeg() {
   batatas += batatasPS;
   BatataTotal += batatasPS;
 
-  document.getElementById("contador").innerHTML = batatas + " Batatas";
-  document.getElementById("batatas/s").innerHTML = batatasPS + " Batatas por segundo";
+  displayBatatas.innerHTML = batatas + " Batatas";
+  displayBatatasPS.innerHTML = batatasPS + " Batatas por segundo";
 
   if(randomStats.elementOpened == "config"){randomStats.timeConfig++; randomStats.timeStatistic = 0}
   if(randomStats.elementOpened == "estatistica"){randomStats.timeStatistic++; randomStats.timeConfig = 0}

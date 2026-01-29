@@ -29,8 +29,8 @@
         <img id="imagemBatata" onclick="clicarNoBatata()" draggable="false" src="imagens/batata.png" width="150" alt="Batata" />
         <br /><br />
         <div>
-          <h1 id="contador">0 Batatas</h1>
-          <h2 id="batatas/s">0 Batatas por segundo</h2>
+          <h1 id="batatas">0 Batatas</h1>
+          <h2 id="batatasPS">0 Batatas por segundo</h2>
         </div>
         <br />
       </div>
@@ -89,14 +89,9 @@
 
           <button id="toggleSFX" onclick="SFXligado = !SFXligado; audioBatata()">Desligar efeitos sonoros</button>
 
-          <h2 id="textoSalvarManualmente">
+          <h2 id="textoSalvarManualmente" onclick="salvarTemporario(); randomStats.saveManual++">
             Salvar manualmente:
-            <img
-              width="40px"
-              src="imagens/save icon.png"
-              alt="Salvar"
-              onclick="salvarTemporario(); randomStats.saveManual++"
-            />
+            <img width="40px" src="imagens/grown save.png" alt="Salvar"/>
           </h2>
         </div>
       </div>
@@ -123,11 +118,11 @@
         </div>
       </div>
 
-      <div id="descricaoConquista">
-        <img id="trofeuConquistaInfo" src="" alt="troféu" />
+      <div id="infoConquista">
+        <img id="trofeuConquista" src="" alt="troféu" />
         <div>
-          <h2 id="nomeConquistaInfo">Titulo</h2>
-          <p id="descricaoConquistaInfo">Descrição</p>
+          <h2 id="nomeConquista">Titulo</h2>
+          <p id="descricaoConquista">Descrição</p>
         </div>
       </div>
 
@@ -139,7 +134,7 @@
     </div>
 
     <div id="campoPopupsConquistas"></div>
-    <div id="popupSalvar"><img draggable="false" src="imagens/save icon.png" alt="salvar" /></div>
+    <div id="popupSalvar"><img draggable="false" src="imagens/growing save.gif" alt="salvar" /></div>
 
     <script src="scripts/geral.js"></script>
     <script src="scripts/script.js"></script>

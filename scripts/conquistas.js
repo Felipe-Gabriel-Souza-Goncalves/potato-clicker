@@ -1,3 +1,8 @@
+const infoConquista = document.getElementById("infoConquista")
+const imgTrofeu = document.getElementById("trofeuConquista")
+const textNome = document.getElementById("nomeConquista")
+const textDescricao = document.getElementById("descricaoConquista")
+
 class Conquistas{
 
     static numeroConquistasTotais = 0
@@ -30,7 +35,7 @@ const randomStats = { // Estatísticas inúteis para fazer conquistas
 }
 
 
-const infoConquistas = {
+const dadosConquistas = {
     c1: new Conquistas("Começando!", "Fez ao menos 100 batatas no total", batatas, "BatataTotal >= 100", "bronze"),
     c2: new Conquistas("Um pouco mais", "Fez ao menos 1.000 batatas no total", batatas, "BatataTotal >= 1000", "bronze"),
     c3: new Conquistas("Aberto para todos!", "Fez ao menos 10.000 batatas no total!", batatas, "BatataTotal >= 10000", "prata"),
@@ -144,29 +149,25 @@ function liberarConquista(conquista, elementIndex){
 }
 
 function verificarConquistasInuteis(){
-    if(randomStats.timeConfig > 300){liberarConquista(infoConquistas.c30)}
+    if(randomStats.timeConfig > 300){liberarConquista(dadosConquistas.c30)}
 
-    if(randomStats.timeStatistic > 300){liberarConquista(infoConquistas.c31)}
+    if(randomStats.timeStatistic > 300){liberarConquista(dadosConquistas.c31)}
     
-    if(randomStats.conquistasAbertas > 25){liberarConquista(infoConquistas.c32)}
-    if(randomStats.saveManual > 10){liberarConquista(infoConquistas.c33)}
-    if(randomStats.tentativasComprar > 100){liberarConquista(infoConquistas.c34)}
+    if(randomStats.conquistasAbertas > 25){liberarConquista(dadosConquistas.c32)}
+    if(randomStats.saveManual > 10){liberarConquista(dadosConquistas.c33)}
+    if(randomStats.tentativasComprar > 100){liberarConquista(dadosConquistas.c34)}
 }
 
 function mostrarConquistaDetalhada(index){
     const conq = Conquistas.conquistasTotais[index]
 
     if(conq.completa === false || conq.completa === undefined){
-        document.getElementById("descricaoConquista").style.display = "none"
-
+        infoConquista.style.display = "none"
         return
     }
     
-    document.getElementById("descricaoConquista").style.display = "flex"
+    infoConquista.style.display = "flex"
 
-    const imgTrofeu = document.getElementById("trofeuConquistaInfo")
-    const textNome = document.getElementById("nomeConquistaInfo")
-    const textDescricao = document.getElementById("descricaoConquistaInfo")
 
     imgTrofeu.src = "imagens/trofeu " + conq.categoria +".png"
     textNome.innerText = conq.nome
@@ -174,7 +175,7 @@ function mostrarConquistaDetalhada(index){
 }
 
 function ocultarConquistaDetalhada(){
-    document.getElementById("descricaoConquista").style.display = "none"
+    infoConquista.style.display = "none"
 }
 
 function excluirPopupConquista(){

@@ -1,8 +1,9 @@
 h2[id^="precoUp"]{
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  width: 150px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .upgradeBloqueado {
@@ -18,7 +19,14 @@ table {
 }
 .nomeUpgrade {width: 200px;}
 .qntUp {width: 60px;}
-.precoCompra {width: 200px;}
+.precoCompra {
+  width: 170px;
+  padding: 0 10px;
+  white-space: nowrap;         
+  overflow: hidden;            
+  text-overflow: ellipsis;
+  text-align: center;
+}
 
 .botaoMudarNumUpgrade {
   height: 100%;

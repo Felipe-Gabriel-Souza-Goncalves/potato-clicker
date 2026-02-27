@@ -1,7 +1,6 @@
 .itemPowerup {
   align-content: center;
   text-align: center;
-  cursor: pointer;
   border: 1px solid gray;
   background-color: rgba(128, 128, 128, 0.39);
   width: 80px;
@@ -27,4 +26,5 @@
   word-wrap: break-word;
 }
 
-#nomePowerups{display: inline;margin: 0px 4px;}
+.itemPowerup[onclick^="Powerup"]{cursor: pointer;}
+.itemPowerup[onclick^="Powerup"]:hover{backdrop-filter: brightness(1.35);}

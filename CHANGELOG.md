@@ -1,16 +1,20 @@
-# Atualizações - Versão atual - [2.0.3]
+# Atualizações - Versão atual - [2.0.4]
 
-## Versão 2.0.3 29/01/26
+## Versão 2.0.4 27/01/2026
+- Melhor responsividade das abas configurações/estatísticas/conquistas
+- Pequenas alterações visuais no tamanho dos preços e imagem do cursor nos powerups
+
+## Versão 2.0.3 29/01/2026
 - Correções de imagens não sendo carregadas
 - README atualizado ao projeto
 
-## Versão 2.0.2 29/01/26
+## Versão 2.0.2 29/01/2026
 - Lançamento do potato clicker
 - Otimizações de código
 - Alteração nos ícones de salvar
 - Alteração na documentação do projeto 
 
-## Versão 2.0.1 14/01/26
+## Versão 2.0.1 14/01/2026
 - Correção do poder do clique não ser salvo em localStorage
 - Informações dos powerups
 - Correção de debug mal formado para trocar fundo

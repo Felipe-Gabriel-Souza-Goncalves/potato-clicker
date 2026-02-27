@@ -48,6 +48,7 @@
   align-items: center;
   min-width: 50vw;
   overflow: hidden;
+  background-color: rgb(247 238 224);
 }
 
 #divConfiguracoes,
@@ -98,8 +99,11 @@
     padding: 0;
   }
   #divConfiguracoes,
-  #divEstatisticas {
-    padding: 20px;
-    width: calc(100vw - 20px - 4.5vw);
+  #divEstatisticas,
+  #divConquistas {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px !important;
+    /* width: calc(100vw - 20px - 4.5vw); */
   }
 }

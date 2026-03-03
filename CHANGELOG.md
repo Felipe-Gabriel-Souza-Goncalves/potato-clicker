@@ -1,4 +1,9 @@
-# Atualizações - Versão atual - [2.0.4]
+# Atualizações - Versão atual - [2.0.5]
+
+## Versão 2.0.5 02/03/2026
+- Correções de responsividade para conquistas e tabela de upgrades
+- Botão de desativar volume agora é checkbox
+- Protótipos inacabados para futuras atualizações envolvendo requestAnimationFrame
 
 ## Versão 2.0.4 27/01/2026
 - Melhor responsividade das abas configurações/estatísticas/conquistas

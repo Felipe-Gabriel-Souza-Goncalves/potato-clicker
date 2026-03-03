@@ -87,7 +87,9 @@
           <span id="configVolume">50%</span>
           <br />
 
-          <button id="toggleSFX" onclick="SFXligado = !SFXligado; audioBatata()">Desligar efeitos sonoros</button>
+          <input type="checkbox" id="toggleSFX" onchange="SFXligado = !SFXligado; audioBatata()">
+          <label for="toggleSFX">Desligar efeitos sonoros</label>
+          <!-- <button id="toggleSFX" onclick="SFXligado = !SFXligado; audioBatata()">Desligar efeitos sonoros</button> -->
 
           <h2 id="textoSalvarManualmente" onclick="salvarTemporario(); randomStats.saveManual++">
             Salvar manualmente:
@@ -143,5 +145,7 @@
     <script src="scripts/conquistas.js"></script>
     <script src="scripts/salvar.js"></script>
     <script src="scripts/events.js"></script>
+
+    <!-- <script src="scripts/gameloop.js"></script> -->
   </body>
 </html>

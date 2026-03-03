@@ -21,6 +21,7 @@ class Upgrades {
 
   // construtor de upgrades
   constructor(nome, preco, taxaPreco, cps, cpc) {
+    // this.id = structuredClone(numeroDeUpgrades)
     this.nome = nome;
     this.preco = preco;
     this.quantidade = 0;
@@ -29,6 +30,7 @@ class Upgrades {
     this.cpc = cpc;
 
     Upgrades.upgradesExistentes.push(this);
+    // Upgrades.contarUpgrades()
   }
 
   // função para comprar upgrade passando id de 2 elementos HTML referente a quantidade/preco do upgrade
@@ -50,7 +52,7 @@ class Upgrades {
         break;
       }
 
-      displayBatatas.innerHTML = batatas + " Batatas";
+      displayBatatas.innerHTML = transformNum(batatas, 2, true) + " Batatas";
 
       // mudar o html dos elementos passados no parametro
       document.getElementById(idQntd).innerHTML = this.quantidade;
@@ -97,7 +99,7 @@ function clicarNoBatata() {
   batatas += Math.floor(poderClique);
   BatataTotal += Math.floor(poderClique);
   cliques += 1;
-  displayBatatas.innerHTML = batatas + " Batatas";
+  displayBatatas.innerHTML = transformNum(batatas, 2, true) + " Batatas";
 }
 
 // Função de adicionar batatas por segundo ao banco de batatas
@@ -105,8 +107,8 @@ function batatasPorSeg() {
   batatas += batatasPS;
   BatataTotal += batatasPS;
 
-  displayBatatas.innerHTML = batatas + " Batatas";
-  displayBatatasPS.innerHTML = batatasPS + " Batatas por segundo";
+  displayBatatas.innerHTML = transformNum(batatas, 2, true) + " Batatas";
+  displayBatatasPS.innerHTML = transformNum(batatasPS, 2, true) + " Batatas por segundo";
 
   if(randomStats.elementOpened == "config"){randomStats.timeConfig++; randomStats.timeStatistic = 0}
   if(randomStats.elementOpened == "estatistica"){randomStats.timeStatistic++; randomStats.timeConfig = 0}

@@ -50,6 +50,10 @@ function carregarSave(){
     // Configurações dos upgrades
     const configUpgrades = save.upgrades
     Upgrades.upgradesExistentes.forEach((upgd, i) =>{
+      if(!upgd){
+        console.log(upgd, i)
+        return
+      }
       upgd.quantidade = configUpgrades[i].quantidade
       upgd.preco = configUpgrades[i].preco
     })

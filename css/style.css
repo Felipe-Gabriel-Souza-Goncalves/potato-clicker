@@ -96,13 +96,14 @@
     flex-direction: column;
   }
   #tudoPraDireita {
-    padding: 0;
+    padding-bottom: 24px;
   }
   #divConfiguracoes,
   #divEstatisticas,
-  #divConquistas {
+  #divConquistas,
+  #infoConquista{
     box-sizing: border-box;
-    width: 100%;
+    width: 100% !important;
     padding: 20px !important;
     /* width: calc(100vw - 20px - 4.5vw); */
   }

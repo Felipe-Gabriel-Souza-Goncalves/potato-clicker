@@ -1,4 +1,8 @@
-# Atualizações - Versão atual - [2.0.5]
+# Atualizações - Versão atual - [2.0.6]
+
+## Versão 2.0.6 03/03/2026
+- Intervalos por requestAnimationFrame
+- Correções de CSS das conquistas
 
 ## Versão 2.0.5 02/03/2026
 - Correções de responsividade para conquistas e tabela de upgrades

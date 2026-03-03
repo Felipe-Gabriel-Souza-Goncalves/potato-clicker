@@ -9,7 +9,9 @@
 
 #campoConquistas {
   margin: 24px 0;
-  display: flex;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   flex-wrap: wrap;
   padding: 8px;
@@ -21,12 +23,14 @@
   justify-content: left;
   border: 8px ridge rgb(70, 39, 13);
   background-color: #363643;
-  width: 32%;
+  width: 100%;
 }
 .containerConquistas h5 {
   height: 100%;
   padding: 0px 6px;
   text-wrap: wrap;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .conquistaBloqueada {
@@ -87,3 +91,22 @@
 .popupConquista img{height: 60px; aspect-ratio:1/1;}
 .popupConquista h2{font-size: 0.9em;}
 .popupConquista p{font-size: 0.7em;}
+
+@media (max-width: 700px) {
+  #campoConquistas{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  #campoConquistas{
+    padding: 0 !important;
+
+  }
+  .containerConquistas{
+    border-width: 6px;
+  }
+  .containerConquistas img{
+    width: 48px !important;
+  }
+}

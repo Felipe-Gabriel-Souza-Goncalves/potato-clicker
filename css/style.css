@@ -108,3 +108,9 @@
     /* width: calc(100vw - 20px - 4.5vw); */
   }
 }
+
+@media (max-width: 480px) {
+  .botaoFecharDiv{
+    width: 48px;
+  }
+}

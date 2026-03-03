@@ -1,21 +1,43 @@
 let ultimoTempo = 0;
-let acumulador1s = 0;
-let acumulador5s = 0;
+let accumulator1s = 0;
+let accumulator2_5s = 0;
+let accumulator5s = 0;
+let accumulator30s = 0;
+
+const accumulators = [accumulator1s, accumulator2_5s, accumulator5s, accumulator30s]
 
 const events = [
   {
-    actions: [],
+    actions: [batatasPorSeg],
     timeNeeded: 1000
   },
   {
-    actions: estatisticas,
-    timeNeeded: ''
+    actions: [estatisticas],
+    timeNeeded: 2500
   },
   {
-    actions: '',
-    timeNeeded: ''
+    actions: [verificarConquistas, verificarConquistasInuteis],
+    timeNeeded: 5000
+  },
+  {
+    actions: [salvarTemporario],
+    timeNeeded: 30000
   },
 ]
+
+function runAction(index){
+  const group = events[index]
+  group.actions.forEach(func => func())
+}
+
+function onTime(index){
+  const group = events[index]
+  
+  if(accumulators[index] >= group.timeNeeded){
+    accumulators[index] = 0
+    runAction(index)
+  }
+}
 
 function loop(tempoAtual) {
   if (!ultimoTempo) ultimoTempo = tempoAtual;
@@ -23,53 +45,34 @@ function loop(tempoAtual) {
   const delta = tempoAtual - ultimoTempo;
   ultimoTempo = tempoAtual;
 
-  acumulador1s += delta;
-  acumulador5s += delta;
-
-  if (acumulador1s >= 1000) {
-    acumulador1s -= 1000;
-    console.log("1seg")
+  for(let i = 0; i < accumulators.length; i++){
+    accumulators[i] += delta
   }
 
-  if (acumulador5s >= 5000) {
-    acumulador5s -= 5000;
-    console.log("5seg")
+  for(let i = 0; i < accumulators.length; i++){
+    onTime(i)
   }
 
   requestAnimationFrame(loop);
 }
 
-// requestAnimationFrame(loop);
+requestAnimationFrame(loop);
 
 
 carregarTabela();
 
 // Salvar
-// pegarLocalStorage();
 carregarSelectBatatas()
-
-
-// Decorações
-setInterval(estatisticas, 2500)
 
 // Conquistas
 verificarConquistas()
 verificarConquistasInuteis()
 carregarConquistas()
 
-setInterval(() =>{
-  verificarConquistas();
-  verificarConquistasInuteis();
-}, 5000)
-
 // Script
 batatasPorSeg()
 carregarTextosPrecos()
 textoAudio()
-
-setInterval(salvarTemporario, 30000);
-setInterval(batatasPorSeg, 1000);
-
 
 document.getElementById("selectBatatasPorSegundo").addEventListener("change", () =>{
   document.getElementById("estatBatatasPorSegundo").innerHTML = valorSelectCPS()

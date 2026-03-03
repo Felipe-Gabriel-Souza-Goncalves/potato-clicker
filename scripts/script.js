@@ -1,5 +1,8 @@
 const displayBatatas = document.getElementById("batatas")
 const displayBatatasPS = document.getElementById("batatasPS")
+const volumeSFX = document.getElementById("volumeSFX");
+const textoAudioLigado = document.getElementById("toggleSFX")
+const textoVolume = document.getElementById("configVolume")
 
 var batatas = 0;
 var batatasPS = 0;
@@ -73,25 +76,22 @@ function audioBatata() {
     let index = Math.floor(Math.random() * 3);
     var audio = new Audio(sonsBatata[index]);
 
-    audio.volume = document.getElementById("volumeSFX").value;
-    audio.play();
+    audio.volume = volumeSFX.value;
+    audio.play()
   } 
 
   textoAudio()
 }
 
 function textoAudio(){
-  const volumeSFX = document.getElementById("volumeSFX").value;
-  const textoAudioLigado = document.getElementById("toggleSFX")
-  const textoVolume = document.getElementById("configVolume")
 
   SFXligado ? 
     textoAudioLigado.innerText = "Desligar efeitos sonoros" :
     textoAudioLigado.innerText = "Ligar efeitos sonoros"
     
   SFXligado ?
-    textoVolume.innerText = (volumeSFX*100).toFixed(0) + "%" :
-    textoVolume.innerText = (volumeSFX*100).toFixed(0) + "% (mutado)" 
+    textoVolume.innerText = (volumeSFX.value*100).toFixed(0) + "%" :
+    textoVolume.innerText = (volumeSFX.value*100).toFixed(0) + "% (mutado)" 
 }
 
 function clicarNoBatata() {

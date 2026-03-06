@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="css/upgrades.css" />
     <link rel="stylesheet" href="css/powerUps.css" />
     <link rel="stylesheet" href="css/animacoes.css" />
-    <link rel="stylesheet" href="css/extras.css" />
     <link rel="stylesheet" href="css/conquistas.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -26,8 +25,8 @@
   <body>
     <div id="tudoPraEsquerda">
       <div class="divBatataGrande">
-        <img id="imagemBatata" onclick="clicarNoBatata()" draggable="false" src="imagens/batata.png" width="150" alt="Batata" />
-        <br /><br />
+        <img id="imagemBatata" onclick="clicarNaBatata()" draggable="false" src="imagens/batata.png" width="150" alt="Batata" />
+        <br />
         <div>
           <h1 id="batatas">0 Batatas</h1>
           <h2 id="batatasPS">0 Batatas por segundo</h2>
@@ -47,9 +46,9 @@
     <div id="tudoPraDireita">
       <br />
       <div class="navSecoes">
-        <img onclick="abrirSecao('divConfiguracoes', '', configAberta)" src="imagens/configuracoes.png" alt="configuracoes">
-        <img onclick="abrirSecao('divEstatisticas', '', estatisticaAberta)" src="imagens/estatisticas.png" alt="estatisticas">
-        <img onclick="abrirSecao('divConquistas', '', abriuConquista)" src="imagens/conquistas.png" alt="conquistas">
+        <img onclick="abrirSecao('divConfiguracoes', '', [configAberta])" src="imagens/configuracoes.png" alt="configuracoes">
+        <img onclick="abrirSecao('divEstatisticas', '', [estatisticaAberta, estatisticas])" src="imagens/estatisticas.png" alt="estatisticas">
+        <img onclick="abrirSecao('divConquistas', '', [abriuConquista])" src="imagens/conquistas.png" alt="conquistas">
       </div>
       <table id="tabelaDeComprasProdutos">
         <thead>
@@ -89,12 +88,13 @@
 
           <input type="checkbox" id="toggleSFX" onchange="SFXligado = !SFXligado; audioBatata()">
           <label for="toggleSFX">Desligar efeitos sonoros</label>
-          <!-- <button id="toggleSFX" onclick="SFXligado = !SFXligado; audioBatata()">Desligar efeitos sonoros</button> -->
 
           <h2 id="textoSalvarManualmente" onclick="salvarTemporario(); randomStats.saveManual++">
             Salvar manualmente:
             <img width="40px" src="imagens/grown save.png" alt="Salvar"/>
           </h2>
+
+          <a id="voltarRepo" href="https://github.com/Felipe-Gabriel-Souza-Goncalves/potato-clicker/">Voltar para o repositório</a>
         </div>
       </div>
 
@@ -103,6 +103,7 @@
         <img src="imagens/fechar.png" class="botaoFecharDiv" width="64" alt="X" onclick="abrirSecao()"></button>
 
         <div class="estatRun">
+          <h2>Tempo de jogo: <span id="estatTempoJogo"></span></h2>
           <h2>Batatas atuais: <span id="estatBatatas">0</span></h2>
           <h2>Batatas totais: <span id="estatBatatasTotal">0</span></h2>
           <h2>Batatas por clique: <span id="estatBatatasPorClique">1</span></h2>
@@ -137,15 +138,21 @@
 
     <div id="campoPopupsConquistas"></div>
     <div id="popupSalvar"><img draggable="false" src="imagens/growing save.gif" alt="salvar" /></div>
-
+    
+    
+    
     <script src="scripts/geral.js"></script>
     <script src="scripts/script.js"></script>
+    
+    <!-- Melhorias in-game -->
+    <script src="scripts/upgrades.js"></script>
     <script src="scripts/powerUps.js"></script>
-    <script src="scripts/decoracoes.js"></script>
     <script src="scripts/conquistas.js"></script>
-    <script src="scripts/salvar.js"></script>
-    <script src="scripts/events.js"></script>
 
-    <script src="scripts/gameloop.js"></script>
+    <!-- Outros -->
+    <script src="scripts/decoracoes.js"></script>
+    <script src="scripts/salvar.js"></script>
+    <script defer src="scripts/gameloop.js"></script>
+
   </body>
 </html>

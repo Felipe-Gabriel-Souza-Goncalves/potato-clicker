@@ -8,16 +8,21 @@ function salvarTemporario() {
       cliques: cliques,
       numeroDeUpgrades: Upgrades.numeroDeUpgrades,
       SFXligado: SFXligado,
-      volume: document.getElementById("volumeSFX").value,
+      volume: volumeSFX.value,
+      seg: seg
     },
     batatas: {
       bancoBatata: batatas,
-      BatataTotal: BatataTotal,
+      batataTotal: batataTotal,
       BatataPS: batatasPS,
       poderClique: poderClique,
     },
     conquistas: Conquistas.conquistasLiberadas,
-    upgrades: Upgrades.upgradesExistentes
+    upgrades: Upgrades.upgradesExistentes,
+    powerups: {
+      pendentes: Powerup.ordemPowerups,
+      desbloqueados: Powerup.powerupsComprados
+    }
   }
 
   localStorage.setItem("CCconfig", JSON.stringify(save))
@@ -32,11 +37,12 @@ function carregarSave(){
     cliques = save.geral.cliques
     Upgrades.numeroDeUpgrades = save.geral.numeroDeUpgrades
     SFXligado = save.geral.SFXligado
-    document.getElementById("volumeSFX").value = save.geral.volume
+    volumeSFX.value = save.geral.volume
+    seg = save.geral.seg
 
     // Configurações sobre batatas
     batatas = save.batatas.bancoBatata
-    BatataTotal = save.batatas.BatataTotal
+    batataTotal = save.batatas.batataTotal
     batatasPS = save.batatas.BatataPS
     poderClique = save.batatas.poderClique
 
@@ -51,12 +57,37 @@ function carregarSave(){
     const configUpgrades = save.upgrades
     Upgrades.upgradesExistentes.forEach((upgd, i) =>{
       if(!upgd){
-        console.log(upgd, i)
         return
       }
       upgd.quantidade = configUpgrades[i].quantidade
       upgd.preco = configUpgrades[i].preco
     })
+
+    if(save.powerups.desbloqueados.length !== 0){
+      const backupPendentes = structuredClone(Powerup.ordemPowerups)
+
+      try {
+
+        Powerup.ordemPowerups = []
+        Powerup.powerupsComprados = []
+
+        // Esse código não merece ser comentado, tá horrível e espero q vc nunca descubra oq eu fiz
+        save.powerups.desbloqueados.forEach(powerup =>{
+          const {nome, descricao, preco, efeito, cumulativo} = {...powerup}
+          const novoPowerup = new Powerup(nome, descricao, preco, efeito)
+          novoPowerup.comprado = true;
+          Powerup.powerupsComprados.push(novoPowerup)
+          Powerup.ordemPowerups.pop()
+        })
+
+        Powerup.atualizarFront()
+      } catch (error) {
+        console.log(error)
+        Powerup.ordemPowerups = backupPendentes
+        
+      }
+
+    }
 
   }
 }

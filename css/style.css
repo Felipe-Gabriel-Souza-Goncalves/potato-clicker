@@ -113,4 +113,10 @@
   .botaoFecharDiv{
     width: 48px;
   }
+  #divConfiguracoes,
+  #divEstatisticas,
+  #divConquistas,
+  #infoConquista{
+    padding-bottom: 36px !important;
+  }
 }

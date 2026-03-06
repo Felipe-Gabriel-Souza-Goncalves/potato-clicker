@@ -36,11 +36,11 @@ const randomStats = { // Estatísticas inúteis para fazer conquistas
 
 
 const dadosConquistas = {
-    c1: new Conquistas("Começando!", "Fez ao menos 100 batatas no total", batatas, "BatataTotal >= 100", "bronze"),
-    c2: new Conquistas("Um pouco mais", "Fez ao menos 1.000 batatas no total", batatas, "BatataTotal >= 1000", "bronze"),
-    c3: new Conquistas("Aberto para todos!", "Fez ao menos 10.000 batatas no total!", batatas, "BatataTotal >= 10000", "prata"),
-    c4: new Conquistas("Melhor do mundo!", "Fez ao menos 100.000 batatas no total!!!", batatas, "BatataTotal >= 100000", "ouro"),
-    c29: new Conquistas("Monopólio", "Fez ao menos 1.000.000 batatas no total!!!", batatas, "BatataTotal >= 1000000", "ouro"),
+    c1: new Conquistas("Começando!", "Fez ao menos 100 batatas no total", batatas, "batataTotal >= 100", "bronze"),
+    c2: new Conquistas("Um pouco mais", "Fez ao menos 1.000 batatas no total", batatas, "batataTotal >= 1000", "bronze"),
+    c3: new Conquistas("Aberto para todos!", "Fez ao menos 10.000 batatas no total!", batatas, "batataTotal >= 10000", "prata"),
+    c4: new Conquistas("Melhor do mundo!", "Fez ao menos 100.000 batatas no total!!!", batatas, "batataTotal >= 100000", "ouro"),
+    c29: new Conquistas("Monopólio", "Fez ao menos 1.000.000 batatas no total!!!", batatas, "batataTotal >= 1000000", "ouro"),
 
     c5: new Conquistas("Olha! faz sozinho!", `Comprou 1 ${upgrade1.nome}`, upgrade1.quantidade, "upgrade1.quantidade >= 1", "bronze"),
     c6: new Conquistas("Automático", `Comprou 10 ${upgrade1.nome}`, upgrade1.quantidade, "upgrade1.quantidade >= 10", "bronze"),
@@ -182,3 +182,4 @@ function excluirPopupConquista(){
     const primeiroPopup = document.getElementsByClassName("popupConquista")[0]
     if(primeiroPopup){primeiroPopup.remove()}
 }
+

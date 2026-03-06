@@ -1,5 +1,8 @@
 # Problemas/Desconfortos conhecidos
 
-- Não ter distinção visual para possibilidade de compra dos powerups
 - Alguns ícones sem cursor adequado
-- Números muito grandes causam problemas visuais
+- Nenhuma indicação de compra inválida nos powerups
+- Conquistas aparecem em "pacotes"
+- A ação de compra e visualizar powerup no mobile é igual
+- Salvar manualmente repetidamente causa problema na animação
+- Compra de upgrades até o saldo esgotar em multiplicadores de compra

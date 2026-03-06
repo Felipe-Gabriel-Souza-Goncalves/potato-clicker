@@ -1,4 +1,18 @@
-# Atualizações - Versão atual - [2.0.6]
+# Atualizações - Versão atual - [2.1.0]
+
+## Versão 2.1.0 05/03/2026
+- Estatística de tempo de jogo (em foco)
+- 2 Powerups novos
+- Link de retorno para repositório
+- Cada upgrade soma as batatas em seu próprio intervalo **(padrão 1s, futuramente haverá mais powerups ou outros que mudam esse tempo)**
+- Mudanças pequenas de CSS para melhor consistência visual e responsividade
+- Salvar corretamente powerups
+
+## Versão 2.0.7 03/03/2026
+- Correções de código
+- Projetos para novas funcionalidades nos upgrades
+- Correção da imagem da batata estar descentralizada
+- Título da página mostra se o jogo está pausado
 
 ## Versão 2.0.6 03/03/2026
 - Intervalos por requestAnimationFrame

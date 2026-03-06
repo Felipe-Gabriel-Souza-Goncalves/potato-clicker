@@ -42,6 +42,13 @@ class Powerup {
   static atualizarFront() {
     filaPowerups.innerHTML = "";
 
+    if(Powerup.ordemPowerups.length === 0){
+      filaPowerups.innerHTML = `
+        <div class="itemPowerup">Parabéns! Você comprou todos</div>
+      `;
+      return
+    }
+
     for (let i = 0; i < 3; i++) {
       if (Powerup.ordemPowerups.length <= i) {
         filaPowerups.innerHTML += `<div class="itemPowerup"></div>`;
@@ -76,7 +83,7 @@ const infoPowerups = {
     "Melhores preços",
     `taxa de aumento 5% menor para ${upgrade3.nome}`,
     625,
-    `upgrade3.taxaPreco *= 0.95;)`
+    `upgrade3.taxaPreco *= 0.95;`
   ),
   pw3: new Powerup(
     "Que belo negócio!",
@@ -86,6 +93,18 @@ const infoPowerups = {
      poderClique+= upgrade4.cpc*5;
      document.getElementById('qntUp4').innerHTML = upgrade4.quantidade;`
   ),
+  pw4: new Powerup(
+    "Cultivo rápido",
+    `${upgrade1.nome} 5% mais rápido`,
+    1025,
+    `upgrade1.speed = upgrade1.intervalo * 0.95`
+  ),
+  pw5: new Powerup(
+    "Invista com calma",
+  `USO ÚNICO - dobra o banco de batatas ATUAL`,
+  50,
+  `batatas *= 2; textoBancoBatatas();`
+)
 };
 
 Powerup.atualizarFront();

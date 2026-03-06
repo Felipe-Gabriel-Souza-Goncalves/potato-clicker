@@ -1,4 +1,6 @@
-function abrirSecao(idSecao, idsSecoesAuxiliares = null, callback = null){
+
+
+function abrirSecao(idSecao, idsSecoesAuxiliares = null, arrayCallback = []){
   document.getElementById("divConfiguracoes").style.display = "none"
   document.getElementById("divEstatisticas").style.display = "none"
   document.getElementById("divConquistas").style.display = "none"
@@ -11,8 +13,8 @@ function abrirSecao(idSecao, idsSecoesAuxiliares = null, callback = null){
     })
   }
 
-  if(callback){
-    callback()
+  if(arrayCallback.length !== 0){
+    arrayCallback.forEach(callback => callback())
   }
 }
 
@@ -20,11 +22,9 @@ function configAberta(){randomStats.elementOpened = "config"}
 function estatisticaAberta(){randomStats.elementOpened = "estatistica"}
 function abriuConquista(){randomStats.conquistasAbertas++}
 
-window.addEventListener("DOMContentLoaded", ()=>{
-  alterarFoto()
-})
 
-function alterarFoto(){
+
+function alterarFundo(){
   const tudoEsquerda = document.getElementById("tudoPraEsquerda")
   const agora = new Date()
   if(agora.getHours() > 5 && agora.getHours() < 18){
@@ -112,3 +112,29 @@ function filterStringNum(stringNum) {
     .replace(/\+/g, "")
     .replace(/-/g, "");
 }
+
+document.addEventListener("visibilitychange", () =>{
+  if(document.hidden){
+    document.title = 'Batata clicker (pausado)'
+  } else{
+    document.title = 'Batata clicker'
+  }
+})
+
+
+let seg = 0
+function contarTempoJogo(seg){
+  let string = ""
+  function formatarSegundos(seg){
+    const dataZero = new Date(0,0,0,0,0,seg,0)
+    const horas = dataZero.getHours().toString().padStart(2, 0)
+    const minutos = dataZero.getMinutes().toString().padStart(2, 0)
+    const segundos = dataZero.getSeconds().toString().padStart(2, 0)
+
+    string = `${horas}:${minutos}:${segundos}`
+  }
+  
+  formatarSegundos(seg)
+  return string
+}
+const incrementarTempoJogo = function (){seg++}

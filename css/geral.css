@@ -17,3 +17,19 @@ select {
 
 button {cursor: pointer;}
 br, hr, img{user-select: none;}
+
+
+
+.botaoFecharDiv {
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  z-index: 9;
+  top: 8px;
+  right: 8px;
+}
+
+body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown) {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}

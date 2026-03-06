@@ -20,3 +20,13 @@
   gap: 10px;
   cursor: pointer;
 }
+
+#voltarRepo {
+  font-size: 1.25em !important;
+  position: fixed;
+  left: 0;
+  bottom: 24px;
+  width: 100%;
+  text-align: center;
+  color: white !important;
+}

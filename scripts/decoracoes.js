@@ -11,8 +11,9 @@ function decoracao(obj, idPreco) {
 }
 
 function estatisticas() {
+  document.getElementById("estatTempoJogo").innerHTML = contarTempoJogo(seg);
   document.getElementById("estatBatatas").innerHTML = batatas;
-  document.getElementById("estatBatatasTotal").innerHTML = BatataTotal;
+  document.getElementById("estatBatatasTotal").innerHTML = batataTotal;
   document.getElementById("estatBatatasPorClique").innerHTML = Math.floor(poderClique).toFixed(0);
   document.getElementById("estatBatatasPorSegundo").innerHTML = valorSelectCPS();
   document.getElementById("estatCliquesTotais").innerHTML = cliques;
@@ -77,9 +78,6 @@ function alterarTextosPrecos(preco, taxaPreco, i) {
 }
 
 
-
-
-
 const textoBatatas = document.getElementById("batatas")
 const textoBatatasPS = document.getElementById("batatasPS")
 
@@ -95,12 +93,7 @@ function textoBancoBatatas(){
 }
 
 function textoBatatasPorSegundo(){
-  displayBatatasPS = `${transformNum(batatas, 2, true)} batatas por segundo`
-}
-
-function precoComprarMuitos(precoOriginal, quantidade, taxa){
-  let novoPreco;
-  
+  displayBatatasPS.textContent = `${transformNum(batatasPS, 2, true)} batatas por segundo`
 }
 
 function decoracaoTabelaUpgrades(indexUpgrade){
@@ -118,19 +111,11 @@ function decoracaoTabelaUpgrades(indexUpgrade){
     const batatasNecessarias = Upgrades.upgradesExistentes[indexUpgrade].preco - batatas
     buttonsComprarUpgrades[indexUpgrade].title = batatasNecessarias + " batatas necessárias para compra"
   }
-
-  // batatasSuficientes === false ? displayPrecosUpgrades.classList.add("precoUpgradeBloqueado") : 
-  //                                displayPrecosUpgrades.classList.remove("precoUpgradeBloqueado") 
-
-  // batatasSuficientes === false ? buttonsComprarUpgrades.classList.add("botaoUpgradeBloqueado") :
-  //                                buttonsComprarUpgrades.classList.remove("botaoUpgradeBloqueado") 
-
-
 }
 
 function textoEstatisticas() {
   document.getElementById("estatBatatas").innerHTML = batatas;
-  document.getElementById("estatBatatasTotal").innerHTML = BatataTotal;
+  document.getElementById("estatBatatasTotal").innerHTML = batataTotal;
   document.getElementById("estatBatatasPorClique").innerHTML = Math.floor(poderClique).toFixed(0);
   document.getElementById("estatBatatasPorSegundo").innerHTML = valorSelectCPS();
   document.getElementById("estatCliquesTotais").innerHTML = cliques;

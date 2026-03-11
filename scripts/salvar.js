@@ -70,6 +70,7 @@ function carregarSave(){
 
         Powerup.ordemPowerups = []
         Powerup.powerupsComprados = []
+        Powerup.atualizarFront()
 
         // Esse código não merece ser comentado, tá horrível e espero q vc nunca descubra oq eu fiz
         save.powerups.desbloqueados.forEach(powerup =>{
@@ -78,6 +79,12 @@ function carregarSave(){
           novoPowerup.comprado = true;
           Powerup.powerupsComprados.push(novoPowerup)
           Powerup.ordemPowerups.pop()
+        })
+
+        
+        save.powerups.pendentes.forEach(powerup =>{
+          const {nome, descricao, preco, efeito, cumulativo} = {...powerup}
+          const novoPowerup = new Powerup(nome, descricao, preco, efeito)
         })
 
         Powerup.atualizarFront()

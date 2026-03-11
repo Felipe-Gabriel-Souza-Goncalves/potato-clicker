@@ -1,4 +1,11 @@
 
+class ItemCompravel{
+  constructor(){
+    this.id = this.id
+    this.nome = this.nome
+    this.preco = this.preco
+  }
+}
 
 function abrirSecao(idSecao, idsSecoesAuxiliares = null, arrayCallback = []){
   document.getElementById("divConfiguracoes").style.display = "none"

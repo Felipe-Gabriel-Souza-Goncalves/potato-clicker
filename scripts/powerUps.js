@@ -95,16 +95,26 @@ const infoPowerups = {
   ),
   pw4: new Powerup(
     "Cultivo rápido",
-    `${upgrade1.nome} 5% mais rápido`,
+    `${upgrade1.nome} 10% mais rápido`,
     1025,
-    `upgrade1.speed = upgrade1.intervalo * 0.95`
+    `upgrade1.speed = upgrade1.intervalo * 0.9`
   ),
-  pw5: new Powerup(
+  // pw5: new Powerup(
+  //   "Multifunção",
+  //   `upgrade2.cpc += 1; poderClique += upgrade2.quantidade*upgrade1.cpc`
+  // ),
+
+
+
+
+
+
+  pw6: new Powerup(
     "Invista com calma",
   `USO ÚNICO - dobra o banco de batatas ATUAL`,
   50,
   `batatas *= 2; textoBancoBatatas();`
-)
+  )
 };
 
 Powerup.atualizarFront();

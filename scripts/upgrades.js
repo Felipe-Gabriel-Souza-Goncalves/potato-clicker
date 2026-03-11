@@ -103,8 +103,9 @@ function carregarTabela() {
 }
 
 // nome, preco, taxa (>1), cps (Batata por segundo), cpc (Batata por clique)
-const upgrade1 = new Upgrades("+1 Batata/seg", 5, 1.2, 1, 0);
-const upgrade2 = new Upgrades("+5 Batata/seg", 25, 1.42, 5, 0);
-const upgrade3 = new Upgrades("+10 Batata/seg", 200, 1.5, 10, 0);
-const upgrade4 = new Upgrades("+1 Batata/click", 1200, 1.3, 0, 1);
+const upgrade1 = new Upgrades("+2 Batata/seg", 10, 1.2, 2, 0);
+const upgrade2 = new Upgrades("+15 Batata/seg", 300, 1.3, 15, 0);
+const upgrade3 = new Upgrades("+100 Batata/seg", 5000, 1.35, 100, 0);
+const upgrade4 = new Upgrades("+250 Batata/seg", 40000, 1.3, 250, 0);
+const upgrade5 = new Upgrades("+1 Batata/click", 50, 1.4, 0, 1);
 

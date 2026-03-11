@@ -80,27 +80,29 @@ function loop(tempoAtual) {
   requestAnimationFrame(loop);
 }
 
-
-
-
 requestAnimationFrame(loop);
 
+function carregarTudo() {
 
-carregarTabela();
+  
+  carregarTabela();
 
-// Salvar
-carregarSelectBatatas()
+  // Salvar
+  carregarSelectBatatas()
 
-// Conquistas
-verificarConquistas()
-verificarConquistasInuteis()
-carregarConquistas()
+  // Conquistas
+  // verificarConquistas()
+  // verificarConquistasInuteis()
+  carregarConquistas()
 
-// Script
-batatasPorSeg()
-carregarTextosPrecos()
-textoAudio()
-alterarFundo()
+  // Script
+  batatasPorSeg()
+  carregarTextosPrecos()
+  textoAudio()
+  alterarFundo()
+}
+
+carregarTudo()
 
 document.getElementById("selectBatatasPorSegundo").addEventListener("change", () =>{
   document.getElementById("estatBatatasPorSegundo").innerHTML = valorSelectCPS()

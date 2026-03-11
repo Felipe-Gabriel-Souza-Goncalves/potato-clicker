@@ -1,4 +1,12 @@
-# Atualizações - Versão atual - [2.1.0]
+# Atualizações - Versão atual - [2.2.0-beta]
+
+## Versão 2.2.0-beta 11/03/2026
+- Correção ao carregar powerups do localstorage
+- Reestruturação dos upgrades (preços, produção)
+- Novo upgrade
+- Protótipos para carregar informações na primeira vez de conquistas/powerups/upgrades via informações salvas em json
+- Novas artes da batata (por enquanto inutilizadas)
+
 
 ## Versão 2.1.0 05/03/2026
 - Estatística de tempo de jogo (em foco)

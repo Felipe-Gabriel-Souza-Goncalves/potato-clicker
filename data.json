@@ -1,0 +1,23 @@
+{
+  "powerups": [
+
+  ],
+  "conquistas": [
+
+  ],
+  "upgrades": [
+
+  ],
+  "elements": {
+    "img": {
+      "src": "",
+      "el": ""
+    },
+    "preco": {
+      "el": ""
+    },
+    "quantidade": {
+      "el": ""
+    }
+  }
+}

@@ -1,18 +1,13 @@
 
-class ItemCompravel{
-  constructor(){
-    this.id = this.id
-    this.nome = this.nome
-    this.preco = this.preco
-  }
-}
-
 function abrirSecao(idSecao, idsSecoesAuxiliares = null, arrayCallback = []){
   document.getElementById("divConfiguracoes").style.display = "none"
   document.getElementById("divEstatisticas").style.display = "none"
   document.getElementById("divConquistas").style.display = "none"
 
-  idSecao != null ? document.getElementById(idSecao).style.display = "unset" : ""
+  if(idSecao != null){
+    document.getElementById(idSecao).style.display = "unset"
+    randomStats.elementOpened = null
+  }
   
   if(idsSecoesAuxiliares){
     Array.from(idsSecoesAuxiliares).forEach(id =>{
@@ -25,16 +20,19 @@ function abrirSecao(idSecao, idsSecoesAuxiliares = null, arrayCallback = []){
   }
 }
 
-function configAberta(){randomStats.elementOpened = "config"}
-function estatisticaAberta(){randomStats.elementOpened = "estatistica"}
-function abriuConquista(){randomStats.conquistasAbertas++}
-
-
+function configAberta(){
+  randomStats.elementOpened = "config"}
+function estatisticaAberta(){
+  randomStats.elementOpened = "estatistica"}
+function abriuConquista(){
+  randomStats.conquistasAbertas++;
+  randomStats.elementOpened = "conquista"
+}
 
 function alterarFundo(){
   const tudoEsquerda = document.getElementById("tudoPraEsquerda")
   const agora = new Date()
-  if(agora.getHours() > 5 && agora.getHours() < 18){
+  if(agora.getHours() > 5 && agora.getHours() < 18){ 
     tudoEsquerda.style.backgroundImage = "url(imagens/bg-manha2.png)"
     tudoEsquerda.style.color= "black"
   } else{
@@ -44,16 +42,9 @@ function alterarFundo(){
 }
 
 // Arrays de sufixos disponíveis
-const sufixosLongos = [
-  " mil", " milhões", " bilhões", " trilhões", " quadrilhões",
-  " quintilhões", " sextilhões", " septilhões",
-  " octilhões", " nonilhões", " decilhões"
-];
-
-const sufixosCurtos = [
-  "k", "mi", "bi", "tri", "qua",
-  "qui", "sex", "sep", "oct", "non", "dec"
-];
+const sufixosCurtos = ["k", "mi", "bi", "tri", "qua", "qui", "sex", "sep", "oct", "non", "dec"];
+const sufixosLongos = [" mil", " milhões", " bilhões", " trilhões", " quadrilhões", " quintilhões",
+                       " sextilhões", " septilhões", " octilhões", " nonilhões", " decilhões"];
 
 function transformNum(num, precisao = 1, curto = false) {
 
@@ -63,19 +54,15 @@ function transformNum(num, precisao = 1, curto = false) {
   const size = stringNum.length;
 
   // Retorna se número for menor que 1000
-  if (size <= 3) {
-    return num;
-  }
+  if (size <= 3) return num
 
   // Qual index para pegar no array de sufixos
   const index = Math.ceil((size - 3) / 3) - 1;
 
   // Calcula quantos números antes do ponto
   let endFor = size % 3;
-  if (endFor === 0) {
-    endFor = 3;
-  }
-
+  if (endFor === 0) endFor = 3
+  
   let finalString = "";
 
   // Se o número for negativo

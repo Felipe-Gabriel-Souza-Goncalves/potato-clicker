@@ -28,6 +28,7 @@ class Upgrades {
 
     Upgrades.upgradesExistentes.push(this);
     createIntervalUpgrade(this.index)
+    
     // Upgrades.contarUpgrades()
   }
 
@@ -50,10 +51,11 @@ class Upgrades {
         break;
       }
 
-      displayBatatas.innerHTML = transformNum(batatas, 2, true) + " Batatas";
+      displayBatatas.innerHTML = transformNum(batatas, 2, true) + " batatas";
 
+      document.getElementsByClassName("quantidadeUpgrade")[index].innerText = this.quantidade
       // mudar o html dos elementos passados no parametro
-      document.getElementById(idQntd).innerHTML = this.quantidade;
+      // document.getElementById(idQntd).innerHTML = this.quantidade;
     }
   }
 
@@ -74,38 +76,9 @@ function createIntervalUpgrade(index){
   })
 }
 
-function carregarTabela() {
-  const tabelaProdutos = document.querySelector("#listaProdutos");
-  tabelaProdutos.innerHTML = "";
-
-  Upgrades.upgradesExistentes.forEach((upgrade, i) => {
-    const index = i + 1;
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-        <td class="nomeUpgrade">
-            <button 
-              class="botaoMudarNumUpgrade" 
-              onclick="upgrade${index}.comprarUpgrade('qntUp${index}', 'precoUp${index}', ${index})"
-              onmouseenter=""
-              onmouseleave=""
-            >
-                ${upgrade.nome}
-            </button>
-        </td>
-        <td class="qntUp" id="qntUp${index}">${upgrade.quantidade}</td>
-        <td class="precoCompra" class="upgradeBloqueado">
-          <h2 id="precoUp${index}">${upgrade.preco} batatas</h2>
-        </td>
-        `;
-
-    tabelaProdutos.appendChild(tr);
-  });
-}
-
 // nome, preco, taxa (>1), cps (Batata por segundo), cpc (Batata por clique)
-const upgrade1 = new Upgrades("+2 Batata/seg", 10, 1.2, 2, 0);
-const upgrade2 = new Upgrades("+15 Batata/seg", 300, 1.3, 15, 0);
-const upgrade3 = new Upgrades("+100 Batata/seg", 5000, 1.35, 100, 0);
-const upgrade4 = new Upgrades("+250 Batata/seg", 40000, 1.3, 250, 0);
-const upgrade5 = new Upgrades("+1 Batata/click", 50, 1.4, 0, 1);
-
+const upgrade1 = new Upgrades("Salada de batata", 10, 1.2, 2, 0);
+const upgrade2 = new Upgrades("Batata doce", 300, 1.3, 15, 0);
+const upgrade3 = new Upgrades("Salgadinho de batata", 5000, 1.35, 100, 0);
+const upgrade4 = new Upgrades("Purê de batata", 40000, 1.3, 250, 0);
+const upgrade5 = new Upgrades("Enxada", 50, 1.4, 0, 1);

@@ -83,23 +83,23 @@ function loop(tempoAtual) {
 requestAnimationFrame(loop);
 
 function carregarTudo() {
-
-  
-  carregarTabela();
+  /*
+    Há instâncias de código js que ocorrem antes daqui por conta do connectedCallback 
+    dos customElements 
+  */
+  carregarSave()
 
   // Salvar
   carregarSelectBatatas()
 
   // Conquistas
-  // verificarConquistas()
-  // verificarConquistasInuteis()
   carregarConquistas()
 
-  // Script
-  batatasPorSeg()
-  carregarTextosPrecos()
   textoAudio()
   alterarFundo()
+  
+  // Script
+  batatasPorSeg()
 }
 
 carregarTudo()

@@ -5,6 +5,7 @@
   background-color: rgba(128, 128, 128, 0.39);
   width: 96px;
   height: 96px;
+  user-select: none;
 }
 .displayPowerUpsEscondido {
   display: none;

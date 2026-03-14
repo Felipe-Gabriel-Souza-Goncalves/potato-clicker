@@ -98,12 +98,3 @@ function carregarSave(){
 
   }
 }
-
-carregarSave()
-
-function carregarTextosPrecos(){
-  Upgrades.upgradesExistentes.forEach((upgd, i) =>{
-    document.getElementById(`qntUp`+ (i+1)).innerText = upgd.quantidade 
-    document.getElementById(`precoUp`+ (i+1)).innerText = upgd.preco + " batatas"
-  })
-}

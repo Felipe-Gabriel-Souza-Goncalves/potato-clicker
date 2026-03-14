@@ -1,5 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  document.documentElement.addEventListener("keydown", (e) =>{
+    if(e.key === "Escape" && randomStats.elementOpened != null){
+      abrirSecao()
+    }
+    // if("batata"[randomStats.letras.length] === e.key.toLowerCase()){
+    //   randomStats.letras.push(e.key)
+    //   console.log(randomStats.letras)
+    // } else{
+    //   randomStats.letras = []
+    // }
+  })
+
   // clicar na batata
   const imagemBatata = document.getElementById("imagemBatata");
   if (imagemBatata) {
@@ -9,28 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // navegação das seções
   const navImgs = document.querySelectorAll(".navSecoes img");
 
-  if (navImgs[0]) {
-    navImgs[0].addEventListener("click", () => {
-      abrirSecao("divConfiguracoes", "", [configAberta]);
-    });
-  }
-
-  if (navImgs[1]) {
-    navImgs[1].addEventListener("click", () => {
-      abrirSecao("divEstatisticas", "", [estatisticaAberta, estatisticas]);
-    });
-  }
-
-  if (navImgs[2]) {
-    navImgs[2].addEventListener("click", () => {
-      abrirSecao("divConquistas", "", [abriuConquista]);
-    });
-  }
+  if (navImgs[0]) { navImgs[0].addEventListener("click", () => {abrirSecao("divConfiguracoes", "", [configAberta]);});}
+  if (navImgs[1]) { navImgs[1].addEventListener("click", () => {abrirSecao("divEstatisticas", "", [estatisticaAberta, estatisticas]);});}
+  if (navImgs[2]) { navImgs[2].addEventListener("click", () => {abrirSecao("divConquistas", "", [abriuConquista]);});}
 
   // botões de quantidade de upgrades
   const botoesUpgrade = document.querySelectorAll(".botaoMudarNumUpgrade");
 
   botoesUpgrade.forEach((botao, index) => {
+    if(botao.parentElement.classList.contains("nomeUpgrade")) return
     botao.addEventListener("click", () => {
       mudarNumUpgrades(index);
     });

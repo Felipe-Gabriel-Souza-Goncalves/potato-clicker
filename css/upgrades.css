@@ -11,13 +11,16 @@ h2[id^="precoUp"]{
   cursor: pointer;
 }
 
-#tabelaDeComprasProdutos {
+#tabelaComprasUpgrades {
   margin: 0 12px;
   font-size: 12px;
   border: 2px solid black;
   border-collapse: collapse;
 }
-.nomeUpgrade {width: 200px;}
+.nomeUpgrade {
+  height: 90px !important;
+  overflow: hidden;
+}
 .qntUp {width: 60px;}
 .precoCompra {
   width: 170px;
@@ -27,6 +30,7 @@ h2[id^="precoUp"]{
   text-overflow: ellipsis;
   text-align: center;
 }
+
 
 .botaoMudarNumUpgrade {
   height: 100%;
@@ -56,7 +60,6 @@ thead tr:last-of-type {
 }
 
 #infoUpgrade{display: none;}
-#nomeUpgrade{display: inline;}
 
 @media (max-width: 600px) {
   .botaoMudarNumUpgrade{
@@ -77,4 +80,36 @@ thead tr:last-of-type {
   .nomeUpgrade button{
     font-size: 1rem;
   }
+}
+
+
+
+jogo-upgrades{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 24px;
+  gap: 1em;
+}
+
+.itemUpgrade{
+  background-color: rgb(105, 78, 46);
+}
+.itemUpgrade > div:first-of-type{
+  position: relative;
+}
+
+.imgUpgrade{
+  aspect-ratio: 50 / 35;
+  height: 128px;
+  object-fit: cover;
+}
+
+.quantidadeUpgrade{
+  color: white;
+  background-color: black;
+  padding: 4px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }

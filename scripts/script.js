@@ -56,7 +56,7 @@ function batatasPorSeg() {
   if(randomStats.elementOpened == "estatistica"){randomStats.timeStatistic++; randomStats.timeConfig = 0}
 
   Upgrades.upgradesExistentes.forEach((upgd,i) =>{
-    alterarTextosPrecos(upgd.preco, upgd.taxaPreco, (i+1))
+    alterarTextosPrecos(upgd.preco, upgd.taxaPreco, (i))
   })
 
 }

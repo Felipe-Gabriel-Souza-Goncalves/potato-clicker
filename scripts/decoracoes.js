@@ -62,7 +62,7 @@ function mudarNumUpgrades(id) {
   }
 
   Upgrades.upgradesExistentes.forEach((upgd, i) =>{
-    alterarTextosPrecos(upgd.preco, upgd.taxaPreco, (i+1))
+    alterarTextosPrecos(upgd.preco, upgd.taxaPreco, (i))
   })
 }
 
@@ -73,8 +73,13 @@ function alterarTextosPrecos(preco, taxaPreco, i) {
         sumPrecos+= preco
     }
 
-    document.getElementById("precoUp"+i).innerText = transformNum(sumPrecos, 2, true) + " batatas"
-    decoracao({preco: sumPrecos}, "precoUp"+i)
+    try {
+      const spanPreco = document.getElementsByClassName("precoUpgrade")[i]
+      if(spanPreco === undefined) return
+      spanPreco.innerText = transformNum(sumPrecos, 2, true) + " batatas"
+    } catch (error) {
+      console.log("index:", i, "\n", error)
+    }
 }
 
 

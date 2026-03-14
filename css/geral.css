@@ -17,7 +17,7 @@ select {
 
 button {cursor: pointer;}
 br, hr, img{user-select: none;}
-
+img{image-rendering: pixelated;}
 
 
 .botaoFecharDiv {

@@ -1,4 +1,15 @@
-# Atualizações - Versão atual - [2.2.0-beta]
+# Atualizações - Versão atual - [2.2.1]
+
+## Versão 2.2.1 13/03/2026
+**ALGUNS BUGS PODEM EXISTIR ENVOLVENDO CONQUISTAS/UPGRADES**
+- FINALMENTE componentes
+  - Configurações
+  - Conquistas
+  - Estatísticas
+  - Upgrades
+- Tabela de upgrades agora é flexbox
+- Novos ícones/nomes de upgrades
+- Novos sprites para batata (inutilizados)
 
 ## Versão 2.2.0-beta 11/03/2026
 - Correção ao carregar powerups do localstorage

@@ -32,15 +32,19 @@ const randomStats = { // Estatísticas inúteis para fazer conquistas
   conquistasAbertas: 0,
   saveManual: 0, // Pega a referencia ;)
   tentativasComprar: 0,
+  letras: []
 }
 
 
 const dadosConquistas = {
     c1: new Conquistas("Começando!", "Fez ao menos 100 batatas no total", batatas, "batataTotal >= 100", "bronze"),
     c2: new Conquistas("Um pouco mais", "Fez ao menos 1.000 batatas no total", batatas, "batataTotal >= 1000", "bronze"),
-    c3: new Conquistas("Aberto para todos!", "Fez ao menos 10.000 batatas no total!", batatas, "batataTotal >= 10000", "prata"),
-    c4: new Conquistas("Melhor do mundo!", "Fez ao menos 100.000 batatas no total!!!", batatas, "batataTotal >= 100000", "ouro"),
-    c29: new Conquistas("Monopólio", "Fez ao menos 1.000.000 batatas no total!!!", batatas, "batataTotal >= 1000000", "ouro"),
+    c3: new Conquistas("Aberto para todos!", "Fez ao menos 10.000 batatas no total!", batatas, "batataTotal >= 10000", "bronze"),
+    c4: new Conquistas("Melhor do mundo!", "Fez ao menos 100.000 batatas no total!!!", batatas, "batataTotal >= 100000", "prata"),
+    c29: new Conquistas("Monopólio", "Fez ao menos 1.000.000 batatas no total!!!", batatas, "batataTotal >= 1000000", "prata"),
+    c30: new Conquistas("Mundo de batata", "Fez ao menos 10.000.000 batatas no total!!!", batatas, "batataTotal >= 10000000", "prata"),
+    c31: new Conquistas("Overdose de batata", "Fez ao menos 100.000.000 batatas no total!!!", batatas, "batataTotal >= 100000000", "ouro"),
+    c32: new Conquistas("Batata.", "Fez ao menos 1.000.000.000 batatas no total!!!", batatas, "batataTotal >= 1000000000", "ouro"),
 
     c5: new Conquistas("Olha! faz sozinho!", `Comprou 1 ${upgrade1.nome}`, upgrade1.quantidade, "upgrade1.quantidade >= 1", "bronze"),
     c6: new Conquistas("Automático", `Comprou 10 ${upgrade1.nome}`, upgrade1.quantidade, "upgrade1.quantidade >= 10", "bronze"),
@@ -66,10 +70,10 @@ const dadosConquistas = {
 
     c23: new Conquistas("Pequenos upgrades", `Comprou 1 upgrade`, Upgrades.numeroDeUpgrades, "Upgrades.numeroDeUpgrades >= 1", "bronze"),
     c24: new Conquistas("Um pouco de upgrades", `Comprou 5 upgrades`, Upgrades.numeroDeUpgrades, "Upgrades.numeroDeUpgrades >= 5", "bronze"),
-    c25: new Conquistas("Vários upgrades", `Comprou 10 upgrades`, Upgrades.numeroDeUpgrades, "Upgrades.numeroDeUpgrades >= 10", "prata"),
-    c26: new Conquistas("Muitos upgrades", `Comprou 50 upgrades`, Upgrades.numeroDeUpgrades, "Upgrades.numeroDeUpgrades >= 50", "prata"),
-    c27: new Conquistas("Upgrades demais", `Comprou 100 upgrades`, Upgrades.numeroDeUpgrades, "Upgrades.numeroDeUpgrades >= 100", "ouro"),
-    c28: new Conquistas("Upgrade que não acaba!", `Comprou 250 upgrades`, Upgrades.numeroDeUpgrades, "Upgrades.numeroDeUpgrades >= 250", "ouro"),
+    c25: new Conquistas("Vários upgrades", `Comprou 10 upgrades`, Upgrades.numeroDeUpgrades, "Upgrades.numeroDeUpgrades >= 25", "prata"),
+    c26: new Conquistas("Muitos upgrades", `Comprou 50 upgrades`, Upgrades.numeroDeUpgrades, "Upgrades.numeroDeUpgrades >= 100", "prata"),
+    c27: new Conquistas("Upgrades demais", `Comprou 100 upgrades`, Upgrades.numeroDeUpgrades, "Upgrades.numeroDeUpgrades >= 250", "ouro"),
+    c28: new Conquistas("Upgrade que não acaba!", `Comprou 250 upgrades`, Upgrades.numeroDeUpgrades, "Upgrades.numeroDeUpgrades >= 500", "ouro"),
 
     c29: new Conquistas("Ei! Tá no mudo!", `Deixe no volume máximo e desative o volume`, SFXligado, "!SFXligado && document.getElementById('volumeSFX').value == '1'", "bronze"),
     c30: new Conquistas("Do meu jeito", `Ficou 5min seguidos vendo as configurações`, randomStats.timeConfig, "randomStats.timeConfig >= 300", "bronze"),

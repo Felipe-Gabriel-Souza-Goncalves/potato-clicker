@@ -25,7 +25,7 @@
   <body>
     <div id="tudoPraEsquerda">
       <div class="divBatataGrande">
-        <img id="imagemBatata" onclick="clicarNaBatata()" draggable="false" src="imagens/batata.png" width="150" alt="Batata" />
+        <img id="imagemBatata" draggable="false" src="imagens/batata.png" width="150" alt="Batata" />
         <br />
         <div>
           <h1 id="batatas">0 Batatas</h1>
@@ -45,12 +45,14 @@
     </div>
     <div id="tudoPraDireita">
       <br />
+      
       <div class="navSecoes">
-        <img onclick="abrirSecao('divConfiguracoes', '', [configAberta])" src="imagens/configuracoes.png" alt="configuracoes">
-        <img onclick="abrirSecao('divEstatisticas', '', [estatisticaAberta, estatisticas])" src="imagens/estatisticas.png" alt="estatisticas">
-        <img onclick="abrirSecao('divConquistas', '', [abriuConquista])" src="imagens/conquistas.png" alt="conquistas">
+        <img src="imagens/configuracoes.png" alt="configuracoes">
+        <img src="imagens/estatisticas.png" alt="estatisticas">
+        <img src="imagens/conquistas.png" alt="conquistas">
       </div>
-      <table id="tabelaDeComprasProdutos">
+
+      <table id="tabelaComprasUpgrades">
         <thead>
           <tr>
             <th><h1>Nome</h1></th>
@@ -58,89 +60,34 @@
             <th><h1>Preço</h1></th>
           </tr>
           <tr>
-            <td><button class="botaoMudarNumUpgrade botaoAtivo" onclick="mudarNumUpgrades(0)">x1</button></td>
-            <td><button class="botaoMudarNumUpgrade" onclick="mudarNumUpgrades(1)">x10</button></td>
-            <td><button class="botaoMudarNumUpgrade" onclick="mudarNumUpgrades(2)">100x</button></td>
+            <td><button class="botaoMudarNumUpgrade botaoAtivo">x1</button></td>
+            <td><button class="botaoMudarNumUpgrade">x10</button></td>
+            <td><button class="botaoMudarNumUpgrade">100x</button></td>
           </tr>
           <tr id="infoUpgrade">
             <td colspan="3" rowspan="3">
               <div>
-                <p id="nomeUpgrade">placeholder</p> &nbsp; | &nbsp; <span id="precoUpgrade">0</span> &nbsp; batatas
+                <span id="precoUpgrade">0</span> &nbsp; batatas
               </div>
             </td>
           </tr>
         </thead>
-        <tbody id="listaProdutos"></tbody>
+        <tbody id="listaUpgrades"></tbody>
       </table>
 
-      <!-- div para configurações -->
-      <div id="divConfiguracoes">
-        <img src="imagens/fechar.png" class="botaoFecharDiv" width="64" alt="X" onclick="abrirSecao()"></button>
+      <jogo-configuracoes></jogo-configuracoes>
+      <jogo-estatisticas></jogo-estatisticas>
+      <jogo-conquistas></jogo-conquistas>
+      <jogo-upgrades></jogo-upgrades>
 
-        <div class="opcoesConfiguracao">
-          <button onclick="apagarProgresso()" id="botaoReiniciarProgresso">REINICIAR PROGRESSO</button>
-          <br /><br />
-
-          <label for="volumeSFX">Volume SFX</label>
-          <input type="range" oninput="audioBatata()" id="volumeSFX" value="0.5" min="0" max="1" step="0.01" />
-          <span id="configVolume">50%</span>
-          <br />
-
-          <input type="checkbox" id="toggleSFX" onchange="SFXligado = !SFXligado; audioBatata()">
-          <label for="toggleSFX">Desligar efeitos sonoros</label>
-
-          <h2 id="textoSalvarManualmente" onclick="salvarTemporario(); randomStats.saveManual++">
-            Salvar manualmente:
-            <img width="40px" src="imagens/grown save.png" alt="Salvar"/>
-          </h2>
-
-          <a id="voltarRepo" href="https://github.com/Felipe-Gabriel-Souza-Goncalves/potato-clicker/">Voltar para o repositório</a>
-        </div>
-      </div>
-
-      <!-- div para estatísticas -->
-      <div id="divEstatisticas">
-        <img src="imagens/fechar.png" class="botaoFecharDiv" width="64" alt="X" onclick="abrirSecao()"></button>
-
-        <div class="estatRun">
-          <h2>Tempo de jogo: <span id="estatTempoJogo"></span></h2>
-          <h2>Batatas atuais: <span id="estatBatatas">0</span></h2>
-          <h2>Batatas totais: <span id="estatBatatasTotal">0</span></h2>
-          <h2>Batatas por clique: <span id="estatBatatasPorClique">1</span></h2>
-
-          <h2>
-            Batatas por segundo:
-            <select name="selectBatatasPorSegundo" id="selectBatatasPorSegundo">
-              <option value="total">Total</option>
-            </select>
-            <span id="estatBatatasPorSegundo">0</span>
-          </h2>
-
-          <h2>Cliques: <span id="estatCliquesTotais">0</span></h2>
-          <h2>Upgrades comprados: <span id="estatUpgradesComprados">0</span></h2>
-        </div>
-      </div>
-
-      <div id="infoConquista">
-        <img id="trofeuConquista" src="" alt="troféu" />
-        <div>
-          <h2 id="nomeConquista">Titulo</h2>
-          <p id="descricaoConquista">Descrição</p>
-        </div>
-      </div>
-
-      <div id="divConquistas">
-        <img src="imagens/fechar.png" class="botaoFecharDiv" width="64" alt="X" onclick="abrirSecao()"></button>
-        <p>Conquistas liberadas: <span id="numeroConquistas">0/0 (0%)</span></p>
-        <div id="campoConquistas"></div>
-      </div>
-    </div>
-
-    <div id="campoPopupsConquistas"></div>
     <div id="popupSalvar"><img draggable="false" src="imagens/growing save.gif" alt="salvar" /></div>
     
-    
-    
+
+    <script src="scripts/componentes/estatisticas.js"></script>
+    <script src="scripts/componentes/conquistas.js"></script>
+    <script src="scripts/componentes/configuracoes.js"></script>
+    <script src="scripts/componentes/upgrades.js"></script>
+
     <script src="scripts/geral.js"></script>
     <script src="scripts/script.js"></script>
     
@@ -152,7 +99,8 @@
     <!-- Outros -->
     <script src="scripts/decoracoes.js"></script>
     <script src="scripts/salvar.js"></script>
-    <script defer src="scripts/gameloop.js"></script>
 
+    <script defer src="scripts/gameloop.js"></script>
+    <script defer src="scripts/addEvents.js"></script>
   </body>
 </html>

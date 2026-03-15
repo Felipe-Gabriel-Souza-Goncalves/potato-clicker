@@ -78,4 +78,4 @@ const upgrade1 = new Upgrades("Salada de batata", 10, 1.2, 2, 0);
 const upgrade2 = new Upgrades("Batata doce", 300, 1.3, 15, 0);
 const upgrade3 = new Upgrades("Salgadinho de batata", 5000, 1.35, 100, 0);
 const upgrade4 = new Upgrades("Purê de batata", 40000, 1.3, 250, 0);
-const upgrade5 = new Upgrades("Enxada", 50, 1.4, 0, 1);
+const upgrade5 = new Upgrades("Enxada", 50, 1.1, 0, 1);

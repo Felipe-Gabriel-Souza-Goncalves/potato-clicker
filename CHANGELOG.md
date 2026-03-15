@@ -1,6 +1,13 @@
-# Atualizações - Versão atual - [2.2.1]
+# Atualizações - Versão atual - [2.2.3]
 
-## Versão 2.2.2 15/03/2026
+## Versão 2.2.3 - 15/03/2026
+- 20 novas conquistas 
+- 6 novos powerups
+- Mudança de nomes de algumas conquistas
+- Mudança da ordem/preço dos powerups
+- Problema de scroll na seção à esquerda
+
+## Versão 2.2.2 - 15/03/2026
 - Correções para alteração visual para batatas suficientes para compra de upgrades/powerups
 - Alterações de design: Responsividade, hover, estilizações das imagens dos itens de upgrade
 

@@ -74,4 +74,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const animacaoSalvar = document.getElementById("popupSalvar").querySelector("img")
+  if(animacaoSalvar){
+    animacaoSalvar.addEventListener("click", () =>{
+      
+    })
+  }
+
 });

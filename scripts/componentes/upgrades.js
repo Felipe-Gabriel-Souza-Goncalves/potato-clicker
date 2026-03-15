@@ -23,14 +23,14 @@ class UpgradesComponente extends HTMLElement{
                 class="imgUpgrade"
                 src="imagens/${imagens[i] || "fechar.png"}" 
                 alt="${upgd.nome}"
-                onclick="Upgrades.upgradesExistentes[${i}].comprarUpgrade('', '', ${i})"
+                onclick="Upgrades.upgradesExistentes[${i}].comprarUpgrade(${i})"
             >
             <span class="quantidadeUpgrade">${upgd.quantidade}</span>
           </div>
           <div>
-            <span class="precoUpgrade">
+            <p class="precoUpgrade">
               ${transformNum(upgd.quantidade, 2, true)} batatas
-            </span>
+            </p>
           </div>
         </div>
       `

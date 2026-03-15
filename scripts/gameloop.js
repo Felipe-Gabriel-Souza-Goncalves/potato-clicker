@@ -8,7 +8,7 @@ const accumulators = [accumulator1s, accumulator2_5s, accumulator5s, accumulator
 
 const events = [
   {
-    actions: [batatasPorSeg, incrementarTempoJogo],
+    actions: [batatasPorSeg, incrementarTempoJogo, iterarEfeitos],
     timeNeeded: 1000
   },
   {

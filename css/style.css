@@ -48,6 +48,7 @@
   align-items: center;
   min-width: 50vw;
   overflow: hidden;
+  overflow-y: auto;
   background-color: rgb(247 238 224);
 }
 

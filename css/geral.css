@@ -6,8 +6,16 @@
 
 body {
   display: flex;
-  overflow-x: hidden;
+  overflow: hidden;
+  max-height: 100vh;
 }
+#tudoPraEsquerda,
+#tudoPraDireita{
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-y: auto;
+}
+
 
 select {
   border: 6px ridge #180f03;

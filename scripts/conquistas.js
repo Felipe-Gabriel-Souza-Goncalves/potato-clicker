@@ -46,6 +46,12 @@ const dadosConquistas = {
     c31: new Conquistas("Overdose de batata", "Fez ao menos 100.000.000 batatas no total!!!", batatas, "batataTotal >= 100000000", "ouro"),
     c32: new Conquistas("Batata.", "Fez ao menos 1.000.000.000 batatas no total!!!", batatas, "batataTotal >= 1000000000", "ouro"),
 
+    // 
+// c5: new Conquistas("Olha! faz sozinho!", `Comprou 1 ${upgrade1.nome}`, upgrade1.quantidade, "upgrade1.quantidade >= 1", "bronze"),
+// c6: new Conquistas("Automático", `Comprou 10 ${upgrade1.nome}`, upgrade1.quantidade, "upgrade1.quantidade >= 10", "bronze"),
+// c7: new Conquistas("Nada mal", `Comprou 25 ${upgrade1.nome}`, upgrade1.quantidade, "upgrade1.quantidade >= 25", "prata"),
+// c8: new Conquistas("Definitivamente algo", `Comprou 50 ${upgrade1.nome}`, upgrade1.quantidade, "upgrade1.quantidade >= 50", "ouro"),
+
     c5: new Conquistas("Olha! faz sozinho!", `Comprou 1 ${upgrade1.nome}`, upgrade1.quantidade, "upgrade1.quantidade >= 1", "bronze"),
     c6: new Conquistas("Automático", `Comprou 10 ${upgrade1.nome}`, upgrade1.quantidade, "upgrade1.quantidade >= 10", "bronze"),
     c7: new Conquistas("Nada mal", `Comprou 25 ${upgrade1.nome}`, upgrade1.quantidade, "upgrade1.quantidade >= 25", "prata"),
@@ -60,6 +66,16 @@ const dadosConquistas = {
     c14: new Conquistas("100 batatas/seg só aqui!", `Comprou 10 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 10", "bronze"),
     c15: new Conquistas("Para que tanto?", `Comprou 25 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 25", "prata"),
     c16: new Conquistas("Milênio de batatas!", `Comprou 50 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 50", "ouro"),
+    
+// c13: new Conquistas("Que forno grande", `Comprou 1 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 1", "bronze"),
+// c14: new Conquistas("100 batatas/seg só aqui!", `Comprou 10 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 10", "bronze"),
+// c15: new Conquistas("Para que tanto?", `Comprou 25 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 25", "prata"),
+// c16: new Conquistas("Milênio de batatas!", `Comprou 50 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 50", "ouro"),
+// 
+// c13: new Conquistas("Que forno grande", `Comprou 1 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 1", "bronze"),
+// c14: new Conquistas("100 batatas/seg só aqui!", `Comprou 10 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 10", "bronze"),
+// c15: new Conquistas("Para que tanto?", `Comprou 25 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 25", "prata"),
+// c16: new Conquistas("Milênio de batatas!", `Comprou 50 ${upgrade3.nome}`, upgrade3.quantidade, "upgrade3.quantidade >= 50", "ouro"),
 
     c17: new Conquistas("O início!", `Clicou 1 vez`, cliques, "cliques >= 1", "bronze"),
     c18: new Conquistas("Pegando o ritmo", `Clicou 500 vezes`, cliques, "cliques >= 500", "bronze"),

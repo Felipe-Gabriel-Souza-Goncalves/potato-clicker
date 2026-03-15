@@ -1,6 +1,10 @@
 # Atualizações - Versão atual - [2.2.1]
 
-## Versão 2.2.1 13/03/2026
+## Versão 2.2.2 15/03/2026
+- Correções para alteração visual para batatas suficientes para compra de upgrades/powerups
+- Alterações de design: Responsividade, hover, estilizações das imagens dos itens de upgrade
+
+## Versão 2.2.1 - 13/03/2026
 **ALGUNS BUGS PODEM EXISTIR ENVOLVENDO CONQUISTAS/UPGRADES**
 - FINALMENTE componentes
   - Configurações
@@ -11,7 +15,7 @@
 - Novos ícones/nomes de upgrades
 - Novos sprites para batata (inutilizados)
 
-## Versão 2.2.0-beta 11/03/2026
+## Versão 2.2.0-beta - 11/03/2026
 - Correção ao carregar powerups do localstorage
 - Reestruturação dos upgrades (preços, produção)
 - Novo upgrade
@@ -19,7 +23,7 @@
 - Novas artes da batata (por enquanto inutilizadas)
 
 
-## Versão 2.1.0 05/03/2026
+## Versão 2.1.0 - 05/03/2026
 - Estatística de tempo de jogo (em foco)
 - 2 Powerups novos
 - Link de retorno para repositório
@@ -27,41 +31,41 @@
 - Mudanças pequenas de CSS para melhor consistência visual e responsividade
 - Salvar corretamente powerups
 
-## Versão 2.0.7 03/03/2026
+## Versão 2.0.7 - 03/03/2026
 - Correções de código
 - Projetos para novas funcionalidades nos upgrades
 - Correção da imagem da batata estar descentralizada
 - Título da página mostra se o jogo está pausado
 
-## Versão 2.0.6 03/03/2026
+## Versão 2.0.6 - 03/03/2026
 - Intervalos por requestAnimationFrame
 - Correções de CSS das conquistas
 
-## Versão 2.0.5 02/03/2026
+## Versão 2.0.5 - 02/03/2026
 - Correções de responsividade para conquistas e tabela de upgrades
 - Botão de desativar volume agora é checkbox
 - Protótipos inacabados para futuras atualizações envolvendo requestAnimationFrame
 
-## Versão 2.0.4 27/01/2026
+## Versão 2.0.4 - 27/01/2026
 - Melhor responsividade das abas configurações/estatísticas/conquistas
 - Pequenas alterações visuais no tamanho dos preços e imagem do cursor nos powerups
 
-## Versão 2.0.3 29/01/2026
+## Versão 2.0.3 - 29/01/2026
 - Correções de imagens não sendo carregadas
 - README atualizado ao projeto
 
-## Versão 2.0.2 29/01/2026
+## Versão 2.0.2 - 29/01/2026
 - Lançamento do potato clicker
 - Otimizações de código
 - Alteração nos ícones de salvar
 - Alteração na documentação do projeto 
 
-## Versão 2.0.1 14/01/2026
+## Versão 2.0.1 - 14/01/2026
 - Correção do poder do clique não ser salvo em localStorage
 - Informações dos powerups
 - Correção de debug mal formado para trocar fundo
 
-## Versão 2.0-beta 13/01/2026
+## Versão 2.0-beta - 13/01/2026
 ### Batata clicker!
 - Imagens e nomes alterados
 - Fundo apropriado para a região de clicar
@@ -69,7 +73,7 @@
 
 ## **Antes do Potato Clicker**
 
-## Versão 1.10-beta 10/01/2026
+## Versão 1.10-beta - 10/01/2026
 - Primeira implementação dos powerups
 - Otimizações e organização de código
 - Melhorias e alterações de design

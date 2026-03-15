@@ -5,12 +5,6 @@ h2[id^="precoUp"]{
   text-overflow: ellipsis;
 }
 
-.upgradeBloqueado {
-  background-color: gray;
-  color: black;
-  cursor: pointer;
-}
-
 #tabelaComprasUpgrades {
   margin: 0 12px;
   font-size: 12px;
@@ -88,15 +82,24 @@ jogo-upgrades{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 24px;
+  padding: 16px;
   gap: 1em;
 }
 
 .itemUpgrade{
-  background-color: rgb(105, 78, 46);
+  background: radial-gradient(rgb(211, 169, 118), rgb(107, 79, 46));
+  cursor: pointer;
 }
 .itemUpgrade > div:first-of-type{
   position: relative;
+}
+.itemUpgrade *{
+  user-select: none;
+}
+
+.upgradeBloqueado {
+  filter: brightness(0.55) saturate(0.5);
+  cursor: not-allowed;
 }
 
 .imgUpgrade{
@@ -112,4 +115,10 @@ jogo-upgrades{
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.precoUpgrade{
+  color: white;
+  width: auto;
+  text-align: center;
 }

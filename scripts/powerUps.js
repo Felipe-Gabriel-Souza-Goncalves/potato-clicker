@@ -91,7 +91,8 @@ const infoPowerups = {
     800,
     `upgrade4.quantidade +=5;
      poderClique+= upgrade4.cpc*5;
-     document.getElementById('qntUp4').innerHTML = upgrade4.quantidade;`
+     document.getElementsByClassName("quantidadeUpgrade")[3].innerText = upgrade4.quantidade
+    `
   ),
   pw4: new Powerup(
     "Cultivo rápido",

@@ -6,7 +6,18 @@
   width: 96px;
   height: 96px;
   user-select: none;
+  cursor: pointer;
 }
+
+.itemPowerup[title^=" "]:not(.powerupBloqueado):hover{
+  backdrop-filter: brightness(1.3);
+}
+
+.powerupBloqueado {
+  filter: brightness(0.7);
+  cursor: not-allowed;
+}
+
 .displayPowerUpsEscondido {
   display: none;
 }
@@ -27,5 +38,4 @@
   word-wrap: break-word;
 }
 
-.itemPowerup[onclick^="Powerup"]{cursor: pointer;}
-.itemPowerup[onclick^="Powerup"]:hover{backdrop-filter: brightness(1.35);}
+/* .itemPowerup[onclick^="Powerup"]:hover{backdrop-filter: brightness(1.35);} */

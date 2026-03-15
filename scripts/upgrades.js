@@ -28,13 +28,12 @@ class Upgrades {
 
     Upgrades.upgradesExistentes.push(this);
     createIntervalUpgrade(this.index)
-    
-    // Upgrades.contarUpgrades()
+
   }
 
   // função para comprar upgrade passando id de 2 elementos HTML referente a quantidade/preco do upgrade
 
-  comprarUpgrade(idQntd, idPreco, index) {
+  comprarUpgrade(index) {
     for (let i = 0; i < qntdUpgradeComprar; i++) {
       if (batatas >= this.preco) {
         batatas -= this.preco;
@@ -52,10 +51,8 @@ class Upgrades {
       }
 
       displayBatatas.innerHTML = transformNum(batatas, 2, true) + " batatas";
-
       document.getElementsByClassName("quantidadeUpgrade")[index].innerText = this.quantidade
-      // mudar o html dos elementos passados no parametro
-      // document.getElementById(idQntd).innerHTML = this.quantidade;
+      efeitoUpgradeLiberado(this.index)
     }
   }
 

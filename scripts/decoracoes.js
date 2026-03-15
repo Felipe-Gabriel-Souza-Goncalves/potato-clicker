@@ -1,12 +1,79 @@
-function decoracao(obj, idPreco) {
+function efeitoUpgradeLiberado(index) {
+  try {
+    const upgradePreco = Upgrades.upgradesExistentes[index].preco
+    const upgradeTaxa = Upgrades.upgradesExistentes[index].taxaPreco
+    const itemUpgrade = document.getElementsByClassName("itemUpgrade")[index]
+    
+    // Se o preço ou elemento não existir, retorna
+    if(!upgradePreco || !itemUpgrade){
+      console.error("Upgrade de index:", index, " não conseguiu mudar aparencia do texto" )
+      console.error("preco:", upgradePreco, "elemento:", itemUpgrade)
+      return
+    }
+
+    // TEM Q MUDARRRR
+    // TEM Q MUDARRRR
+    // TEM Q MUDARRRR
+    // TEM Q MUDARRRR
+    // TEM Q MUDARRRR
+    // TEM Q MUDARRRR
+    
+    
+    // Muda a aparência a depender se for suficiente ou não
+    if(precoComMultiplicador(upgradePreco, upgradeTaxa) > batatas){
+      itemUpgrade.classList.add("upgradeBloqueado")
+    } else {
+      if(!itemUpgrade.classList.contains("upgradeBloqueado")) return
+      itemUpgrade.classList.remove("upgradeBloqueado")
+    }
+  } catch (error) {
+    console.error(error)
+  }
   
-  const elementPreco = document.getElementById(idPreco)
-  elementPreco.title = transformNum(obj.preco, 2, true) + ` batatas necessários para comprar`;
+
+}
+
+function efeitoPowerupLiberado(index){
+  try {
+    const powerupPreco = Powerup.ordemPowerups[index].preco
+    const itemPowerup = document.getElementsByClassName("itemPowerup")[index]
+    
+    // Se o preço ou elemento não existir, retorna
+    if(!powerupPreco || !itemPowerup){
+      console.error("Powerup index:", index, " não conseguiu mudar aparencia do texto" )
+      console.error("preco:", powerupPreco, "elemento:", itemPowerup)
+      return
+    }
   
-  if (obj.preco > batatas) {
-    elementPreco.parentElement.classList.add("upgradeBloqueado")
-  } else if(elementPreco.parentElement.classList.contains("upgradeBloqueado")) {
-    elementPreco.parentElement.classList.remove("upgradeBloqueado")
+    // TEM Q MUDARRRR
+    // TEM Q MUDARRRR
+    // TEM Q MUDARRRR
+    // TEM Q MUDARRRR
+    // TEM Q MUDARRRR
+    // TEM Q MUDARRRR
+    
+    
+    // Muda a aparência a depender se for suficiente ou não
+    if(powerupPreco > batatas){
+      itemPowerup.classList.add("powerupBloqueado")
+    } else {
+      if(!itemPowerup.classList.contains("powerupBloqueado")) return
+      itemPowerup.classList.remove("powerupBloqueado")
+    }
+  } catch (error) {
+    console.error("POWERUP", index)
+    console.error(error)
+  }
+}
+
+function iterarEfeitos(){
+  Upgrades.upgradesExistentes.forEach((upgd) =>{
+    efeitoUpgradeLiberado(upgd.index)
+  })
+
+  const itemPowerupLength = Math.min(Math.max(Powerup.ordemPowerups.length - 1), 3)
+  for (let i = 0; i < itemPowerupLength; i++) {
+    efeitoPowerupLiberado(i)
   }
 }
 
@@ -63,15 +130,21 @@ function mudarNumUpgrades(id) {
 
   Upgrades.upgradesExistentes.forEach((upgd, i) =>{
     alterarTextosPrecos(upgd.preco, upgd.taxaPreco, (i))
+    efeitoUpgradeLiberado(i)
   })
 }
 
+function precoComMultiplicador(preco, taxaPreco){
+  let sumPrecos = preco
+  for (let j = 1; j < qntdUpgradeComprar; j++) {
+      preco = Math.floor(preco * taxaPreco);
+      sumPrecos+= preco
+  } 
+  return sumPrecos
+}
+
 function alterarTextosPrecos(preco, taxaPreco, i) {
-    let sumPrecos = preco
-    for (let j = 1; j < qntdUpgradeComprar; j++) {
-        preco = Math.floor(preco * taxaPreco);
-        sumPrecos+= preco
-    }
+    const sumPrecos = precoComMultiplicador(preco, taxaPreco)
 
     try {
       const spanPreco = document.getElementsByClassName("precoUpgrade")[i]

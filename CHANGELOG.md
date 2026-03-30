@@ -1,5 +1,10 @@
 # Atualizações - Versão atual - [2.2.3]
 
+## Versão 2.2.x - 30/03/2026
+**Commit temporário**
+- Exportar arquivo
+- 2ª fonte alterada se não houver conexão
+
 ## Versão 2.2.3 - 15/03/2026
 - 20 novas conquistas 
 - 6 novos powerups

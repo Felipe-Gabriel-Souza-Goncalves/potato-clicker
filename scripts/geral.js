@@ -116,6 +116,26 @@ document.addEventListener("visibilitychange", () =>{
 })
 
 
+function exportarSave(){
+  const save = localStorage.getItem("CCconfig")
+  if(!save) return
+  console.log(save)
+  
+  const blob = new Blob([JSON.stringify(save)], {type: "application/json"})
+  const url = URL.createObjectURL(blob)
+
+  const link = document.createElement("a")
+  link.href = url
+
+  const data = new Date().toLocaleDateString({language: "pt-br"})
+  const hora = new Date().toLocaleTimeString({language: "pt-br"})
+
+  link.download = "Potato clicker - save " + data + " " + hora
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
+
 let seg = 0
 function contarTempoJogo(seg){
   let string = ""
@@ -132,3 +152,6 @@ function contarTempoJogo(seg){
   return string
 }
 const incrementarTempoJogo = function (){seg++}
+
+
+console.log()

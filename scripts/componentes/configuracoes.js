@@ -21,6 +21,9 @@ class ConfiguracoesComponente extends HTMLElement {
             <img width="40px" src="imagens/grown save.png" alt="Salvar"/>
           </h2>
 
+          <button id="btnExportSave">Exportar arquivo de jogo</button>
+
+
           <a id="voltarRepo" href="https://github.com/Felipe-Gabriel-Souza-Goncalves/potato-clicker/">Voltar para o repositório</a>
         </div>
       </div>

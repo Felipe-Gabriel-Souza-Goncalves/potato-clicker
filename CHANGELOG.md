@@ -1,4 +1,10 @@
-# Atualizações - Versão atual - [2.2.3]
+# Atualizações - Versão atual - [3.0]
+
+## Versão 3.0 - 30/03/2026
+**Desenvolvimento desde a 2.2.1** 
+- Lançamento dos novos upgrades (incompátiveis com os anteriores)
+- Estruturação de exportação e importação de arquivo de jogo (em progresso para compatibilidade com save antigo)
+- Atualização de README
 
 ## Versão 2.2.x - 30/03/2026
 **Commit temporário**

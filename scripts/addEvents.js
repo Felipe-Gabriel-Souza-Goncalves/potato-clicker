@@ -82,6 +82,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // }
 
 
+  
+  const inputImportarSave = document.getElementById("importar-save");
+  if (inputImportarSave) {
+    inputImportarSave.addEventListener("change", importarSave);
+  }
 
+  const buttonExportSave = document.getElementById("buttonExportSave");
+  if (buttonExportSave) {
+    buttonExportSave.addEventListener("click", exportarSave);
+  }
+
+  const buttonImportSave = document.getElementById("buttonImportSave");
+  if (buttonImportSave) {
+    buttonImportSave.addEventListener("click", () => {inputImportarSave.click()});
+  }
 
 });

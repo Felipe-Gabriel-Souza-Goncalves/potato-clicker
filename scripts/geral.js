@@ -136,6 +136,31 @@ function exportarSave(){
   document.body.removeChild(link)
 }
 
+function importarSave(){
+    const inputImportar = document.getElementById("importar-save")
+    if(!inputImportar.files) {
+        alert("Nenhum arquivo selecionado")
+        return
+    }
+
+    const leitor = new FileReader()
+    leitor.onload = () =>{
+        try {
+            const reparsedSave = JSON.parse(JSON.parse(leitor.result))
+            localStorage.setItem("CCconfig", JSON.stringify(reparsedSave))
+            window.location.reload()
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    leitor.onerror = () => {
+        alert("Erro ao importar")
+    }
+
+    leitor.readAsText(inputImportar.files[0])
+}
+
+
 let seg = 0
 function contarTempoJogo(seg){
   let string = ""
@@ -152,6 +177,3 @@ function contarTempoJogo(seg){
   return string
 }
 const incrementarTempoJogo = function (){seg++}
-
-
-console.log()

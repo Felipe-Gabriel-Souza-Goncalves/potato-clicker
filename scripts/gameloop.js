@@ -8,7 +8,7 @@ const accumulators = [accumulator1s, accumulator2_5s, accumulator5s, accumulator
 
 const events = [
   {
-    actions: [batatasPorSeg, incrementarTempoJogo, iterarEfeitos],
+    actions: [batatasPorSeg, incrementarTempoJogo, iterarEfeitos, incrementarTempoSecao],
     timeNeeded: 1000
   },
   {
@@ -100,6 +100,8 @@ function carregarTudo() {
   
   // Script
   batatasPorSeg()
+
+
 }
 
 carregarTudo()

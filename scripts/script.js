@@ -52,12 +52,6 @@ function batatasPorSeg() {
   textoBancoBatatas()
   textoBatatasPorSegundo()
 
-  if(randomStats.elementOpened == "config"){randomStats.timeConfig++; randomStats.timeStatistic = 0}
-  if(randomStats.elementOpened == "estatistica"){randomStats.timeStatistic++; randomStats.timeConfig = 0}
-
-  Upgrades.upgradesExistentes.forEach((upgd,i) =>{
-    alterarTextosPrecos(upgd.preco, upgd.taxaPreco, (i))
-  })
 
 }
 
@@ -84,7 +78,7 @@ function carregarSelectBatatas() {
   select.innerHTML = "";
 
   Upgrades.upgradesExistentes
-    .filter((upgd) => upgd.cps > 0)
+    .filter((upgd) => upgd.bpi > 0)
     .forEach((upgd, i) => {
       const option = document.createElement("option");
       option.value = i;

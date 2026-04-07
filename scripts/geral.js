@@ -6,6 +6,7 @@ function abrirSecao(idSecao, idsSecoesAuxiliares = null, arrayCallback = []){
 
   if(idSecao != null){
     document.getElementById(idSecao).style.display = "unset"
+  } else{
     randomStats.elementOpened = null
   }
   
@@ -27,6 +28,9 @@ function estatisticaAberta(){
 function abriuConquista(){
   randomStats.conquistasAbertas++;
   randomStats.elementOpened = "conquista"
+}
+function limparElementOpened(){
+  randomStats.elementOpened =  ""
 }
 
 function alterarFundo(){

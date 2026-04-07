@@ -1,4 +1,15 @@
-# Atualizações - Versão atual - [3.0]
+# Atualizações - Versão atual - [3.0.1]
+
+## Versão 3.0.1 - 07/04/2026
+- Agora clicar para comprar upgrade não obriga ser na imagem
+- Mudança de código para mais coerência 
+  - cps -> bpi (Batata por intervalo)
+  - cpc -> bpc (Batata por clique)
+- Correção de preços de powerups desatualizados
+- Design dos powerups para comprar alterados
+- Suspensão de 1 powerup para correção "no futuro fará sentido"
+- Informações do upgrade ao passar mouse por cima
+- Correção de lógica para validar conquistas aleatórias
 
 ## Versão 3.0 - 30/03/2026
 **Desenvolvimento desde a 2.2.1** 

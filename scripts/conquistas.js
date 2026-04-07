@@ -8,7 +8,21 @@ class Conquistas{
     static numeroConquistasTotais = 0
     static conquistasTotais = []
     static numeroConquistasLiberadas = 0
-    static conquistasLiberadas = []
+
+    set completa(bool){
+        this._completa = bool
+
+        Conquistas.numeroConquistasLiberadas += 1
+        const liberado = Conquistas.numeroConquistasLiberadas 
+        const total = Conquistas.numeroConquistasTotais
+
+        document.getElementById("numeroConquistas").innerHTML = ` ${liberado}/${total} (${(liberado/total*100).toFixed(1)}%)`
+    }
+
+    get completa(){
+        return this._completa
+    }
+
 
     constructor(nome, descricao, criterio, categoria){
 
@@ -16,7 +30,7 @@ class Conquistas{
         this.descricao = descricao
         this.criterio = criterio,
         this.categoria = categoria
-        this.completa = false
+        this._completa = false
         this.index = Conquistas.numeroConquistasTotais
 
         Conquistas.numeroConquistasTotais++   
@@ -45,7 +59,6 @@ const dadosConquistas = {
     c31: new Conquistas("Overdose de batata", "Fez ao menos 100.000.000 batatas no total!!!", "batataTotal >= 100000000", "ouro"),
     c32: new Conquistas("Batata.", "Fez ao menos 1.000.000.000 batatas no total!!!", "batataTotal >= 1000000000", "ouro"),
 
-    // 
     c5: new Conquistas("Devagar se vai longe", `Atingiu 1 batatas por segundo`, "batatasPS >= 1", "bronze"), // AAA
     c6: new Conquistas("Ainda pouco, porém melhor", `Atingiu 50 batatas por segundo`, "batatasPS >= 50", "bronze"), // AAA
     c7: new Conquistas("Acelerando", `Atingiu 500 batatas por segundo`, "batatasPS >= 500", "prata"), // AAA
@@ -98,12 +111,12 @@ const dadosConquistas = {
     c27: new Conquistas("São muitos powerups", `Comprou 10 powerups`, "Powerup.numComprados >= 10", "ouro"), // AAA
     c28: new Conquistas("Viu que tinha um de 50 batatas?", `Comprou todos os powerups`, "Powerup.ordemPowerups.length == 0", "ouro"), // AAA
 
-    c29: new Conquistas("Ei! Tá no mudo!", `Deixe no volume máximo e desative o volume`, "!SFXligado && document.getElementById('volumeSFX').value == '1'", "bronze"),
-    c30: new Conquistas("Do meu jeito", `Ficou 5min seguidos vendo as configurações`, "randomStats.timeConfig >= 300", "bronze"),
-    c31: new Conquistas("Analista de dados", `Ficou 5min seguidos vendo as estatísticas`, "randomStats.timeStatistic >= 300", "bronze"),
-    c32: new Conquistas("VOU LIBERAR TODOS!", `Abriu a conquistas mais de 25 vezes`, "randomStats.conquistasAbertas >= 25", "bronze"),
-    c33: new Conquistas("Não confio na automação", `Salvou manualmente 10 vezes`, "randomStats.saveManual >= 10", "bronze"),
-    c34: new Conquistas("Me deixe comprar!!!", `Tentou comprar algo sem batatas suficientes 100 vezes`, "randomStats.tentativasComprar >= 100", "prata"),
+    volume_mute: new Conquistas("Ei! Tá no mudo!", `Deixe no volume máximo e desative o volume`, "!SFXligado && document.getElementById('volumeSFX').value == '1'", "bronze"),
+    time_config: new Conquistas("Do meu jeito", `Ficou 5min seguidos vendo as configurações`, "randomStats.timeConfig >= 300", "bronze"),
+    time_statistic: new Conquistas("Analista de dados", `Ficou 5min seguidos vendo as estatísticas`, "randomStats.timeStatistic >= 300", "bronze"),
+    open_achieviments: new Conquistas("VOU LIBERAR TODOS!", `Abriu as conquistas mais de 25 vezes`, "randomStats.conquistasAbertas >= 25", "bronze"),
+    manual_saves: new Conquistas("Não confio na automação", `Salvou manualmente 10 vezes`, "randomStats.saveManual >= 10", "bronze"),
+    buy_tries: new Conquistas("Me deixe comprar!!!", `Tentou comprar algo sem batatas suficientes 100 vezes`, "randomStats.tentativasComprar >= 100", "prata"),
 
 }
 
@@ -116,7 +129,7 @@ function carregarConquistas(){
     Conquistas.conquistasTotais.forEach((conq, i) =>{
         const container = document.createElement("div")
         container.classList.add("containerConquistas")
-        conq.completa ? "" : container.classList.add("conquistaBloqueada")
+        conq._completa ? "" : container.classList.add("conquistaBloqueada")
         container.innerHTML = `
             <img loading="lazy" style="width: 60px" src="imagens/trofeu ${conq.categoria}.png">
             <div>
@@ -124,8 +137,14 @@ function carregarConquistas(){
             </div>
         `
 
-        container.setAttribute("onmouseenter", `mostrarConquistaDetalhada(${i})`)
-        container.setAttribute("onmouseleave", `ocultarConquistaDetalhada()`)
+        container.addEventListener("mouseenter", () => {mostrarConquistaDetalhada(i)})
+        container.addEventListener("mouseleave", (e) => {
+            if(e.relatedTarget == infoConquista ||
+               e.currentTarget == infoConquista ||
+               e.target == infoConquista
+            ) return
+            ocultarConquistaDetalhada()
+        })
 
         campoConquistas.appendChild(container)
     })
@@ -141,10 +160,6 @@ function verificarConquistas(){
             console.log("Erro na conquista", conq, ", ERRO:", error)
         }
     })
-
-    document.getElementById("numeroConquistas").innerHTML = 
-        Conquistas.numeroConquistasLiberadas + "/" + Conquistas.numeroConquistasTotais +
-        " (" + (Conquistas.numeroConquistasLiberadas/Conquistas.numeroConquistasTotais*100).toFixed(1) + "%)"
 }
 
 function liberarConquista(conquista, elementIndex){    
@@ -153,8 +168,6 @@ function liberarConquista(conquista, elementIndex){
 
     document.querySelectorAll(".containerConquistas")[elementIndex].classList.remove("conquistaBloqueada")
     conquista.completa = true
-    Conquistas.numeroConquistasLiberadas++
-    Conquistas.conquistasLiberadas.push(conquista)
 
     const popup = `
         <div class="popupConquista">
@@ -176,11 +189,15 @@ function liberarConquista(conquista, elementIndex){
 }
 
 function verificarConquistasInuteis(){
-    if(randomStats.timeConfig > 300){liberarConquista(dadosConquistas.c30)}
-    if(randomStats.timeStatistic > 300){liberarConquista(dadosConquistas.c31)}
-    if(randomStats.conquistasAbertas > 25){liberarConquista(dadosConquistas.c32)}
-    if(randomStats.saveManual > 10){liberarConquista(dadosConquistas.c33)}
-    if(randomStats.tentativasComprar > 100){liberarConquista(dadosConquistas.c34)}
+    try {
+        eval(dadosConquistas.time_config.criterio) ? liberarConquista(dadosConquistas.time_config) : ""
+        eval(dadosConquistas.time_config.time_statistic) ? liberarConquista(dadosConquistas.time_statistic) : ""
+        eval(dadosConquistas.time_config.open_achieviments) ? liberarConquista(dadosConquistas.open_achieviments) : ""
+        eval(dadosConquistas.time_config.manual_saves) ? liberarConquista(dadosConquistas.manual_saves) : ""
+        eval(dadosConquistas.time_config.buy_tries) ? liberarConquista(dadosConquistas.buy_tries) : ""
+    } catch (error) {
+        console.log("Erro na conquista aleatória", ", ERRO:", error)
+    }
 }
 
 function mostrarConquistaDetalhada(index){
@@ -208,4 +225,20 @@ function excluirPopupConquista(){
     if(primeiroPopup){primeiroPopup.remove()}
 }
 
-// const eventClickPopup = function(){liberarConquista(infoConquista.clickSave)}
+
+function incrementarTempoSecao(){
+    switch (randomStats.elementOpened) {
+        case "config":
+            randomStats.timeConfig++; 
+            randomStats.timeStatistic = 0;
+            break;
+        case "estatistica":
+            randomStats.timeStatistic++;
+            randomStats.timeConfig = 0;
+            break;
+        default:
+            randomStats.timeStatistic = 0;
+            randomStats.timeConfig = 0;
+            break;
+    }
+}

@@ -71,10 +71,14 @@ function iterarEfeitos(){
     efeitoUpgradeLiberado(upgd.index)
   })
 
-  const itemPowerupLength = Math.min(Math.max(Powerup.ordemPowerups.length - 1), 3)
-  for (let i = 0; i < itemPowerupLength; i++) {
-    efeitoPowerupLiberado(i)
-  }
+  // let contador = 0
+  // for(let i = 0; i < Powerup.ordemPowerups.length; i++){
+  //   if(contador === 3) break
+  //   if(Powerup.ordemPowerups[i].comprado == false){
+  //     efeitoPowerupLiberado(i)
+  //     contador++
+  //   }
+  // }
 }
 
 function estatisticas() {
@@ -93,13 +97,13 @@ function valorSelectCPS() {
 
   if (index == "total") {
     Upgrades.upgradesExistentes
-      .filter((upgd) => upgd.cps > 0)
+      .filter((upgd) => upgd.bpi > 0)
       .forEach((upgd, i) => {
-        total += upgd.quantidade * upgd.cps;
+        total += upgd.quantidade * upgd.bpi;
       });
   } else {
     const upgd = Upgrades.upgradesExistentes[index];
-    total = upgd.quantidade * upgd.cps;
+    total = upgd.quantidade * upgd.bpi;
   }
 
   return total;

@@ -53,7 +53,6 @@ thead tr:last-of-type {
   background-color: rgb(68, 68, 68);
 }
 
-#infoUpgrade{display: none;}
 
 @media (max-width: 600px) {
   .botaoMudarNumUpgrade{
@@ -121,4 +120,25 @@ jogo-upgrades{
   color: white;
   width: auto;
   text-align: center;
+}
+
+jogo-upgrades > div:has(#infoUpgrade){
+  position: fixed;
+  width: auto;
+  justify-items: center;
+  z-index: 1;
+  display: none;
+  top: 16px;
+}
+
+#infoUpgrade{
+  padding: 8px 16px;
+  margin: 12px;
+  border: 4px double rgb(71, 50, 15);
+  border: 8px double #180f03;
+  background-color: #47320f;
+  color: white;
+  width: 300px;
+  word-wrap: break-word;
+
 }

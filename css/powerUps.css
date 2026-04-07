@@ -1,8 +1,10 @@
 .itemPowerup {
   align-content: center;
   text-align: center;
-  border: 1px solid gray;
-  background-color: rgba(128, 128, 128, 0.39);
+  border: 6px ridge #180f03;
+  background-color: #4b3308;
+  backdrop-filter: blur(3px);
+  color: white;
   width: 96px;
   height: 96px;
   user-select: none;
@@ -14,6 +16,7 @@
 }
 
 .powerupBloqueado {
+  color: rgb(179, 179, 179);
   filter: brightness(0.7);
   cursor: not-allowed;
 }

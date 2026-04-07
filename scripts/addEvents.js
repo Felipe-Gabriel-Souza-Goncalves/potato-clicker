@@ -1,15 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   document.documentElement.addEventListener("keydown", (e) =>{
     if(e.key === "Escape" && randomStats.elementOpened != null){
       abrirSecao()
     }
-    // if("batata"[randomStats.letras.length] === e.key.toLowerCase()){
-    //   randomStats.letras.push(e.key)
-    //   console.log(randomStats.letras)
-    // } else{
-    //   randomStats.letras = []
-    // }
   })
 
   // clicar na batata
@@ -73,26 +66,20 @@ document.addEventListener("DOMContentLoaded", () => {
       randomStats.saveManual++;
     });
   }
-
-  // const animacaoSalvar = document.getElementById("popupSalvar").querySelector("img")
-  // if(animacaoSalvar){
-  //   animacaoSalvar.addEventListener("click", () =>{
-      
-  //   })
-  // }
-
-
   
+  // Escolha de arquivo para importar save
   const inputImportarSave = document.getElementById("importar-save");
   if (inputImportarSave) {
     inputImportarSave.addEventListener("change", importarSave);
   }
 
+  // Botão para criar JSON do save
   const buttonExportSave = document.getElementById("buttonExportSave");
   if (buttonExportSave) {
     buttonExportSave.addEventListener("click", exportarSave);
   }
 
+  // Botão para acionar input de anexar arquivo
   const buttonImportSave = document.getElementById("buttonImportSave");
   if (buttonImportSave) {
     buttonImportSave.addEventListener("click", () => {inputImportarSave.click()});

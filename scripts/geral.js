@@ -50,7 +50,7 @@ const sufixosCurtos = ["k", "mi", "bi", "tri", "qua", "qui", "sex", "sep", "oct"
 const sufixosLongos = [" mil", " milhões", " bilhões", " trilhões", " quadrilhões", " quintilhões",
                        " sextilhões", " septilhões", " octilhões", " nonilhões", " decilhões"];
 
-function transformNum(num, precisao = 1, curto = false) {
+function sufixarNum(num, precisao = 1, curto = false) {
 
   // Filtra a string e pega seu tamanho
   let stringNum = String(num);

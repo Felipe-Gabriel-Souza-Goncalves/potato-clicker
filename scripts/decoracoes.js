@@ -12,13 +12,8 @@ function efeitoUpgradeLiberado(index) {
     }
 
     // TEM Q MUDARRRR
-    // TEM Q MUDARRRR
-    // TEM Q MUDARRRR
-    // TEM Q MUDARRRR
-    // TEM Q MUDARRRR
-    // TEM Q MUDARRRR
-    
-    
+    // Puts, esqeueci pq
+        
     // Muda a aparência a depender se for suficiente ou não
     if(precoComMultiplicador(upgradePreco, upgradeTaxa) > batatas){
       itemUpgrade.classList.add("upgradeBloqueado")
@@ -33,10 +28,10 @@ function efeitoUpgradeLiberado(index) {
 
 }
 
-function efeitoPowerupLiberado(index){
+function efeitoPowerupLiberado(indexPwp, indexEl){
   try {
-    const powerupPreco = Powerup.ordemPowerups[index].preco
-    const itemPowerup = document.getElementsByClassName("itemPowerup")[index]
+    const powerupPreco = Powerup.ordemPowerups[indexPwp].preco
+    const itemPowerup = document.getElementsByClassName("itemPowerup")[indexEl]
     
     // Se o preço ou elemento não existir, retorna
     if(!powerupPreco || !itemPowerup){
@@ -61,7 +56,7 @@ function efeitoPowerupLiberado(index){
       itemPowerup.classList.remove("powerupBloqueado")
     }
   } catch (error) {
-    console.error("POWERUP", index)
+    console.error("POWERUP", indexPwp, indexEl)
     console.error(error)
   }
 }
@@ -71,6 +66,16 @@ function iterarEfeitos(){
     efeitoUpgradeLiberado(upgd.index)
   })
 
+  let proximosPowerups = []
+  let i = 0;
+  while(i < Powerup.ordemPowerups.length && proximosPowerups.length < 3){
+    if(Powerup.ordemPowerups[i].comprado == false){
+      proximosPowerups.push(i)
+    }
+    i++
+  }
+
+  proximosPowerups.forEach((indexPwp, indexEl) => {efeitoPowerupLiberado(indexPwp, indexEl)})
   // let contador = 0
   // for(let i = 0; i < Powerup.ordemPowerups.length; i++){
   //   if(contador === 3) break
@@ -82,13 +87,14 @@ function iterarEfeitos(){
 }
 
 function estatisticas() {
-  document.getElementById("estatTempoJogo").innerHTML = contarTempoJogo(seg);
-  document.getElementById("estatBatatas").innerHTML = batatas;
-  document.getElementById("estatBatatasTotal").innerHTML = batataTotal;
-  document.getElementById("estatBatatasPorClique").innerHTML = Math.floor(poderClique).toFixed(0);
-  document.getElementById("estatBatatasPorSegundo").innerHTML = valorSelectCPS();
-  document.getElementById("estatCliquesTotais").innerHTML = cliques;
-  document.getElementById("estatUpgradesComprados").innerHTML = Upgrades.numeroDeUpgrades;
+  if(randomStats.elementOpened !== "estatistica") return
+  document.getElementById("estatTempoJogo").innerText = contarTempoJogo(seg);
+  document.getElementById("estatBatatas").innerText = batatas;
+  document.getElementById("estatBatatasTotal").innerText = batataTotal;
+  document.getElementById("estatBatatasPorClique").innerText = Math.floor(poderClique).toFixed(0);
+  document.getElementById("estatBatatasPorSegundo").innerText = valorSelectCPS();
+  document.getElementById("estatCliquesTotais").innerText = cliques;
+  document.getElementById("estatUpgradesComprados").innerText = Upgrades.numeroDeUpgrades;
 }
 
 function valorSelectCPS() {
@@ -153,7 +159,7 @@ function alterarTextosPrecos(preco, taxaPreco, i) {
     try {
       const spanPreco = document.getElementsByClassName("precoUpgrade")[i]
       if(spanPreco === undefined) return
-      spanPreco.innerText = transformNum(sumPrecos, 2, true) + " batatas"
+      spanPreco.innerText = sufixarNum(sumPrecos, 2, true) + " batatas"
     } catch (error) {
       console.log("index:", i, "\n", error)
     }
@@ -171,17 +177,17 @@ function mudarUI(){
 }
 
 function textoBancoBatatas(){
-  displayBatatas.textContent = `${transformNum(batatas, 2, true)} batatas`
+  displayBatatas.textContent = `${sufixarNum(batatas, 2, true)} batatas`
 }
 
 function textoBatatasPorSegundo(){
-  displayBatatasPS.textContent = `${transformNum(batatasPS, 2, true)} batatas por segundo`
+  displayBatatasPS.textContent = `${sufixarNum(batatasPS, 2, true)} batatas por segundo`
 }
 
 function decoracaoTabelaUpgrades(indexUpgrade){
   const batatasSuficientes = Upgrades.upgradesExistentes[indexUpgrade].preco > batatas
   
-  displayPrecosUpgrades[indexUpgrade].textContent = `${transformNum(batatas, 2, true)} batatas`
+  displayPrecosUpgrades[indexUpgrade].textContent = `${sufixarNum(batatas, 2, true)} batatas`
 
   if(batatasSuficientes){
     displayPrecosUpgrades[indexUpgrade].classList.remove("precoUpgradeBloqueado") 
@@ -193,13 +199,4 @@ function decoracaoTabelaUpgrades(indexUpgrade){
     const batatasNecessarias = Upgrades.upgradesExistentes[indexUpgrade].preco - batatas
     buttonsComprarUpgrades[indexUpgrade].title = batatasNecessarias + " batatas necessárias para compra"
   }
-}
-
-function textoEstatisticas() {
-  document.getElementById("estatBatatas").innerHTML = batatas;
-  document.getElementById("estatBatatasTotal").innerHTML = batataTotal;
-  document.getElementById("estatBatatasPorClique").innerHTML = Math.floor(poderClique).toFixed(0);
-  document.getElementById("estatBatatasPorSegundo").innerHTML = valorSelectCPS();
-  document.getElementById("estatCliquesTotais").innerHTML = cliques;
-  document.getElementById("estatUpgradesComprados").innerHTML = Upgrades.numeroDeUpgrades;
 }

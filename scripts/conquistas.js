@@ -126,6 +126,7 @@ function carregarConquistas(){
     const campoConquistas = document.querySelector("#campoConquistas")
 
 
+    // Cria todos os elementos de conquista
     Conquistas.conquistasTotais.forEach((conq, i) =>{
         const container = document.createElement("div")
         container.classList.add("containerConquistas")
@@ -137,6 +138,7 @@ function carregarConquistas(){
             </div>
         `
 
+        // Adiciona os eventos de mostrar/esconder informações da conquista
         container.addEventListener("mouseenter", () => {mostrarConquistaDetalhada(i)})
         container.addEventListener("mouseleave", (e) => {
             if(e.relatedTarget == infoConquista ||
@@ -167,7 +169,7 @@ function liberarConquista(conquista, elementIndex){
     if(conquista.completa === true) return
 
     document.querySelectorAll(".containerConquistas")[elementIndex].classList.remove("conquistaBloqueada")
-    conquista.completa = true
+    conquista.completa = true // Aciona Setter
 
     const popup = `
         <div class="popupConquista">
@@ -209,7 +211,6 @@ function mostrarConquistaDetalhada(index){
     }
     
     infoConquista.style.display = "flex"
-
 
     imgTrofeu.src = "imagens/trofeu " + conq.categoria +".png"
     textNome.innerText = conq.nome

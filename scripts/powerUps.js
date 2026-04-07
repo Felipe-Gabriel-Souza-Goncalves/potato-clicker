@@ -18,7 +18,7 @@ class Powerup {
   }
 
   comprarPowerup(index) {
-    if (batatas > this.preco) {
+    if (batatas >= this.preco) {
       batatas -= this.preco;
       Powerup.comprado(index);
       eval(this.efeito);
@@ -60,7 +60,7 @@ class Powerup {
 
       filaPowerups.innerHTML += `
         <div 
-          class="itemPowerup"
+          class="itemPowerup powerupBloqueado"
           title="${powerup.descricao}"
           onclick="${clickAction}"
           onmouseenter="mostrarPowerupDetalhado(${powerup.index})"  
@@ -86,15 +86,15 @@ const infoPowerups = {
     700,
     `upgrade3.taxaPreco *= 0.95;`,
   ),
-  // pw3: new Powerup(
-  //   "No futuro fará sentido",
-  //   `+5 ${upgrade2.nome}`,
-  //   1500,
-  //   `upgrade2.quantidade +=5;
-  //    poderClique+= upgrade2.bpc*5;
-  //    document.getElementsByClassName("quantidadeUpgrade")[1].innerText = upgrade2.quantidade
-  //   `,
-  // ),
+  pw3: new Powerup(
+    "No futuro fará sentido",
+    `+5 ${upgrade2.nome}`,
+    1500,
+    `upgrade2.quantidade +=5;
+     poderClique+= upgrade2.bpc*5;
+     document.getElementsByClassName("quantidadeUpgrade")[1].innerText = upgrade2.quantidade
+    `,
+  ),
   pw4: new Powerup(
     "Cultivo rápido",
     `${upgrade1.nome} 10% mais rápido`,
@@ -164,7 +164,7 @@ function mostrarPowerupDetalhado(indexPowerup) {
   const descricao = document.getElementById("descricaoPowerup");
 
   nome.textContent = powerup.nome;
-  preco.textContent = transformNum(powerup.preco, 2, true) + " batatas";
+  preco.textContent = sufixarNum(powerup.preco, 2, true) + " batatas";
   descricao.textContent = powerup.descricao;
 
   document.getElementById("infoPowerups").style.display = "block";

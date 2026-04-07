@@ -6,23 +6,18 @@ class Upgrades {
   static upgradesExistentes = [];
 
   // Contar todos os upgrades criados quando o programa for rodado
-  static contarUpgrades() {
+  static contarUpgrades(qntd) {
     this.numeroDeUpgrades++;
-  }
-
-  set speed(newValue){
-    this.intervalo = newValue
-    upgradesInterval[this.index].timeNeeded = this.intervalo 
   }
 
   // TESTES
   // construtor de upgrades
   constructor(nome, preco, taxaPreco, bpi, bpc, intervalo) {
-    this.index = structuredClone(Upgrades.upgradesExistentes.length)
+    this.index = Upgrades.upgradesExistentes.length
     this.nome = nome;
     this.preco = preco;
-    this.quantidade = 0;
     this.taxaPreco = taxaPreco;
+    this._quantidade = 0;
     this.bpi = bpi; // Batata por intervalo
     this.bpc = bpc; // Batata por clique
     this.intervalo = intervalo || 1000;
@@ -32,15 +27,40 @@ class Upgrades {
 
   }
 
+  set speed(newValue){
+    this.intervalo = newValue
+    upgradesInterval[this.index].timeNeeded = this.intervalo 
+  }
+
+  set quantidade(newQntd){
+    // Calcula a quantidade que será adicionada: quantidadeNova - quantidadeAntiga
+    const diffQntd = newQntd - this._quantidade
+
+    // Soma os novos bpc e bpi
+    poderClique += this.bpc * diffQntd
+    batatasPS += this.bpi * diffQntd
+
+    // Atualiza o front-end
+    this._quantidade = newQntd
+    if(document.getElementsByClassName("quantidadeUpgrade")[this.index]){
+      document.getElementsByClassName("quantidadeUpgrade")[this.index].innerText = this._quantidade
+    }
+
+    // Atualiza 
+    alterarTextosPrecos(this.preco, this.taxaPreco, this.index)
+  }
+
+  get quantidade(){
+    return this._quantidade
+  }
+  
+
   comprarUpgrade(index) {
     for (let i = 0; i < qntdUpgradeComprar; i++) {
       if (batatas >= this.preco) {
         batatas -= this.preco;
         this.preco = Math.floor(this.preco * this.taxaPreco);
         this.quantidade++;
-
-        poderClique += this.bpc
-        batatasPS += this.bpi
 
         Upgrades.contarUpgrades();
         alterarTextosPrecos(this.preco, this.taxaPreco, index)
@@ -49,15 +69,14 @@ class Upgrades {
         break;
       }
 
-      displayBatatas.innerHTML = transformNum(batatas, 2, true) + " batatas";
-      document.getElementsByClassName("quantidadeUpgrade")[index].innerText = this.quantidade
+      displayBatatas.innerHTML = sufixarNum(batatas, 2, true) + " batatas";
       efeitoUpgradeLiberado(this.index)
     }
   }
 
   acrescentarBatatasPassivas(){
-    batatas += this.bpi
-    batataTotal += this.bpi
+    batatas += this.bpi * this._quantidade
+    batataTotal += this.bpi * this._quantidade
     textoBancoBatatas()
     textoBatatasPorSegundo()
   }
@@ -66,14 +85,14 @@ class Upgrades {
     const containerInfoUpgrade = document.querySelector("jogo-upgrades > div:has(#infoUpgrade)")
     const infoUpgrade = document.getElementById("infoUpgrade")
     
-
     const infoNome = infoUpgrade.querySelector("span#infoNome")
     const infoBpi = infoUpgrade.querySelector("p #infoBpi")
     const infoBpc = infoUpgrade.querySelector("p #infoBpc")
+
     const upgd = Upgrades.upgradesExistentes[index]
     infoNome.innerText = upgd.nome
-    infoBpi.innerText = `${upgd.bpi} | ${upgd.bpi * upgd.quantidade}`
-    infoBpc.innerText = `${upgd.bpc} | ${upgd.bpc * upgd.quantidade}`
+    infoBpi.innerText = `${upgd.bpi} | ${Number((upgd.bpi * upgd.quantidade).toFixed(2))}`
+    infoBpc.innerText = `${upgd.bpc} | ${Number((upgd.bpc * upgd.quantidade).toFixed(2))}`
 
     containerInfoUpgrade.style.display = "block"
   }
@@ -83,6 +102,7 @@ class Upgrades {
   }
 }
 
+// Cria os intervalos dos quais os upgrades criarão batatas
 function createIntervalUpgrade(index){
   const upgrade = Upgrades.upgradesExistentes[index]
   

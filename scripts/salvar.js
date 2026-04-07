@@ -8,15 +8,19 @@ function salvarTemporario() {
     // return [up.quantidade || 0, up.preco || NaN]
   })
 
+  // Cria um array de index de quais conquistas foram completas (para otimização)
   const filteredConquistas = Conquistas.conquistasTotais
     .filter(conq => conq && conq.completa == true)
     .map(conq => {return conq.index})
 
+
+  // Cria um array de index de quais powerups foram comprados (para otimização)
+  // CONTUDO HÁ UM PROBLEMA QUE ALGUNS EFEITOS NÃO SÃO SALVOS
   const filteredPowerups = Powerup.ordemPowerups
   .filter(pwp => pwp.comprado === true)
   .map(pwp =>{return pwp.index})
 
-  
+  // Cria o objeto que será salvo em localStorage
   const save = {
     geral: {
       cliques: cliques,
@@ -28,14 +32,13 @@ function salvarTemporario() {
     batatas: {
       bancoBatata: batatas,
       batataTotal: batataTotal,
-      BatataPS: batatasPS,
-      poderClique: poderClique,
     },
     conquistas: filteredConquistas,
     upgrades: Upgrades.upgradesExistentes,
     powerups: filteredPowerups
   }
 
+  // Salva o objeto
   localStorage.setItem("CCconfig", JSON.stringify(save))
 }
 
@@ -54,8 +57,6 @@ function carregarSave(){
     // Configurações sobre batatas
     batatas = save.batatas.bancoBatata ?? 0
     batataTotal = save.batatas.batataTotal ?? 0
-    batatasPS = save.batatas.BatataPS ?? 0
-    poderClique = save.batatas.poderClique ?? 0
 
     // Configurações das conquistas
     save.conquistas.forEach(index =>{
@@ -63,7 +64,7 @@ function carregarSave(){
         console.log("Index não declarado")
         return
       }
-      Conquistas.conquistasTotais[index].completa = true
+      Conquistas.conquistasTotais[index].completa = true //Aciona setter
     })
 
     // Configurações dos upgrades
@@ -72,17 +73,20 @@ function carregarSave(){
       if(!upgd){
         return
       }
-      upgd.quantidade = configUpgrades[i].quantidade ?? upgd.quantidade
+
+      // Atribui as informações salvas
+      upgd.quantidade = configUpgrades[i]._quantidade ?? upgd.quantidade // Aciona setter!!!
       upgd.preco = configUpgrades[i].preco ?? upgd.preco
       upgd.bpi = configUpgrades[i].bpi ?? upgd.bpi
       upgd.bpc = configUpgrades[i].bpc ?? upgd.bpc
     })
 
+    // Configurações dos powerups
     if(save.powerups.length !== 0){
       save.powerups.forEach(index =>{
         Powerup.ordemPowerups[index].comprado = true
-        Powerup.atualizarFront()
       })
+      Powerup.atualizarFront()
     }
   }
 }

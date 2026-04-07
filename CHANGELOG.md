@@ -1,4 +1,12 @@
-# Atualizações - Versão atual - [3.0.1]
+# Atualizações - Versão atual - [3.0.2]
+
+## Versão 3.0.2 - 07/04/2026
+- Correção de comprar powerup somente se batatas for maior e não maior/igual ao preço
+- Alguns comentários de código
+- Setter de quantidade para os upgrades
+- Remoção de código desnecessário
+- Correção de efeito visual em powerups indisponíveis por preços
+- Outras correções e alterações mínimas
 
 ## Versão 3.0.1 - 07/04/2026
 - Agora clicar para comprar upgrade não obriga ser na imagem

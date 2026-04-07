@@ -30,7 +30,7 @@ class UpgradesComponente extends HTMLElement{
           </div>
           <div>
             <p class="precoUpgrade">
-              ${transformNum(upgd.preco, 2, true)} batatas
+              ${sufixarNum(upgd.preco, 2, true)} batatas
             </p>
           </div>
         </div>

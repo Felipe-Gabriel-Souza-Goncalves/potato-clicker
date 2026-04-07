@@ -37,22 +37,11 @@ function textoAudio(){
 }
 
 function clicarNaBatata() {
-  audioBatata();
   batatas += Math.floor(poderClique);
   batataTotal += Math.floor(poderClique);
   cliques += 1;
+  audioBatata();
   textoBancoBatatas()
-}
-
-// Função de adicionar batatas por segundo ao banco de batatas
-function batatasPorSeg() {
-  batatas += batatasPS;
-  batataTotal += batatasPS;
-
-  textoBancoBatatas()
-  textoBatatasPorSegundo()
-
-
 }
 
 function apagarProgresso() {
@@ -89,6 +78,3 @@ function carregarSelectBatatas() {
 
   select.innerHTML += `<option value="total">Total</option>`;
 }
-
-
-

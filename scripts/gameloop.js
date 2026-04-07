@@ -1,44 +1,37 @@
 let ultimoTempo = 0;
-let accumulator1s = 0;
-let accumulator2_5s = 0;
-let accumulator5s = 0;
-let accumulator30s = 0;
-
-const accumulators = [accumulator1s, accumulator2_5s, accumulator5s, accumulator30s]
-
 const events = [
   {
-    actions: [batatasPorSeg, incrementarTempoJogo, iterarEfeitos, incrementarTempoSecao],
-    timeNeeded: 1000
+    actions: [incrementarTempoJogo, iterarEfeitos, incrementarTempoSecao],
+    timeNeeded: 1000,
+    accumulator: 0
   },
   {
     actions: [estatisticas],
-    timeNeeded: 2500
+    timeNeeded: 2500,
+    accumulator: 0
   },
   {
     actions: [verificarConquistas, verificarConquistasInuteis],
-    timeNeeded: 5000
+    timeNeeded: 5000,
+    accumulator: 0
   },
   {
     actions: [salvarTemporario],
-    timeNeeded: 30000
+    timeNeeded: 30000,
+    accumulator: 0
   },
 ]
-
-
 
 function runActionGlobal(index){
   const group = events[index]
   group.actions.forEach(func => func())
 }
 
-
-
 function onTime(index){
   const group = events[index]
   
-  if(accumulators[index] >= group.timeNeeded){
-    accumulators[index] = 0
+  if(group.accumulator >= group.timeNeeded){
+    group.accumulator = 0
     runActionGlobal(index)
   }
 }
@@ -51,19 +44,24 @@ function loop(tempoAtual) {
 
 
   // Gerais
-  for(let i = 0; i < accumulators.length; i++){
-    accumulators[i] += delta
+  // Adicionar o tempo ao acumulador
+  // Foi feito separadamente para ter o menor intervalo possível entre acumuladores
+  for(let i = 0; i < events.length; i++){ 
+    events[i].accumulator += delta
   }
 
-  for(let i = 0; i < accumulators.length; i++){
+  // Iterar por acumulador se chegou ao necessário 
+  for(let i = 0; i < events.length; i++){
     onTime(i)
   }
 
-  // Upgrades
+  // Eventos reservador para Upgrades
+  // Adicionar o tempo ao acumulador
     for(let i = 0; i < upgradesInterval.length; i++){
     upgradesInterval[i].accumulator += delta
   }
 
+  // Iterar por acumulador se chegou ao necessário 
   for(let i = 0; i < upgradesInterval.length; i++){
     const up = upgradesInterval[i]
     
@@ -97,11 +95,10 @@ function carregarTudo() {
 
   textoAudio()
   alterarFundo()
-  
+  textoBancoBatatas()
+  textoBatatasPorSegundo()
   // Script
-  batatasPorSeg()
-
-
+  // batatasPorSeg()
 }
 
 carregarTudo()

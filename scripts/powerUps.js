@@ -75,10 +75,10 @@ class Powerup {
 
 const infoPowerups = {
   pw1: new Powerup(
-    "Cliques também",
-    `+1 bpc para cada 10 ${upgrade1.nome}`,
+    "Cliques saudáveis",
+    `+1 bpc para cada 4 ${upgrade1.nome}`,
     250,
-    `upgrade1.bpc += 0.1; poderClique += upgrade1.quantidade*upgrade1.bpc`,
+    `upgrade1.bpc += 0.25; poderClique += upgrade1.quantidade*upgrade1.bpc`,
   ),
   pw2: new Powerup(
     "Melhores preços",
@@ -98,13 +98,13 @@ const infoPowerups = {
   pw4: new Powerup(
     "Cultivo rápido",
     `${upgrade1.nome} 10% mais rápido`,
-    2400,
+    2750,
     `upgrade1.speed = upgrade1.intervalo * 0.9`,
   ),
   pw5: new Powerup(
     "Pratos maiores",
     `+3 batatas/segundo na ${upgrade1.nome}`,
-    4900,
+    8000,
     `upgrade1.bpi += 3; batatasPS += upgrade1.quantidade * 3`,
   ),
 
@@ -112,9 +112,9 @@ const infoPowerups = {
 
   pw7: new Powerup(
     "Cliques doces",
-    `+1 batata/clique para cada 4 ${upgrade2.nome} `,
-    8000,
-    `upgrade2.bpc += 0.25; poderClique += upgrade2.quantidade*upgrade2.bpc`,
+    `+1 batata/clique para cada ${upgrade2.nome} `,
+    15000,
+    `upgrade2.bpc += 1; poderClique += upgrade2.quantidade*upgrade2.bpc`,
   ),
 
   pw6: new Powerup(
@@ -126,27 +126,39 @@ const infoPowerups = {
 
   pw8: new Powerup(
     "Enxada afiada",
-    `+3 batata/clique na ${upgrade5.nome}`,
-    13500,
-    `upgrade5.bpc += 3; poderClique += upgrade5.quantidade * 3`,
+    `+4 batata/clique na ${upgrade5.nome}`,
+    25000,
+    `upgrade5.bpc += 4; poderClique += upgrade5.quantidade * 4`,
   ),
   pw9: new Powerup(
     "Limão, sal, azeite...",
-    `+5 batatas/segundo na ${upgrade1.nome}`,
-    20000,
-    `upgrade1.bpi += 5; batatasPS += upgrade1.quantidade * 5`,
+    `+7 batatas/segundo na ${upgrade1.nome}`,
+    42000,
+    `upgrade1.bpi += 7; batatasPS += upgrade1.quantidade * 7`,
   ),
   pw10: new Powerup(
     "Crocância e sabor",
-    `+10 batatas/segundo na ${upgrade2.nome}`,
-    33000,
-    `upgrade2.bpi += 10; batatasPS += upgrade2.quantidade * 10`,
+    `+15 batatas/segundo na ${upgrade2.nome}`,
+    70000,
+    `upgrade2.bpi += 15; batatasPS += upgrade2.quantidade * 15`,
   ),
   pw11: new Powerup(
     "Adubo",
-    `6 batatas/clique na ${upgrade5.nome}`,
-    37000,
-    `upgrade5.bpc += 6; poderClique += upgrade5.quantidade * 6`,
+    `15 batatas/clique na ${upgrade5.nome}`,
+    100000,
+    `upgrade5.bpc += 15; poderClique += upgrade5.quantidade * 15`,
+  ),
+  pw12: new Powerup(
+    "Cliques nutritivos",
+    `+3 batata/clique para cada 4 ${upgrade1.nome} `,
+    120000,
+    `upgrade1.bpc += 3; poderClique += upgrade1.quantidade*upgrade1.bpc`,
+  ),
+  pw13: new Powerup(
+    "Cliques salgados",
+    `+5 batata/clique para cada ${upgrade3.nome} `,
+    160000,
+    `upgrade3.bpc += 5; poderClique += upgrade3.quantidade*upgrade3.bpc`,
   ),
 };
 

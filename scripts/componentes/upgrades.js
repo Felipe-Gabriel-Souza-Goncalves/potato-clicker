@@ -53,8 +53,8 @@ class UpgradesComponente extends HTMLElement{
       <div id="infoUpgrade">
         <span id="infoNome"></span>
         <p>Unidade | Total</p>
-        <p>bpi: <span id="infoBpi">lorem - lorem</span></p>
-        <p>bpc: <span id="infoBpc">lorem - lorem</span></p>
+        <p>Batatas passivas: <span id="infoBpi">lorem - lorem</span></p>
+        <p>Batatas por clique: <span id="infoBpc">lorem - lorem</span></p>
       </div>
     `
 

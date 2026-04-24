@@ -92,6 +92,10 @@ function sufixarNum(num, precisao = 1, curto = false) {
     }
   }
 
+
+  // Retira 0 desnecessários
+  finalString = Number(finalString).toString()
+  
   // Adiciona notação científica caso ultrapasse os sufixos
   if (index >= sufixosLongos.length) {
     finalString += "e" + (size - endFor);

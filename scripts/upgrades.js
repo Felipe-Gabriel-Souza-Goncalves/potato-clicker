@@ -91,8 +91,8 @@ class Upgrades {
 
     const upgd = Upgrades.upgradesExistentes[index]
     infoNome.innerText = upgd.nome
-    infoBpi.innerText = `${upgd.bpi} | ${Number((upgd.bpi * upgd.quantidade).toFixed(2))}`
-    infoBpc.innerText = `${upgd.bpc} | ${Number((upgd.bpc * upgd.quantidade).toFixed(2))}`
+    infoBpi.innerText = `${upgd.bpi} | Total: ${Number((upgd.bpi * upgd.quantidade).toFixed(2))}`
+    infoBpc.innerText = `${upgd.bpc} | Total: ${Number((upgd.bpc * upgd.quantidade).toFixed(2))}`
 
     containerInfoUpgrade.style.display = "block"
   }

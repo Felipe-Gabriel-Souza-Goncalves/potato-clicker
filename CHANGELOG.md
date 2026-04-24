@@ -1,4 +1,11 @@
-# Atualizações - Versão atual - [3.0.2]
+# Atualizações - Versão atual - [3.0.3]
+
+## Versão 3.0.3 - 24/04/2026
+- Ajustes de preços/efeito de powerups
+- 2 novos powerups
+- Correção na conquista de comprar todos os powerups
+- Correção na visualização de preços com .0
+- Pequena alteração nas informações dos upgrades
 
 ## Versão 3.0.2 - 07/04/2026
 - Correção de comprar powerup somente se batatas for maior e não maior/igual ao preço

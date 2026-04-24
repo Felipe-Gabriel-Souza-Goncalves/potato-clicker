@@ -109,7 +109,7 @@ const dadosConquistas = {
     c25: new Conquistas("Avanço rápido", `Comprou 3 powerups`, "Powerup.numComprados >= 3", "prata"), // AAA
     c26: new Conquistas("Com grandes poderes...", `Comprou 5 powerups`, "Powerup.numComprados >= 5", "prata"), // AAA
     c27: new Conquistas("São muitos powerups", `Comprou 10 powerups`, "Powerup.numComprados >= 10", "ouro"), // AAA
-    c28: new Conquistas("Viu que tinha um de 50 batatas?", `Comprou todos os powerups`, "Powerup.ordemPowerups.length == 0", "ouro"), // AAA
+    c28: new Conquistas("Viu que tinha um de 50 batatas?", `Comprou todos os powerups`, "Powerup.numComprados == Powerup.ordemPowerups.length", "ouro"), // AAA
 
     volume_mute: new Conquistas("Ei! Tá no mudo!", `Deixe no volume máximo e desative o volume`, "!SFXligado && document.getElementById('volumeSFX').value == '1'", "bronze"),
     time_config: new Conquistas("Do meu jeito", `Ficou 5min seguidos vendo as configurações`, "randomStats.timeConfig >= 300", "bronze"),

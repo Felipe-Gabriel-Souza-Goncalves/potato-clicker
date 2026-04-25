@@ -123,52 +123,6 @@ document.addEventListener("visibilitychange", () =>{
   }
 })
 
-
-function exportarSave(){
-  const save = localStorage.getItem("CCconfig")
-  if(!save) return
-  console.log(save)
-  
-  const blob = new Blob([JSON.stringify(save)], {type: "application/json"})
-  const url = URL.createObjectURL(blob)
-
-  const link = document.createElement("a")
-  link.href = url
-
-  const data = new Date().toLocaleDateString({language: "pt-br"})
-  const hora = new Date().toLocaleTimeString({language: "pt-br"})
-
-  link.download = "Potato clicker - save " + data + " " + hora
-  document.body.appendChild(link)
-  link.click()
-  document.body.removeChild(link)
-}
-
-function importarSave(){
-    const inputImportar = document.getElementById("importar-save")
-    if(!inputImportar.files) {
-        alert("Nenhum arquivo selecionado")
-        return
-    }
-
-    const leitor = new FileReader()
-    leitor.onload = () =>{
-        try {
-            const reparsedSave = JSON.parse(JSON.parse(leitor.result))
-            localStorage.setItem("CCconfig", JSON.stringify(reparsedSave))
-            window.location.reload()
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    leitor.onerror = () => {
-        alert("Erro ao importar")
-    }
-
-    leitor.readAsText(inputImportar.files[0])
-}
-
-
 let seg = 0
 function contarTempoJogo(seg){
   let string = ""

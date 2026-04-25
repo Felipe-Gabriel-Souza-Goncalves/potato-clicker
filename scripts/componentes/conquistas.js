@@ -17,6 +17,7 @@ class ConquistasComponente extends HTMLElement{
       </div>
 
       <div id="campoPopupsConquistas"></div>
+      <div id="fecharPopupsConquistas"></div>
     `
   }
 }

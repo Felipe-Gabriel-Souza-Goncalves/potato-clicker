@@ -34,6 +34,7 @@ class Powerup {
     powerup.comprado = true;
 
     this.atualizarFront();
+    iterarEfeitos() // possivelmente temporario
     esconderPowerupDetalhado();
   }
 

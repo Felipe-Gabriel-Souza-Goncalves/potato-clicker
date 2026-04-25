@@ -23,7 +23,7 @@ class ConfiguracoesComponente extends HTMLElement {
 
           <button id="buttonExportSave">Exportar arquivo do jogo</button>
           <button id="buttonImportSave">Importar arquivo do jogo</button>
-          <input type="file" id="importar-save" style="display: none;">
+          <input type="file" accept=".json" id="importar-save" style="display: none;">
           
           <a id="voltarRepo" href="https://github.com/Felipe-Gabriel-Souza-Goncalves/potato-clicker/">Voltar para o repositório</a>
         </div>

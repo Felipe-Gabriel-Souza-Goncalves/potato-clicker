@@ -3,6 +3,8 @@ const imgTrofeu = document.getElementById("trofeuConquista")
 const textNome = document.getElementById("nomeConquista")
 const textDescricao = document.getElementById("descricaoConquista")
 
+const fecharPopupsConquistas = document.getElementById("fecharPopupsConquistas")
+const campoPopupsConquistas = document.getElementById("campoPopupsConquistas")
 class Conquistas{
 
     static numeroConquistasTotais = 0
@@ -59,11 +61,11 @@ const dadosConquistas = {
     c31: new Conquistas("Overdose de batata", "Fez ao menos 100.000.000 batatas no total!!!", "batataTotal >= 100000000", "ouro"),
     c32: new Conquistas("Batata.", "Fez ao menos 1.000.000.000 batatas no total!!!", "batataTotal >= 1000000000", "ouro"),
 
-    c5: new Conquistas("Devagar se vai longe", `Atingiu 1 batatas por segundo`, "batatasPS >= 1", "bronze"), // AAA
-    c6: new Conquistas("Ainda pouco, porém melhor", `Atingiu 50 batatas por segundo`, "batatasPS >= 50", "bronze"), // AAA
-    c7: new Conquistas("Acelerando", `Atingiu 500 batatas por segundo`, "batatasPS >= 500", "prata"), // AAA
-    c8: new Conquistas("Linha de produção", `Atingiu 2000 batatas por segundo`, "batatasPS >= 2000", "prata"), // AAA
-    c8: new Conquistas("Pode aposentar o mouse", `Atingiu 10000 batatas por segundo`, "batatasPS >= 10000", "ouro"), // AAA
+    c5: new Conquistas("Devagar se vai longe", `Atingiu 1 batatas por segundo`, "batatasPS >= 1", "bronze"),
+    c6: new Conquistas("Ainda pouco, porém melhor", `Atingiu 50 batatas por segundo`, "batatasPS >= 50", "bronze"),
+    c7: new Conquistas("Acelerando", `Atingiu 500 batatas por segundo`, "batatasPS >= 500", "prata"),
+    c8: new Conquistas("Linha de produção", `Atingiu 2000 batatas por segundo`, "batatasPS >= 2000", "prata"),
+    c8: new Conquistas("Pode aposentar o mouse", `Atingiu 10000 batatas por segundo`, "batatasPS >= 10000", "ouro"),
 
     c5: new Conquistas("Olha! faz sozinho!", `Comprou 1 ${upgrade1.nome}`, "upgrade1.quantidade >= 1", "bronze"),
     c6: new Conquistas("Tempero saboroso", `Comprou 10 ${upgrade1.nome}`, "upgrade1.quantidade >= 10", "bronze"),
@@ -80,17 +82,17 @@ const dadosConquistas = {
     c15: new Conquistas("Para que tanto?", `Comprou 25 ${upgrade3.nome}`, "upgrade3.quantidade >= 25", "prata"),
     c16: new Conquistas("Risco a saúde", `Comprou 50 ${upgrade3.nome}`, "upgrade3.quantidade >= 50", "ouro"),
     
-    c13: new Conquistas("Bom acompanhamento", `Comprou 1 ${upgrade4.nome}`, "upgrade4.quantidade >= 1", "bronze"), // AAA
-    c14: new Conquistas("Textura suave", `Comprou 10 ${upgrade4.nome}`, "upgrade4.quantidade >= 10", "bronze"), // AAA
-    c15: new Conquistas("Muito carboidrato", `Comprou 25 ${upgrade4.nome}`, "upgrade4.quantidade >= 25", "prata"), // AAA
-    c16: new Conquistas("Hábito alimentar", `Comprou 50 ${upgrade4.nome}`, "upgrade4.quantidade >= 50", "ouro"), // AAA
+    c13: new Conquistas("Bom acompanhamento", `Comprou 1 ${upgrade4.nome}`, "upgrade4.quantidade >= 1", "bronze"),
+    c14: new Conquistas("Textura suave", `Comprou 10 ${upgrade4.nome}`, "upgrade4.quantidade >= 10", "bronze"),
+    c15: new Conquistas("Muito carboidrato", `Comprou 25 ${upgrade4.nome}`, "upgrade4.quantidade >= 25", "prata"),
+    c16: new Conquistas("Hábito alimentar", `Comprou 50 ${upgrade4.nome}`, "upgrade4.quantidade >= 50", "ouro"),
 
-    c13: new Conquistas("Trabalho honesto", `Comprou 1 ${upgrade5.nome}`, "upgrade5.quantidade >= 1", "bronze"), // AAA
-    c14: new Conquistas("Carpinando do lote", `Comprou 10 ${upgrade5.nome}`, "upgrade5.quantidade >= 10", "bronze"), // AAA
-    c15: new Conquistas("Mão de obra", `Comprou 25 ${upgrade5.nome}`, "upgrade5.quantidade >= 25", "prata"), // AAA
-    c16: new Conquistas("Enxada de ferro", `Comprou 50 ${upgrade5.nome}`, "upgrade5.quantidade >= 50", "prata"), // AAA
-    c16: new Conquistas("Enxada de aço", `Comprou 100 ${upgrade5.nome}`, "upgrade5.quantidade >= 100", "ouro"), // AAA
-    c16: new Conquistas("Enxada de diamante", `Comprou 200 ${upgrade5.nome}`, "upgrade5.quantidade >= 200", "ouro"), // AAA
+    c13: new Conquistas("Trabalho honesto", `Comprou 1 ${upgrade5.nome}`, "upgrade5.quantidade >= 1", "bronze"),
+    c14: new Conquistas("Carpinando do lote", `Comprou 10 ${upgrade5.nome}`, "upgrade5.quantidade >= 10", "bronze"),
+    c15: new Conquistas("Mão de obra", `Comprou 25 ${upgrade5.nome}`, "upgrade5.quantidade >= 25", "prata"),
+    c16: new Conquistas("Enxada de ferro", `Comprou 50 ${upgrade5.nome}`, "upgrade5.quantidade >= 50", "prata"),
+    c16: new Conquistas("Enxada de aço", `Comprou 100 ${upgrade5.nome}`, "upgrade5.quantidade >= 100", "ouro"),
+    c16: new Conquistas("Enxada de diamante", `Comprou 200 ${upgrade5.nome}`, "upgrade5.quantidade >= 200", "ouro"),
 
     c17: new Conquistas("O início!", `Clicou 1 vez`, "cliques >= 1", "bronze"),
     c18: new Conquistas("Pegando o ritmo", `Clicou 500 vezes`, "cliques >= 500", "bronze"),
@@ -100,16 +102,16 @@ const dadosConquistas = {
     c22: new Conquistas("Por que???", `Clicou 100.000 vezes`, "cliques >= 100000", "ouro"),
 
     c24: new Conquistas("Um pouco de upgrades", `Comprou 5 upgrades`, "Upgrades.numeroDeUpgrades >= 5", "bronze"),
-    c25: new Conquistas("Vários upgrades", `Comprou 10 upgrades`, "Upgrades.numeroDeUpgrades >= 25", "bronze"),
-    c26: new Conquistas("Muitos upgrades", `Comprou 50 upgrades`, "Upgrades.numeroDeUpgrades >= 100", "prata"),
-    c27: new Conquistas("Upgrades demais", `Comprou 100 upgrades`, "Upgrades.numeroDeUpgrades >= 250", "ouro"),
-    c28: new Conquistas("Upgrade que não acaba!", `Comprou 250 upgrades`, "Upgrades.numeroDeUpgrades >= 500", "ouro"),
+    c25: new Conquistas("Vários upgrades", `Comprou 25 upgrades`, "Upgrades.numeroDeUpgrades >= 25", "bronze"),
+    c26: new Conquistas("Muitos upgrades", `Comprou 50 upgrades`, "Upgrades.numeroDeUpgrades >= 50", "prata"),
+    c27: new Conquistas("Upgrades demais", `Comprou 100 upgrades`, "Upgrades.numeroDeUpgrades >= 100", "ouro"),
+    c28: new Conquistas("Upgrade que não acaba!", `Comprou 250 upgrades`, "Upgrades.numeroDeUpgrades >= 250", "ouro"),
 
-    c24: new Conquistas("Poderoso", `Comprou 1 powerups`, "Powerup.numComprados >= 1", "bronze"), // AAA
-    c25: new Conquistas("Avanço rápido", `Comprou 3 powerups`, "Powerup.numComprados >= 3", "prata"), // AAA
-    c26: new Conquistas("Com grandes poderes...", `Comprou 5 powerups`, "Powerup.numComprados >= 5", "prata"), // AAA
-    c27: new Conquistas("São muitos powerups", `Comprou 10 powerups`, "Powerup.numComprados >= 10", "ouro"), // AAA
-    c28: new Conquistas("Viu que tinha um de 50 batatas?", `Comprou todos os powerups`, "Powerup.numComprados == Powerup.ordemPowerups.length", "ouro"), // AAA
+    c24: new Conquistas("Poderoso", `Comprou 1 powerups`, "Powerup.numComprados >= 1", "bronze"),
+    c25: new Conquistas("Avanço rápido", `Comprou 3 powerups`, "Powerup.numComprados >= 3", "prata"),
+    c26: new Conquistas("Com grandes poderes...", `Comprou 5 powerups`, "Powerup.numComprados >= 5", "prata"),
+    c27: new Conquistas("São muitos powerups", `Comprou 10 powerups`, "Powerup.numComprados >= 10", "ouro"),
+    c28: new Conquistas("Viu que tinha um de 50 batatas?", `Comprou todos os powerups`, "Powerup.numComprados == Powerup.ordemPowerups.length", "ouro"),
 
     volume_mute: new Conquistas("Ei! Tá no mudo!", `Deixe no volume máximo e desative o volume`, "!SFXligado && document.getElementById('volumeSFX').value == '1'", "bronze"),
     time_config: new Conquistas("Do meu jeito", `Ficou 5min seguidos vendo as configurações`, "randomStats.timeConfig >= 300", "bronze"),
@@ -153,9 +155,11 @@ function carregarConquistas(){
 }
 
 function verificarConquistas(){
-    Conquistas.conquistasTotais.forEach((conq, i) =>{
+    Conquistas.conquistasTotais
+    .filter(conq => conq && conq.completa === false)
+    .forEach((conq, i) =>{
         try {
-            if(conq.completa == false && eval(conq.criterio) == true){
+            if(eval(conq.criterio) == true){
                 liberarConquista(conq, i)
             }
         } catch (error) {
@@ -185,7 +189,7 @@ function liberarConquista(conquista, elementIndex){
         </div>
     `
 
-    document.getElementById("campoPopupsConquistas").innerHTML += popup
+    campoPopupsConquistas.innerHTML += popup
 
     setTimeout(() => {excluirPopupConquista()}, 5000)
 }

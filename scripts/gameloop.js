@@ -1,7 +1,12 @@
 let ultimoTempo = 0;
 const events = [
   {
-    actions: [incrementarTempoJogo, iterarEfeitos, incrementarTempoSecao],
+    actions: [iterarEfeitos],
+    timeNeeded: 500,
+    accumulator: 0
+  },
+  {
+    actions: [incrementarTempoJogo, incrementarTempoSecao],
     timeNeeded: 1000,
     accumulator: 0
   },

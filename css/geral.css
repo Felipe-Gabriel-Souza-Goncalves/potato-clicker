@@ -42,3 +42,17 @@ body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown) {
   overflow-x: hidden !important;
   overflow-y: auto !important;
 }
+
+.infoFlutuante{
+  padding: 8px 16px;
+  margin: 12px;
+  border: 8px double #180f03;
+  background-color: #47320f;
+  background: 
+    linear-gradient(#47320f, #47320f) padding-box,
+                    rgb(148, 82, 12);
+  color: white;
+  word-wrap: break-word;
+  corner-shape: notch;
+  border-radius: 8px;
+}

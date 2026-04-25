@@ -121,3 +121,16 @@
     padding-bottom: 36px !important;
   }
 }
+
+#popupBackupErro{
+  position: fixed;
+  z-index: 8;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  padding: 8px 12px;
+  background-color: white;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-wrap: wrap;
+}

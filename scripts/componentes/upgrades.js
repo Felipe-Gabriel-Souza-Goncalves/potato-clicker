@@ -50,7 +50,7 @@ class UpgradesComponente extends HTMLElement{
 
     const containerInfo = document.createElement("div")
     containerInfo.innerHTML = `
-      <div id="infoUpgrade">
+      <div id="infoUpgrade" class="infoFlutuante">
         <span id="infoNome"></span>
         <p>Unidade | Total</p>
         <p>Batatas passivas: <span id="infoBpi">lorem - lorem</span></p>

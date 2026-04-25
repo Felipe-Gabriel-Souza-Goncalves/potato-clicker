@@ -1,4 +1,11 @@
-# Atualizações - Versão atual - [3.0.3]
+# Atualizações - Versão atual - [3.0.4]
+
+## Versão 3.0.4 - 25/04/2026
+- Medida básica de backup em caso de save imcompatível
+- Correções de erros envolvendo carregar save
+- Correções de powerups e upgrades funcionando incorretamente
+- Alteração de tempo de funções de atualização de DOM
+- Alterações de design
 
 ## Versão 3.0.3 - 24/04/2026
 - Ajustes de preços/efeito de powerups

@@ -1,4 +1,9 @@
-# Atualizações - Versão atual - [3.0.4]
+# Atualizações - Versão atual - [3.1.0-beta]
+
+## Versão 3.1.0-beta 27/04/2026
+- 9 novas skins para a batata (desbloqueado por número de conquista)
+- Novo powerup
+- Alteração no cálculo de batatas por segundo (decorativo) e poder do clique (correção)
 
 ## Versão 3.0.4 - 25/04/2026
 - Medida básica de backup em caso de save imcompatível

@@ -161,6 +161,12 @@ const infoPowerups = {
     160000,
     `upgrade3.bpc += 5; poderClique += upgrade3.quantidade*upgrade3.bpc`,
   ),
+  pw14: new Powerup(
+    "Cultivo rápido II",
+    `${upgrade2.nome} 10% mais rápido`,
+    55000,
+    `upgrade2.speed = upgrade2.intervalo * 0.9`,
+  ),
 };
 
 Powerup.atualizarFront();

@@ -108,6 +108,4 @@ function carregarTudo() {
 
 carregarTudo()
 
-document.getElementById("selectBatatasPorSegundo").addEventListener("change", () =>{
-  document.getElementById("estatBatatasPorSegundo").innerHTML = valorSelectCPS()
-});
+

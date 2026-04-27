@@ -10,6 +10,8 @@
   min-width: 50vw;
   height: 100vh;
   padding-bottom: 20px;
+  position: relative;
+  overflow-y: hidden;
 }
 .divBatataGrande {
   display: flex;
@@ -19,7 +21,6 @@
   text-align: center;
 }
 #imagemBatata {
-  clip-path: circle();
   transition: 0.4s;
   cursor: pointer;
 }
@@ -32,14 +33,69 @@
   animation: clickBatata 0.15s ease-in-out;
 }
 
+jogo-skins{
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  flex-wrap: wrap;
+  gap: 20px;
+
+}
+
+#divSkins > div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: baseline;
+  width: 400px;
+  max-height: 100vh;
+  gap: 20px;  
+  background-color: rgb(24, 28, 49, 0.7);
+  backdrop-filter: blur(3px);
+  overflow-y: auto;
+  padding: 24px 12px;
+  box-sizing: border-box;
+}
+
+.itemSkin{
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+img[src="imagens/skins.png"]{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 96px;
+  background-color: rgba(33, 37, 54, 0.4);
+  cursor: pointer;
+} 
+
 .botaoAtivo {
   filter: brightness(1.1);
   background-color: darkgrey !important;
   color: aliceblue;
 }
 
-.navSecoes img{
+.navSecoes img {
   cursor: pointer;
+}
+.navSecoes img:nth-of-type(1) {anchor-name: --aba1;}
+.navSecoes img:nth-of-type(2) {anchor-name: --aba2;}
+.navSecoes img:nth-of-type(3) {anchor-name: --aba3;}
+
+#abaNome {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  /* position-anchor: DECIDIDO EM JS; */
+  top: anchor(bottom);
+  right: anchor(right);
+  left: anchor(left);
+  justify-self: center;
 }
 
 #tudoPraDireita {
@@ -50,6 +106,10 @@
   overflow: hidden;
   overflow-y: auto;
   background-color: rgb(247 238 224);
+}
+
+#divSkins{
+  display: none;
 }
 
 #divConfiguracoes,
@@ -102,7 +162,7 @@
   #divConfiguracoes,
   #divEstatisticas,
   #divConquistas,
-  #infoConquista{
+  #infoConquista {
     box-sizing: border-box;
     width: 100% !important;
     padding: 20px !important;
@@ -111,18 +171,18 @@
 }
 
 @media (max-width: 480px) {
-  .botaoFecharDiv{
+  .botaoFecharDiv {
     width: 48px;
   }
   #divConfiguracoes,
   #divEstatisticas,
   #divConquistas,
-  #infoConquista{
+  #infoConquista {
     padding-bottom: 36px !important;
   }
 }
 
-#popupBackupErro{
+#popupBackupErro {
   position: fixed;
   z-index: 8;
   bottom: 0;

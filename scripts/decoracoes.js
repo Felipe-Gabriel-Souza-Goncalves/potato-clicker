@@ -181,7 +181,8 @@ function textoBancoBatatas(){
 }
 
 function textoBatatasPorSegundo(){
-  displayBatatasPS.textContent = `${sufixarNum(batatasPS, 2, true)} batatas por segundo`
+  const BPS = calcularBatatasPassivas().toFixed(0)
+  displayBatatasPS.textContent = `${sufixarNum(BPS, 2, true)} batatas por segundo`
 }
 
 function decoracaoTabelaUpgrades(indexUpgrade){

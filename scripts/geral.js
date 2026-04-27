@@ -3,6 +3,7 @@ function abrirSecao(idSecao, idsSecoesAuxiliares = null, arrayCallback = []){
   document.getElementById("divConfiguracoes").style.display = "none"
   document.getElementById("divEstatisticas").style.display = "none"
   document.getElementById("divConquistas").style.display = "none"
+  document.getElementById("divSkins").style.display = "none"
 
   if(idSecao != null){
     document.getElementById(idSecao).style.display = "unset"
@@ -20,6 +21,39 @@ function abrirSecao(idSecao, idsSecoesAuxiliares = null, arrayCallback = []){
     arrayCallback.forEach(callback => callback())
   }
 }
+
+function hoverAba(escolha){
+  const imgs = document.querySelectorAll(".navSecoes img")
+  const abaNome = document.getElementById("abaNome")
+
+  if(!escolha && escolha !== 0){
+    abaNome.style.display = "none"
+    return
+  }
+  
+  abaNome.style.display = "block"
+
+  switch (escolha) {
+    case 0:
+      abaNome.textContent = "Configurações"
+      abaNome.style.positionAnchor = "--aba1"
+      break;
+    case 1:
+      abaNome.textContent = "Estatísticas"
+      abaNome.style.positionAnchor = "--aba2"
+      break;  
+    case 2:
+      abaNome.textContent = "Conquistas"
+      abaNome.style.positionAnchor = "--aba3"
+      break;
+    default:
+      abaNome.style.display = "none"
+      abaNome.style.anchorName = ""
+
+      break;
+  }
+}
+
 
 function configAberta(){
   randomStats.elementOpened = "config"}

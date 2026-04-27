@@ -88,11 +88,13 @@ class Upgrades {
     const infoNome = infoUpgrade.querySelector("span#infoNome")
     const infoBpi = infoUpgrade.querySelector("p #infoBpi")
     const infoBpc = infoUpgrade.querySelector("p #infoBpc")
+    const infoVelocidade = infoUpgrade.querySelector("p #infoVelocidade")
 
     const upgd = Upgrades.upgradesExistentes[index]
     infoNome.innerText = upgd.nome
     infoBpi.innerText = `${upgd.bpi} | Total: ${Number((upgd.bpi * upgd.quantidade).toFixed(2))}`
     infoBpc.innerText = `${upgd.bpc} | Total: ${Number((upgd.bpc * upgd.quantidade).toFixed(2))}`
+    infoVelocidade.innerText = `${Number((upgd.intervalo/1000).toFixed(2))}s`
 
     containerInfoUpgrade.style.display = "block"
   }
@@ -112,6 +114,34 @@ function createIntervalUpgrade(index){
     accumulator: 0
   })
 }
+
+// Calcula o poder do clique total
+function calcularPoderClique(){
+  const inicialValue = 1
+  let finalPoderClique = inicialValue
+
+  Upgrades.upgradesExistentes.forEach(upgd => {
+    finalPoderClique += upgd.bpc * upgd.quantidade
+  })
+  
+  return finalPoderClique
+}
+
+// Calcula batatas POR SEGUNDO
+function calcularBatatasPassivas(){
+  let somaBatatasSegundo = 0
+
+  Upgrades.upgradesExistentes.forEach(upgd =>{
+    const poderPorIntervalo = upgd.bpi * upgd.quantidade
+    const poderPorSegundo = poderPorIntervalo / (upgd.intervalo/1000)
+
+    somaBatatasSegundo += poderPorSegundo
+  })
+
+  return somaBatatasSegundo
+}
+
+// console.log(calcularBatatasPassivas())
 
 // nome, preco, taxa (>1), bpi (Batata por intervalo), bpc (Batata por clique)
 const upgrade1 = new Upgrades("Salada de batata", 10, 1.2, 2, 0);

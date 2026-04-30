@@ -1,0 +1,374 @@
+[
+  {
+    "nome": "Começando!",
+    "descricao": "Fez ao menos 100 batatas no total",
+    "criterio": "batataTotal >= 100",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Um pouco mais",
+    "descricao": "Fez ao menos 1.000 batatas no total",
+    "criterio": "batataTotal >= 1000",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Aberto para todos!",
+    "descricao": "Fez ao menos 10.000 batatas no total!",
+    "criterio": "batataTotal >= 10000",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Melhor do mundo!",
+    "descricao": "Fez ao menos 100.000 batatas no total!!!",
+    "criterio": "batataTotal >= 100000",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Monopólio",
+    "descricao": "Fez ao menos 1.000.000 batatas no total!!!",
+    "criterio": "batataTotal >= 1000000",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Mundo de batata",
+    "descricao": "Fez ao menos 10.000.000 batatas no total!!!",
+    "criterio": "batataTotal >= 10000000",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Overdose de batata",
+    "descricao": "Fez ao menos 100.000.000 batatas no total!!!",
+    "criterio": "batataTotal >= 100000000",
+    "categoria": "ouro"
+  },
+  {
+    "nome": "Batata.",
+    "descricao": "Fez ao menos 1.000.000.000 batatas no total!!!",
+    "criterio": "batataTotal >= 1000000000",
+    "categoria": "ouro"
+  },
+
+
+
+  {
+    "nome": "Devagar se vai longe",
+    "descricao": "Atingiu 1 batatas por segundo",
+    "criterio": "batatasPS >= 1",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Ainda pouco, porém melhor",
+    "descricao": "Atingiu 50 batatas por segundo",
+    "criterio": "batatasPS >= 50",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Acelerando",
+    "descricao": "Atingiu 500 batatas por segundo",
+    "criterio": "batatasPS >= 500",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Linha de produção",
+    "descricao": "Atingiu 2000 batatas por segundo",
+    "criterio": "batatasPS >= 2000",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Pode aposentar o mouse",
+    "descricao": "Atingiu 10000 batatas por segundo",
+    "criterio": "batatasPS >= 10000",
+    "categoria": "ouro"
+  },
+
+
+
+  {
+    "nome": "Olha! faz sozinho!",
+    "descricao": "Comprou 1 Salada de batata",
+    "criterio": "upgrade1.quantidade >= 1",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Tempero saboroso",
+    "descricao": "Comprou 10 Salada de batata",
+    "criterio": "upgrade1.quantidade >= 10",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Uma alternativa saudável",
+    "descricao": "Comprou 25 Salada de batata",
+    "criterio": "upgrade1.quantidade >= 25",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Definitivamente algo",
+    "descricao": "Comprou 50 Salada de batata",
+    "criterio": "upgrade1.quantidade >= 50",
+    "categoria": "ouro"
+  },
+
+
+
+  {
+    "nome": "5x melhor!",
+    "descricao": "Comprou 1 Batata doce",
+    "criterio": "upgrade2.quantidade >= 1",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Ótimo custo benefício",
+    "descricao": "Comprou 10 Batata doce",
+    "criterio": "upgrade2.quantidade >= 10",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Doce e produtivo",
+    "descricao": "Comprou 25 Batata doce",
+    "criterio": "upgrade2.quantidade >= 25",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Wow. batatas.",
+    "descricao": "Comprou 50 Batata doce",
+    "criterio": "upgrade2.quantidade >= 50",
+    "categoria": "ouro"
+  },
+
+
+
+  {
+    "nome": "Que forno grande",
+    "descricao": "Comprou 1 Salgadinho de batata",
+    "criterio": "upgrade3.quantidade >= 1",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Cuidado com colesterol!",
+    "descricao": "Comprou 10 Salgadinho de batata",
+    "criterio": "upgrade3.quantidade >= 10",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Para que tanto?",
+    "descricao": "Comprou 25 Salgadinho de batata",
+    "criterio": "upgrade3.quantidade >= 25",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Risco a saúde",
+    "descricao": "Comprou 50 Salgadinho de batata",
+    "criterio": "upgrade3.quantidade >= 50",
+    "categoria": "ouro"
+  },
+
+
+
+  {
+    "nome": "Bom acompanhamento",
+    "descricao": "Comprou 1 Purê de batata",
+    "criterio": "upgrade4.quantidade >= 1",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Textura suave",
+    "descricao": "Comprou 10 Purê de batata",
+    "criterio": "upgrade4.quantidade >= 10",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Muito carboidrato",
+    "descricao": "Comprou 25 Purê de batata",
+    "criterio": "upgrade4.quantidade >= 25",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Hábito alimentar",
+    "descricao": "Comprou 50 Purê de batata",
+    "criterio": "upgrade4.quantidade >= 50",
+    "categoria": "ouro"
+  },
+
+
+
+  {
+    "nome": "Trabalho honesto",
+    "descricao": "Comprou 1 Enxada",
+    "criterio": "upgrade5.quantidade >= 1",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Carpinando do lote",
+    "descricao": "Comprou 10 Enxada",
+    "criterio": "upgrade5.quantidade >= 10",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Mão de obra",
+    "descricao": "Comprou 25 Enxada",
+    "criterio": "upgrade5.quantidade >= 25",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Enxada de ferro",
+    "descricao": "Comprou 50 Enxada",
+    "criterio": "upgrade5.quantidade >= 50",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Enxada de aço",
+    "descricao": "Comprou 100 Enxada",
+    "criterio": "upgrade5.quantidade >= 100",
+    "categoria": "ouro"
+  },
+  {
+    "nome": "Enxada de diamante",
+    "descricao": "Comprou 200 Enxada",
+    "criterio": "upgrade5.quantidade >= 200",
+    "categoria": "ouro"
+  },
+
+
+
+  {
+    "nome": "O início!",
+    "descricao": "Clicou 1 vez",
+    "criterio": "cliques >= 1",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Pegando o ritmo",
+    "descricao": "Clicou 500 vezes",
+    "criterio": "cliques >= 500",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "O começo de muitos",
+    "descricao": "Clicou 1.000 vezes",
+    "criterio": "cliques >= 1000",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Doendo o dedo",
+    "descricao": "Clicou 5.000 vezes",
+    "criterio": "cliques >= 5000",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Espírito de clicker",
+    "descricao": "Clicou 10.000 vezes",
+    "criterio": "cliques >= 10000",
+    "categoria": "ouro"
+  },
+  {
+    "nome": "Por que???",
+    "descricao": "Clicou 100.000 vezes",
+    "criterio": "cliques >= 100000",
+    "categoria": "ouro"
+  },
+
+
+
+  {
+    "nome": "Um pouco de upgrades",
+    "descricao": "Comprou 5 upgrades",
+    "criterio": "Upgrades.numeroDeUpgrades >= 5",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Vários upgrades",
+    "descricao": "Comprou 25 upgrades",
+    "criterio": "Upgrades.numeroDeUpgrades >= 25",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Muitos upgrades",
+    "descricao": "Comprou 50 upgrades",
+    "criterio": "Upgrades.numeroDeUpgrades >= 50",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Upgrades demais",
+    "descricao": "Comprou 100 upgrades",
+    "criterio": "Upgrades.numeroDeUpgrades >= 100",
+    "categoria": "ouro"
+  },
+  {
+    "nome": "Upgrade que não acaba!",
+    "descricao": "Comprou 250 upgrades",
+    "criterio": "Upgrades.numeroDeUpgrades >= 250",
+    "categoria": "ouro"
+  },
+
+
+
+  {
+    "nome": "Poderoso",
+    "descricao": "Comprou 1 powerup",
+    "criterio": "Powerup.numComprados >= 1",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Avanço rápido",
+    "descricao": "Comprou 3 powerups",
+    "criterio": "Powerup.numComprados >= 3",
+    "categoria": "prata"
+  },
+  {
+    "nome": "Com grandes poderes...",
+    "descricao": "Comprou 5 powerups",
+    "criterio": "Powerup.numComprados >= 5",
+    "categoria": "prata"
+  },
+  {
+    "nome": "São muitos powerups",
+    "descricao": "Comprou 10 powerups",
+    "criterio": "Powerup.numComprados >= 10",
+    "categoria": "ouro"
+  },
+  {
+    "nome": "Viu que tinha um de 50 batatas?",
+    "descricao": "Comprou todos os powerups",
+    "criterio": "Powerup.numComprados == Powerup.ordemPowerups.length",
+    "categoria": "ouro"
+  },
+
+
+  
+  {
+    "nome": "Ei! Tá no mudo!",
+    "descricao": "Deixe no volume máximo e desative o volume",
+    "criterio": "!SFXligado && document.getElementById('volumeSFX').value == '1'",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Do meu jeito",
+    "descricao": "Ficou 5min seguidos vendo as configurações",
+    "criterio": "randomStats.timeConfig >= 300",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Analista de dados",
+    "descricao": "Ficou 5min seguidos vendo as estatísticas",
+    "criterio": "randomStats.timeStatistic >= 300",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "VOU LIBERAR TODOS!",
+    "descricao": "Abriu as conquistas mais de 25 vezes",
+    "criterio": "randomStats.conquistasAbertas >= 25",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Não confio na automação",
+    "descricao": "Salvou manualmente 10 vezes",
+    "criterio": "randomStats.saveManual >= 10",
+    "categoria": "bronze"
+  },
+  {
+    "nome": "Me deixe comprar!!!",
+    "descricao": "Tentou comprar algo sem batatas suficientes 100 vezes",
+    "criterio": "randomStats.tentativasComprar >= 100",
+    "categoria": "prata"
+  }
+]

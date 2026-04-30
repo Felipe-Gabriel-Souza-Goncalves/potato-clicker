@@ -1,0 +1,42 @@
+[
+  {
+    "nome": "Salada de batata",
+    "preco": 10,
+    "taxaPreco": 1.2,
+    "bpi": 2,
+    "bpc": 0,
+    "intervalo": 1000
+  },
+  {
+    "nome": "Batata doce",
+    "preco": 300,
+    "taxaPreco": 1.3,
+    "bpi": 15,
+    "bpc": 0,
+    "intervalo": 1000
+  },
+  {
+    "nome": "Salgadinho de batata",
+    "preco": 5000,
+    "taxaPreco": 1.3,
+    "bpi": 100,
+    "bpc": 0,
+    "intervalo": 1000
+  },
+  {
+    "nome": "Purê de batata",
+    "preco": 40000,
+    "taxaPreco": 1.3,
+    "bpi": 250,
+    "bpc": 0,
+    "intervalo": 1000
+  },
+  {
+    "nome": "Enxada",
+    "preco": 50,
+    "taxaPreco": 1.1,
+    "bpi": 0,
+    "bpc": 1,
+    "intervalo": 1000
+  }
+]

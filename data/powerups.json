@@ -1,0 +1,100 @@
+[
+  {
+    "nome": "Cliques saudáveis",
+    "descricao": "+1 bpc para cada 4 Salada de batata",
+    "preco": 250,
+    "efeito": "upgrade1.bpc += 0.25; poderClique += upgrade1.quantidade*upgrade1.bpc",
+    "cumulativo": true
+  },
+  {
+    "nome": "Melhores preços",
+    "descricao": "taxa de aumento de preço 5% menor para Salgadinho de batata",
+    "preco": 700,
+    "efeito": "upgrade3.taxaPreco *= 0.95;",
+    "cumulativo": false
+  },
+  {
+    "nome": "No futuro fará sentido",
+    "descricao": "+5 Batata doce",
+    "preco": 1500,
+    "efeito": "upgrade2.quantidade +=5; poderClique+= upgrade2.bpc*5; document.getElementsByClassName(\"quantidadeUpgrade\")[1].innerText = upgrade2.quantidade",
+    "cumulativo": false
+  },
+  {
+    "nome": "Cultivo rápido",
+    "descricao": "Salada de batata 10% mais rápido",
+    "preco": 2750,
+    "efeito": "upgrade1.speed = upgrade1.intervalo * 0.9",
+    "cumulativo": false
+  },
+  {
+    "nome": "Pratos maiores",
+    "descricao": "+3 batatas/segundo na Salada de batata",
+    "preco": 8000,
+    "efeito": "upgrade1.bpi += 3; batatasPS += upgrade1.quantidade * 3",
+    "cumulativo": true
+  },
+  {
+    "nome": "Cliques doces",
+    "descricao": "+1 batata/clique para cada Batata doce",
+    "preco": 15000,
+    "efeito": "upgrade2.bpc += 1; poderClique += upgrade2.quantidade*upgrade2.bpc",
+    "cumulativo": true
+  },
+  {
+    "nome": "Invista com calma",
+    "descricao": "USO ÚNICO - dobra o banco de batatas ATUAL",
+    "preco": 50,
+    "efeito": "batatas *= 2; textoBancoBatatas();",
+    "cumulativo": false
+  },
+  {
+    "nome": "Enxada afiada",
+    "descricao": "+4 batata/clique na Enxada",
+    "preco": 25000,
+    "efeito": "upgrade5.bpc += 4; poderClique += upgrade5.quantidade * 4",
+    "cumulativo": true
+  },
+  {
+    "nome": "Limão, sal, azeite...",
+    "descricao": "+7 batatas/segundo na Salada de batata",
+    "preco": 42000,
+    "efeito": "upgrade1.bpi += 7; batatasPS += upgrade1.quantidade * 7",
+    "cumulativo": true
+  },
+  {
+    "nome": "Crocância e sabor",
+    "descricao": "+15 batatas/segundo na Batata doce",
+    "preco": 70000,
+    "efeito": "upgrade2.bpi += 15; batatasPS += upgrade2.quantidade * 15",
+    "cumulativo": true
+  },
+  {
+    "nome": "Adubo",
+    "descricao": "15 batatas/clique na Enxada",
+    "preco": 100000,
+    "efeito": "upgrade5.bpc += 15; poderClique += upgrade5.quantidade * 15",
+    "cumulativo": true
+  },
+  {
+    "nome": "Cliques nutritivos",
+    "descricao": "+3 batata/clique para cada 4 Salada de batata",
+    "preco": 120000,
+    "efeito": "upgrade1.bpc += 3; poderClique += upgrade1.quantidade*upgrade1.bpc",
+    "cumulativo": true
+  },
+  {
+    "nome": "Cliques salgados",
+    "descricao": "+5 batata/clique para cada Salgadinho de batata",
+    "preco": 160000,
+    "efeito": "upgrade3.bpc += 5; poderClique += upgrade3.quantidade*upgrade3.bpc",
+    "cumulativo": true
+  },
+  {
+    "nome": "Cultivo rápido II",
+    "descricao": "Batata doce 10% mais rápido",
+    "preco": 55000,
+    "efeito": "upgrade2.speed = upgrade2.intervalo * 0.9",
+    "cumulativo": false
+  }
+]

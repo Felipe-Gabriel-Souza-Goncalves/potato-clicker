@@ -1,0 +1,52 @@
+[
+  {
+    "nome": "Batata",
+    "src": "batata.png",
+    "meta": 0
+  },
+  {
+    "nome": "Batata descolada",
+    "src": "batata_descolada.png",
+    "meta": 5
+  },
+  {
+    "nome": "Batata artista",
+    "src": "batata_artista.png",
+    "meta": 10
+  },
+  {
+    "nome": "Batata de guerra",
+    "src": "batata_guerra.png",
+    "meta": 15
+  },
+  {
+    "nome": "Batata ????",
+    "src": "batata_misterio.png",
+    "meta": 20
+  },
+  {
+    "nome": "Batata blocos",
+    "src": "batata_bloco.png",
+    "meta": 25
+  },
+  {
+    "nome": "Batata chique",
+    "src": "batata_chique.png",
+    "meta": 30
+  },
+  {
+    "nome": "Batata desenhada",
+    "src": "batata_desenho.png",
+    "meta": 35
+  },
+  {
+    "nome": "Batata bugada",
+    "src": "batata_glitch.png",
+    "meta": 40
+  },
+  {
+    "nome": "Batchatcha",
+    "src": "batchatcha.png",
+    "meta": 50
+  }
+]

@@ -1,4 +1,7 @@
-# Atualizações - Versão atual - [3.1.0-beta]
+# Atualizações - Versão atual - [3.1.0]
+
+## Versão 3.1.0 - 30/04/2026
+- JSON dos dados dos upgrades, powerups, skins e conquistas
 
 ## Versão 3.1.0-beta 27/04/2026
 - 9 novas skins para a batata (desbloqueado por número de conquista)
